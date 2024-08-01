@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://21mohqufde"]
+[gd_scene load_steps=2 format=3 uid="uid://21mohqufde"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_7tmkl"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_7tmkl")
 
 [node name="text" type="Label" parent="."]
 offset_right = 1154.0
@@ -8,3 +11,8 @@ offset_bottom = 647.0
 text = "LVL 1 CARREGADO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="voltar" type="Button" parent="." groups=["button"]]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Voltar"
