@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://21mohqufde"]
+
+[node name="Level" type="Node2D"]
+
+[node name="text" type="Label" parent="."]
+offset_right = 1154.0
+offset_bottom = 647.0
+text = "LVL 1 CARREGADO"
+horizontal_alignment = 1
+vertical_alignment = 1

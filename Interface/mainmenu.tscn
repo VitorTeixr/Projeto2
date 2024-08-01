@@ -1,0 +1,139 @@
+[gd_scene load_steps=6 format=3 uid="uid://btvq06nj36u2s"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_r2i3s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3r26w"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vqwlj"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8x1f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_obyyy"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r2i3s")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = -72.0
+offset_right = 570.0
+offset_bottom = 24.0
+grow_vertical = 2
+text = "Nome do Jogo"
+label_settings = SubResource("LabelSettings_3r26w")
+
+[node name="Label" type="Label" parent="Label"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -217.0
+offset_top = 3.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Los Infernales"
+label_settings = SubResource("LabelSettings_vqwlj")
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -349.0
+offset_top = -56.0
+offset_right = -148.0
+offset_bottom = 256.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="NewGame" type="Button" parent="ButtonsContainer" groups=["button"]]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
+text = "Dias"
+flat = true
+
+[node name="Options" type="Button" parent="ButtonsContainer" groups=["button"]]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
+text = "Opções"
+flat = true
+
+[node name="Credits" type="Button" parent="ButtonsContainer" groups=["button"]]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
+text = "Credítos"
+flat = true
+
+[node name="Left" type="Button" parent="ButtonsContainer" groups=["button"]]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
+text = "Sair"
+flat = true
+
+[node name="Version" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Version 1.0"
+label_settings = SubResource("LabelSettings_obyyy")
