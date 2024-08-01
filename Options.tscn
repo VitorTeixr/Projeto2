@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://ck6mwpvcnjgx6"]
+[gd_scene load_steps=2 format=3 uid="uid://ck6mwpvcnjgx6"]
+
+[ext_resource type="Script" path="res://scripts/Options.gd" id="1_dodn2"]
 
 [node name="Options" type="Node2D"]
+script = ExtResource("1_dodn2")
 
 [node name="text" type="Label" parent="."]
 offset_right = 1151.0
@@ -8,3 +11,8 @@ offset_bottom = 648.0
 text = "Opções carregadas"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="voltar" type="Button" parent="." groups=["button"]]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Voltar"
