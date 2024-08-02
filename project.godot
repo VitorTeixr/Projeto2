@@ -18,7 +18,3 @@ config/icon="res://sprites/icon.svg"
 [autoload]
 
 BackgroundMusic="*res://Interface/BackgroundMusic.tscn"
-
-[rendering]
-
-renderer/rendering_method="mobile"
