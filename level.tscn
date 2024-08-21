@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://21mohqufde"]
+[gd_scene load_steps=4 format=3 uid="uid://21mohqufde"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_7tmkl"]
 
@@ -6,17 +6,36 @@
 font_size = 70
 outline_size = 5
 
+[sub_resource type="LabelSettings" id="LabelSettings_ib536"]
+font_size = 60
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_7tmkl")
 
-[node name="text" type="Label" parent="."]
+[node name="Calendario" type="Label" parent="."]
 custom_minimum_size = Vector2(2.945, 0.625)
-offset_left = 30.0
-offset_top = 64.0
-offset_right = 575.0
-offset_bottom = 160.0
-text = "Calendário 2135"
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 163.0
+offset_top = 62.0
+offset_right = 952.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "Março         Ano de 2135"
 label_settings = SubResource("LabelSettings_3r26w")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Semana" type="Label" parent="."]
+offset_left = 258.0
+offset_top = 129.0
+offset_right = 833.0
+offset_bottom = 259.0
+text = "D   S   T   Q   Q   S   S"
+label_settings = SubResource("LabelSettings_ib536")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -27,9 +46,72 @@ offset_right = 89.0
 offset_bottom = 48.0
 text = "Voltar"
 
-[node name="Button" type="Button" parent="."]
+[node name="Continue" type="Button" parent="."]
 offset_left = 930.0
 offset_top = 568.0
 offset_right = 1046.0
 offset_bottom = 599.0
 text = "Continue"
+
+[node name="Dia 1" type="Button" parent="."]
+offset_left = 246.0
+offset_top = 249.0
+offset_right = 316.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 50
+text = "1"
+
+[node name="Dia 2" type="Button" parent="."]
+offset_left = 332.0
+offset_top = 249.0
+offset_right = 402.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 50
+text = "2
+"
+
+[node name="Dia 3" type="Button" parent="."]
+offset_left = 418.0
+offset_top = 249.0
+offset_right = 488.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[node name="Dia 4" type="Button" parent="."]
+offset_left = 510.0
+offset_top = 249.0
+offset_right = 580.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 50
+text = "4"
+
+[node name="Dia 5" type="Button" parent="."]
+offset_left = 606.0
+offset_top = 249.0
+offset_right = 676.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 50
+text = "5"
+
+[node name="Dia 6" type="Button" parent="."]
+offset_left = 694.0
+offset_top = 249.0
+offset_right = 764.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 50
+text = "6"
+
+[node name="Dia 7" type="Button" parent="."]
+offset_left = 778.0
+offset_top = 249.0
+offset_right = 848.0
+offset_bottom = 326.0
+theme_override_font_sizes/font_size = 50
+text = "7"
+
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 140.0
+offset_top = 418.0
+offset_right = 315.0
+offset_bottom = 488.0

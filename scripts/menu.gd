@@ -22,4 +22,7 @@ func _on_button_pressed(_button: Button) -> void:
 			
 		"Left":
 			get_tree().quit()
+			
+		
+		
 		

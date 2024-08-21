@@ -13,6 +13,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="voltar" type="Button" parent="." groups=["button"]]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 74.0
+offset_bottom = 46.0
 text = "Voltar"
