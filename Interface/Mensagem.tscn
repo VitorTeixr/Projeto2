@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfg5h0d06gbei"]
 
-[ext_resource type="Script" path="res://Interface/Mensagem.gd" id="1_kk0ja"]
+[ext_resource type="Script" path="res://scripts/Mensagem.gd" id="1_kk0ja"]
 [ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="1_x2h1u"]
 
 [node name="Control" type="Control"]

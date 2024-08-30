@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://byfc6trregqta"]
 
-[ext_resource type="Script" path="res://Interface/menagem_detalhada.gd" id="1_3725c"]
+[ext_resource type="Script" path="res://scripts/menagem_detalhada.gd" id="1_3725c"]
 [ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="1_mc6no"]
 
 [node name="Menagem detalhada" type="Control"]

@@ -1,6 +1,6 @@
 extends Panel
 
-func _ready():
+func _process(delta):
 	
 	var time = Time.get_time_dict_from_system()
 	

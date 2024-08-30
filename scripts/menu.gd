@@ -12,13 +12,13 @@ func _ready() -> void:
 func _on_button_pressed(_button: Button) -> void:
 	match _button.name:
 		"NewGame":
-			get_tree().change_scene_to_file("res://level.tscn")
+			get_tree().change_scene_to_file("res://Interface/level.tscn")
 			
 		"Options":
-			get_tree().change_scene_to_file("res://Options.tscn")
+			get_tree().change_scene_to_file("res://Interface/Options.tscn")
 			
 		"Credits":
-			pass
+			get_tree().change_scene_to_file("res://Interface/Creditos.tscn")
 			
 		"Left":
 			get_tree().quit()

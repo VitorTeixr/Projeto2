@@ -1,13 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://ck6mwpvcnjgx6"]
+[gd_scene load_steps=4 format=3 uid="uid://ck6mwpvcnjgx6"]
 
 [ext_resource type="Script" path="res://scripts/Options.gd" id="1_dodn2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tfv0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gih2h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Options" type="Node2D"]
 script = ExtResource("1_dodn2")
 
 [node name="text" type="Label" parent="."]
-offset_right = 1151.0
-offset_bottom = 648.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 544.0
+offset_top = 16.0
+offset_right = 691.0
+offset_bottom = 39.0
+grow_horizontal = 2
+size_flags_horizontal = 4
 text = "Opções carregadas"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -18,3 +31,21 @@ offset_top = 15.0
 offset_right = 74.0
 offset_bottom = 46.0
 text = "Voltar"
+
+[node name="CheckButton" type="CheckButton" parent="." groups=["button"]]
+offset_left = 442.0
+offset_top = 291.0
+offset_right = 788.0
+offset_bottom = 362.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_2tfv0")
+button_pressed = true
+text = "Musíca"
+
+[node name="CheckButton2" type="CheckButton" parent="." groups=["button"]]
+offset_left = 442.0
+offset_top = 372.0
+offset_right = 788.0
+offset_bottom = 435.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_gih2h")
+button_pressed = true
+text = "Efeitos"

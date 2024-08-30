@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp70764ld7a5g"]
+
+[ext_resource type="Script" path="res://scripts/Creditos.gd" id="1_1527r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lrj12"]
+font_size = 30
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1527r")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 525.0
+offset_top = 235.0
+offset_right = 611.0
+offset_bottom = 412.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Vitor
+Julia
+Pedro
+Derek"
+label_settings = SubResource("LabelSettings_lrj12")
+horizontal_alignment = 1
+
+[node name="voltar" type="Button" parent="." groups=["button"]]
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 74.0
+offset_bottom = 46.0
+text = "Voltar"

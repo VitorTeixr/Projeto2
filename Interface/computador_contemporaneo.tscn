@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b851km53ae2em"]
 
-[ext_resource type="Script" path="res://Interface/computador_contemporâneo.gd" id="1_nxr4l"]
+[ext_resource type="Script" path="res://scripts/computador_contemporâneo.gd" id="1_nxr4l"]
 [ext_resource type="Texture2D" uid="uid://0rn2ytaxayjx" path="res://sprites/fundo.png" id="2_exqpf"]
 
 [node name="Computador_contemporâneo" type="Node2D"]

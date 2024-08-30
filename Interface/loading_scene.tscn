@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdwfba3u7376h"]
+
+[ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="1_28lxm"]
+[ext_resource type="Script" path="res://scripts/loading_scene.gd" id="1_fa505"]
+[ext_resource type="Script" path="res://scripts/ProgressBar.gd" id="3_ssscg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhuoq"]
+bg_color = Color(0.668257, 0.647478, 0.617296, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfix8"]
+bg_color = Color(0.298, 0.658215, 0.731896, 1)
+
+[node name="Loading_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fa505")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 578.0
+offset_right = 841.0
+offset_bottom = 615.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bhuoq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mfix8")
+script = ExtResource("3_ssscg")
+
+[node name="TextureRect" type="TextureRect" parent="ProgressBar"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -17.0
+offset_right = 58.0
+offset_bottom = 47.0
+texture = ExtResource("1_28lxm")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(546, 192)
+scale = Vector2(5.49805, 5.4043)
+texture = ExtResource("1_28lxm")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
