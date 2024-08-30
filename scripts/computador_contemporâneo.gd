@@ -17,6 +17,6 @@ func _on_button_2_pressed():
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Interface/Mensagem.tscn")
+	get_tree().change_scene_to_file("res://Interface/computador_contemporaneo.tscn")
 
 	 # Replace with function body.
