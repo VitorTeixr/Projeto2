@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://dmllnf4rhqqs3"]
+[gd_scene load_steps=18 format=3 uid="uid://dmllnf4rhqqs3"]
 
+[ext_resource type="Shader" path="res://sprites/crt.gdshader" id="1_3vo1h"]
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Battlenet.ttf" id="1_sfs6i"]
 [ext_resource type="Texture2D" uid="uid://3p4w03sv5xnn" path="res://sprites/PatchRegular.png" id="2_yvt6y"]
 [ext_resource type="Texture2D" uid="uid://bgxoxahor34bd" path="res://sprites/PatchInverted.png" id="3_dvwiq"]
@@ -8,7 +9,12 @@
 [ext_resource type="Script" path="res://sprites/Time Panel.gd" id="5_vxqoj"]
 [ext_resource type="Texture2D" uid="uid://h1khqvjhtr3j" path="res://sprites/ClosePressed.png" id="6_waunn"]
 [ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="8_hdhyv"]
-[ext_resource type="Shader" path="res://sprites/windows95.gdshader" id="9_gyvkd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7cwd"]
+expand_margin_left = 10.0
+expand_margin_top = 30.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa50r"]
 bg_color = Color(0.695503, 0.695503, 0.695503, 1)
@@ -44,21 +50,14 @@ font = ExtResource("1_sfs6i")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gx6wm"]
-shader = ExtResource("9_gyvkd")
-shader_parameter/time = null
-shader_parameter/scanline_intensity = 0.5
-shader_parameter/vignette_intensity = 0.5
-shader_parameter/resolution = Vector2(512, 512)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_ocwyp"]
-viewport_path = NodePath("SubViewportContainer/SubViewport")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7cwd"]
-expand_margin_left = 10.0
-expand_margin_top = 30.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ir0li"]
+shader = ExtResource("1_3vo1h")
+shader_parameter/crt_curve = 0.0
+shader_parameter/crt_scan_line_color = 0.309
+shader_parameter/aperture_grille_rate = 0.0
+shader_parameter/aparture_grille_cut_rate = 0.648
+shader_parameter/rf_switch_esque_blur = 1.0
+shader_parameter/white_noise_rate = 0.062
 
 [node name="WindowsDesktop" type="Control"]
 layout_mode = 3
@@ -68,21 +67,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+[node name="Window" type="Window" parent="."]
+title = "Pop"
+initial_position = 2
+visible = false
+transparent = true
+theme_override_constants/resize_margin = 5
+theme_override_fonts/title_font = ExtResource("1_sfs6i")
+theme_override_icons/close = ExtResource("5_titud")
+theme_override_icons/close_pressed = ExtResource("6_waunn")
+theme_override_styles/embedded_border = SubResource("StyleBoxFlat_c7cwd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-transparent_bg = true
-handle_input_locally = false
-size = Vector2i(1152, 648)
-render_target_update_mode = 4
-
-[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -90,7 +87,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.532846, 0.515367, 1)
 
-[node name="Panel" type="Panel" parent="SubViewportContainer/SubViewport"]
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -100,7 +98,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pa50r")
 
-[node name="Panel" type="Panel" parent="SubViewportContainer/SubViewport/Panel"]
+[node name="Panel" type="Panel" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,7 +108,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sw66v")
 
-[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/Panel"]
+[node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 10.0
@@ -128,7 +126,7 @@ text = "Start"
 icon = ExtResource("4_uun0y")
 expand_icon = true
 
-[node name="Time Panel" type="Panel" parent="SubViewportContainer/SubViewport/Panel"]
+[node name="Time Panel" type="Panel" parent="Panel"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -143,7 +141,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_df2sy")
 script = ExtResource("5_vxqoj")
 
-[node name="Time" type="Label" parent="SubViewportContainer/SubViewport/Panel/Time Panel"]
+[node name="Time" type="Label" parent="Panel/Time Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -158,7 +156,8 @@ grow_horizontal = 2
 grow_vertical = 2
 label_settings = SubResource("LabelSettings_to17k")
 
-[node name="TextureButton" type="TextureButton" parent="SubViewportContainer/SubViewport"]
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 38.0
 offset_right = 101.0
@@ -169,7 +168,8 @@ texture_hover = ExtResource("8_hdhyv")
 texture_disabled = ExtResource("8_hdhyv")
 texture_focused = ExtResource("8_hdhyv")
 
-[node name="TextureButton2" type="TextureButton" parent="SubViewportContainer/SubViewport"]
+[node name="TextureButton2" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 120.0
 offset_right = 101.0
@@ -180,7 +180,8 @@ texture_hover = ExtResource("8_hdhyv")
 texture_disabled = ExtResource("8_hdhyv")
 texture_focused = ExtResource("8_hdhyv")
 
-[node name="TextureButton3" type="TextureButton" parent="SubViewportContainer/SubViewport"]
+[node name="TextureButton3" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 37.0
 offset_top = 202.0
 offset_right = 101.0
@@ -191,19 +192,11 @@ texture_hover = ExtResource("8_hdhyv")
 texture_disabled = ExtResource("8_hdhyv")
 texture_focused = ExtResource("8_hdhyv")
 
-[node name="TextureRect" type="TextureRect" parent="SubViewportContainer"]
-visible = false
-material = SubResource("ShaderMaterial_gx6wm")
-layout_mode = 2
-texture = SubResource("ViewportTexture_ocwyp")
-
-[node name="Window" type="Window" parent="."]
-title = "Pop"
-initial_position = 2
-visible = false
-transparent = true
-theme_override_constants/resize_margin = 5
-theme_override_fonts/title_font = ExtResource("1_sfs6i")
-theme_override_icons/close = ExtResource("5_titud")
-theme_override_icons/close_pressed = ExtResource("6_waunn")
-theme_override_styles/embedded_border = SubResource("StyleBoxFlat_c7cwd")
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ir0li")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
