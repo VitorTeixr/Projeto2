@@ -1,0 +1,161 @@
+[gd_scene load_steps=12 format=3 uid="uid://c1gx8mnmqrqv3"]
+
+[ext_resource type="Texture2D" uid="uid://pghuu0xgq2sw" path="res://sprites/pngwing.com.png" id="1_hrfsr"]
+[ext_resource type="Script" path="res://scripts/PcCyberpunk.gd" id="1_q8175"]
+[ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Battlenet.ttf" id="2_m0yot"]
+[ext_resource type="Texture2D" uid="uid://ddp66tnmetc4r" path="res://sprites/EmailIcon.png" id="3_i36o8"]
+[ext_resource type="Script" path="res://scripts/PcAntigo.gd" id="3_wnulo"]
+[ext_resource type="Texture2D" uid="uid://bgxoxahor34bd" path="res://sprites/PatchInverted.png" id="4_uam88"]
+[ext_resource type="Script" path="res://sprites/Time Panel.gd" id="5_njc3g"]
+[ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="7_5jwro"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lwnxj"]
+font = ExtResource("2_m0yot")
+font_size = 32
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yerja"]
+texture = ExtResource("4_uam88")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ivye7"]
+font = ExtResource("2_m0yot")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="PcCyberpunk" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q8175")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.381703, 0.381703, 0.381703, 1)
+
+[node name="PcAntigo" type="TextureButton" parent="." groups=["button"]]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 29.0
+offset_right = 91.0
+offset_bottom = 90.0
+action_mode = 0
+texture_normal = ExtResource("1_hrfsr")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_wnulo")
+
+[node name="Pc Antigo" type="Label" parent="PcAntigo"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Pc Antigo"
+label_settings = SubResource("LabelSettings_lwnxj")
+horizontal_alignment = 1
+
+[node name="Emails" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 283.0
+offset_right = 94.0
+offset_bottom = 344.0
+toggle_mode = true
+texture_normal = ExtResource("3_i36o8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Emails" type="Label" parent="Emails"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Emails"
+label_settings = SubResource("LabelSettings_lwnxj")
+horizontal_alignment = 1
+
+[node name="Time Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -133.0
+offset_top = 8.0
+offset_right = -20.0
+offset_bottom = -591.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_yerja")
+script = ExtResource("5_njc3g")
+
+[node name="Time" type="Label" parent="Time Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_ivye7")
+
+[node name="Menu Iniciar" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1034.0
+offset_top = 147.0
+offset_right = 1130.0
+offset_bottom = 523.0
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Menu Iniciar"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_5jwro")
+
+[node name="TextureButton2" type="TextureButton" parent="Menu Iniciar"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_5jwro")
+
+[node name="TextureButton3" type="TextureButton" parent="Menu Iniciar"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_5jwro")
+
+[node name="TextureButton4" type="TextureButton" parent="Menu Iniciar"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_5jwro")
+
+[node name="Indicador" type="Label" parent="Menu Iniciar"]
+layout_mode = 2
+text = "Menu iniciar"
+
+[connection signal="pressed" from="PcAntigo" to="." method="_on_pc_antigo_pressed"]
+[connection signal="pressed" from="Emails" to="." method="_on_emails_pressed"]

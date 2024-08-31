@@ -1,13 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://vjinf60a0dx8"]
-
-[ext_resource type="Script" path="res://scripts/NotePad.gd" id="1_d5ksw"]
+[gd_scene format=3 uid="uid://vjinf60a0dx8"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_d5ksw")
 
 [node name="TextEditor" type="TextEdit" parent="."]
 layout_mode = 0
