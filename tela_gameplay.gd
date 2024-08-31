@@ -7,7 +7,7 @@ func _ready() -> void:
 	$ScrollContainer2/VBoxContainer/Label2.text="começo"
 	for _button in get_tree().get_nodes_in_group('button'):
 		_button.pressed.connect(_on_button_pressed.bind(_button))
-		
+	$Label/Button.toggled=false
 	pass # Replace with function body.
 var resposta=null
 
