@@ -57,8 +57,7 @@ layout_mode = 2
 
 [node name="Label2" type="Label" parent="ScrollContainer2/VBoxContainer"]
 layout_mode = 2
-text = "null
-"
+text = "null"
 
 [node name="OptionButton" type="OptionButton" parent="."]
 layout_mode = 0
@@ -67,8 +66,7 @@ offset_top = 76.0
 offset_right = 116.0
 offset_bottom = 113.0
 item_count = 2
-popup/item_0/text = "problema 1"
-popup/item_0/id = 0
+popup/item_0/text = "Problema 1"
 popup/item_1/text = "Problema 2"
 popup/item_1/id = 1
 
