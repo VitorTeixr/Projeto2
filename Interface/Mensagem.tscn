@@ -18,7 +18,17 @@ offset_left = 171.0
 offset_top = 234.0
 offset_right = 1063.0
 offset_bottom = 337.0
-text = "Mensagem 1"
+text = "       Jason Morais"
+alignment = 0
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 354.0
+offset_right = 1050.0
+offset_bottom = 457.0
+text = "      Vitória, do Departamento de Controle de Danos"
+alignment = 0
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(101, 90)
@@ -34,4 +44,5 @@ offset_bottom = 90.0
 text = "Sair"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
