@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqg36pt6yfia0"]
 
-[ext_resource type="Script" path="res://tela_gameplay.gd" id="1_k57ww"]
+[ext_resource type="Script" path="res://scripts/tela_gameplay.gd" id="1_k57ww"]
 
 [node name="Tela_gameplay" type="Control"]
 layout_mode = 3
