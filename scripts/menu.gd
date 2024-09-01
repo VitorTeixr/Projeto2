@@ -12,6 +12,8 @@ func _ready() -> void:
 func _on_button_pressed(_button: Button) -> void:
 	match _button.name:
 		"NewGame":
+			Transition.transition()
+			await Transition.on_transition_finished
 			get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn")
 			
 		"Options":
@@ -26,4 +28,3 @@ func _on_button_pressed(_button: Button) -> void:
 			
 		
 			
-
