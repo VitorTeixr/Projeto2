@@ -8,7 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	
+	$Label2.text=Global.emails[Global.mensage]["mensagem"]
 
 
 func _on_exit_pressed():
