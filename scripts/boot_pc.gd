@@ -38,5 +38,6 @@ func _process(delta):
 			
 func _on_timer_timeout():
 	# Quando o timer expira, troca de cena
+	print("carregado")
 	get_tree().change_scene_to_file("res://Interface/windows95.tscn")
 			

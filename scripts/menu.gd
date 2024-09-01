@@ -14,6 +14,7 @@ func _on_button_pressed(_button: Button) -> void:
 		"NewGame":
 			Transition.transition()
 			await Transition.on_transition_finished
+			print("carregado")
 			get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn")
 			
 		"Options":
