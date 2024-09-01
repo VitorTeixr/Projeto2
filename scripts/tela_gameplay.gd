@@ -21,7 +21,10 @@ func _ready() -> void:
 	get_node("Label/Button").toggle_mode = false
 	
 func _on_send_button_pressed():
-	_verify_answer()	
+	if resposta_selecionada != null:
+		_verify_answer()
+	else:
+		get_node("ScrollContainer2/VBoxContainer/Label2").text = "Selecione Uma Opção"
 	
 func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://Interface/windows95.tscn")
