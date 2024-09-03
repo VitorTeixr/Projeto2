@@ -6,7 +6,8 @@ var problemas = [
 	{'problema': "Descrição do Problema 2", 'resposta': 'b2'}
 ]
 var resposta_selecionada = null
-var problema_atual = 0  
+var problema_atual = 0
+  
 
 
 func _ready() -> void:
@@ -41,9 +42,12 @@ func _on_button_pressed(button: Button):
 func _verify_answer():
 	if resposta_selecionada == problemas[problema_atual]['resposta']:
 		print("Acertou!")
+		Global.acertosD1 += 1
+		Global.trys += 1
 		get_tree().change_scene_to_file("res://Interface/windows95.tscn")
 	else:
 		print("Resposta errada.")
+		Global.trys += 1
 		get_tree().change_scene_to_file("res://Interface/windows95.tscn")
 
 func _update_problem():

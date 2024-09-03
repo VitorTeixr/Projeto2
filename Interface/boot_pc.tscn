@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://bppeuqt51nof4"]
+
+[ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="1_erhpk"]
+[ext_resource type="Script" path="res://scripts/boot_pc.gd" id="1_rddm0"]
+
+[sub_resource type="Animation" id="Animation_vbtio"]
+resource_name = "blink"
+length = 3.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.3, 1.6, 1.9, 2.2, 2.5, 2.8, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false, true, false, true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_1lqaj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dxt7h"]
+_data = {
+"RESET": SubResource("Animation_1lqaj"),
+"blink": SubResource("Animation_vbtio")
+}
+
+[node name="BootPc" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rddm0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 163.0
+offset_right = 645.0
+offset_bottom = 304.0
+texture = ExtResource("1_erhpk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dxt7h")
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 336.0
+offset_top = 487.0
+offset_right = 797.0
+offset_bottom = 539.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0

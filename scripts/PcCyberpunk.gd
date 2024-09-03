@@ -39,7 +39,7 @@ func _on_pc_antigo_pressed():
 	
 func _on_double_click():
 	# Ação desejada ao clicar duas vezes rapidamente
-	get_tree().change_scene_to_file("res://Interface/loading_scene.tscn")
+	get_tree().change_scene_to_file("res://Interface/boot_pc.tscn")
 	# Aqui você pode chamar a função ou ação desejada.
 
 
