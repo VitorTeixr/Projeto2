@@ -1,0 +1,11 @@
+Detritos:
+Descrição: 
+“Causado por uma falta de manutenção, detritos é um tipo de problema mais predominante em usuários de alto capital, visto que a possibilidade de comprar um outro mais facilmente se torna a principal razão por não focar em preservar o chip.” 
+
+Perigo: 
+Seu nível de perigo é mediano, pois os detritos da má manutenção podem resultar em perda de desempenho do chip no sistema, sobreaquecimento e diminuição de vida útil do chip e relacionados a ele no sistema. 
+
+Resolução: 
+A melhor forma de lidar com os detritos é limpeza semanal do chip: com um pincel, remova qualquer sujeira grossa como poeira, terra e materiais orgânicos, com um pano seco remova com mais delicadeza as outras sujeiras. Repita isso uma vez a cada uma ou duas semanas. 
+
+

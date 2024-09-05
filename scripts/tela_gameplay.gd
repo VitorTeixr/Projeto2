@@ -8,19 +8,28 @@ var problemas = [
 var resposta_selecionada = null
 var problema_atual = 0
   
-
+func mostrar(i):
+	var file_path=i['descricao']
+	var file= FileAccess.open(file_path, FileAccess.READ)
+	$ScrollContainer2/VBoxContainer/Label2.text=file.get_as_text()
 
 func _ready() -> void:
-	# Inicializa o texto do Label com o primeiro problema
-	get_node("Sair").pressed.connect(_on_exit_button_pressed)
-	get_node("Label/Button").pressed.connect(_on_send_button_pressed)
-	get_node("ScrollContainer2/VBoxContainer/Label2").text = "Selecione Um Problema"
+	$Timer.start()
+	#Produz botões correspondentes a quantidade de dias
+	for a in range(Global.dia_atual):
+		for i in Global.dias[a]['problemas']:
+			
+			var botao=Button.new()
+			botao.text=i['titulo']
+			botao.connect('pressed',func():mostrar(i))
+			$ScrollContainer/VBoxContainer.add_child(botao)
+			
+			
+			
+			
 
-	for button in get_tree().get_nodes_in_group('button'):
-		button.pressed.connect(_on_button_pressed.bind(button))
 
-	get_node("Label/Button").toggle_mode = false
-	
+		
 func _on_send_button_pressed():
 	if resposta_selecionada != null:
 		_verify_answer()
@@ -30,14 +39,7 @@ func _on_send_button_pressed():
 func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://Interface/windows95.tscn")
 	
-func _on_button_pressed(button: Button):
-	match button.name:
-		'b1':
-			resposta_selecionada = 'b1'
-			_update_label_text('res://historia_do_brasil.txt')
-		'b2':
-			resposta_selecionada = 'b2'
-			_update_label_text('res://portugal.txt')
+
 			
 func _verify_answer():
 	if resposta_selecionada == problemas[problema_atual]['resposta']:
@@ -67,3 +69,7 @@ func _on_option_button_item_selected(index):
 	# Atualiza o índice do problema se você estiver usando um OptionButton
 	problema_atual = index
 	_update_problem()
+
+
+func _on_timer_timeout():
+	print("Acabou") # Replace with function body.
