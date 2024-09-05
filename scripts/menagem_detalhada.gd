@@ -3,13 +3,17 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	var file_path=Global.email_atual["msg"]
+	var file= FileAccess.open(file_path, FileAccess.READ)
+	$ScrollContainer/VBoxContainer/Label.text=file.get_as_text()
+	$Label2.text="De:"+Global.email_atual['remetente']
+	$Label3.text="Assunto:"+ Global.email_atual['assunto']
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	pass
 	
-	$Label2.text=Global.emails[Global.mensage]["mensagem"]
+
 
 
 func _on_exit_pressed():

@@ -1,11 +1,19 @@
 extends Control
 
 
+
+
 # Called when the node enters the scene tree for the first time.
+func _ready():
+	for x in Global.dia_atual:
+		for i in Global.dias[x]['emails']:
+			var butao=Button.new()
+			butao.text=i['remetente']
+			butao.connect('pressed',func():pressionado(i))
+			$ScrollContainer/VBoxContainer.add_child(butao)
+		
 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
@@ -14,6 +22,7 @@ func _on_exit_pressed():
 	get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn") # Replace with function body.
 
 
-func _on_button_pressed():
-	Global.mensage=0
-	get_tree().change_scene_to_file("res://Interface/menagem_detalhada.tscn") # Replace with function body.
+func pressionado(detalhes):
+	Global.email_atual=detalhes
+	print(Global.email_atual)
+	get_tree().change_scene_to_file("res://Interface/menagem_detalhada.tscn")

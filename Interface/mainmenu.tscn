@@ -92,8 +92,8 @@ grow_vertical = 2
 [node name="NewGame" type="Button" parent="ButtonsContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
 theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
 text = "Dias"
@@ -102,8 +102,8 @@ flat = true
 [node name="Options" type="Button" parent="ButtonsContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
 theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
 text = "Opções"
@@ -112,8 +112,8 @@ flat = true
 [node name="Credits" type="Button" parent="ButtonsContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
 theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
 text = "Creditos"
@@ -122,8 +122,8 @@ flat = true
 [node name="Left" type="Button" parent="ButtonsContainer" groups=["button"]]
 layout_mode = 2
 size_flags_horizontal = 0
-theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
 theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1)
+theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
 text = "Sair"
