@@ -59,7 +59,6 @@ offset_right = 116.0
 offset_bottom = 113.0
 item_count = 2
 popup/item_0/text = "Problema 1"
-popup/item_0/id = 0
 popup/item_1/text = "Problema 2"
 popup/item_1/id = 1
 

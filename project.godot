@@ -12,14 +12,14 @@ config_version=5
 
 config/name="Phone Disk Error"
 run/main_scene="res://Interface/mainmenu.tscn"
-config/features=PackedStringArray("4.2", "Mobile")
+config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://sprites/icon.svg"
 
 [autoload]
 
-BackgroundMusic="*res://Interface/BackgroundMusic.tscn"
 Global="*res://scripts/global.gd"
 Transition="*res://Interface/transition.tscn"
+MusicManager="*res://scripts/music_manager.gd"
 
 [editor]
 

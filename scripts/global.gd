@@ -32,3 +32,8 @@ var email_atual={}
 var pergunta_atual={}
 #Sabe o dia atual referente ao seu idOxidação
 var dia_atual=1
+
+var trys = 0
+var acertosD1 = 0
+
+var musica = true
