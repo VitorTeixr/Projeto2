@@ -19,7 +19,7 @@ offset_right = 209.0
 offset_bottom = 56.0
 text = "Problema asdasdadasds"
 
-[node name="Button" type="Button" parent="Label"]
+[node name="send" type="Button" parent="Label"]
 layout_mode = 0
 offset_left = 19.0
 offset_top = 131.0
@@ -74,7 +74,7 @@ text = "Sair"
 wait_time = 4.99
 autostart = true
 
-[connection signal="button_down" from="Label/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Label/send" to="." method="_on_send_button_down"]
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

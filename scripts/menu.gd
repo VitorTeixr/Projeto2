@@ -7,8 +7,6 @@ func _ready():
 		_button.pressed.connect(_on_button_pressed.bind(_button))
 	
 		
-	if not MusicManager.is_playing:
-		MusicManager.play_music()
 		
 	pass
 

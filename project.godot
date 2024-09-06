@@ -19,7 +19,6 @@ config/icon="res://sprites/icon.svg"
 
 Global="*res://scripts/global.gd"
 Transition="*res://Interface/transition.tscn"
-MusicManager="*res://scripts/music_manager.gd"
 
 [editor]
 
