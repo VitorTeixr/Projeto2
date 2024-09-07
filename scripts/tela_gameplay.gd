@@ -1,81 +1,68 @@
 extends Control
 
-# Variáveis globais de dias e problemas
-var problemas = Global.dias[Global.dia_atual - 1]['problemas']
-var quiz = Global.dias[Global.dia_atual - 1]['quiz']
+# Lista de problemas e suas respostas corretas
+var problemas = [
+	{'problema': "Descrição do Problema 1", 'resposta': 'b1'},
+	{'problema': "Descrição do Problema 2", 'resposta': 'b2'}
+]
+var resposta_selecionada = null  # Índice do problema atual
+var problema_atual = 0  
 
-var resposta_selecionada = null
-var problema_atual = -1  # Inicialmente sem problema selecionado
-
-func mostrar(i):
-	var file_path = i['descricao']
-	var file = FileAccess.open(file_path, FileAccess.READ)
-	if file:
-		$ScrollContainer2/VBoxContainer/Label2.text = file.get_as_text()
-		file.close()
 
 func _ready() -> void:
-	# Produz botões correspondentes aos problemas
-	for problema in problemas:
-		var botao = Button.new()
-		botao.text = problema['titulo']
-		
-		# Conecta cada botão para mostrar o problema e registrar a resposta selecionada
-		botao.connect('pressed', Callable(self, "_on_button_pressed").bind(problema))
-		
-		$ScrollContainer/VBoxContainer.add_child(botao)
+	# Inicializa o texto do Label com o primeiro problema
+	get_node("Sair").pressed.connect(_on_exit_button_pressed)
+	get_node("Label/send").pressed.connect(_on_send_button_pressed)
+	get_node("ScrollContainer2/VBoxContainer/Label2").text = "Selecione Um Problema"
 
-func _on_button_pressed(problema) -> void:
-	mostrar(problema)
-	resposta_selecionada = problema['titulo']
-	problema_atual = find_problem_index(problema)  # Encontra o índice do problema selecionado
+	for button in get_tree().get_nodes_in_group('buttonTG'):
+		button.pressed.connect(_on_button_pressed.bind(button))
 
-func find_problem_index(problema) -> int:
-	# Função para encontrar o índice do problema no array
-	for i in range(problemas.size()):
-		if problemas[i]['titulo'] == problema['titulo']:
-			return i
-	return -1  # Retorna -1 se o problema não for encontrado (não deve acontecer)
-
-func _on_send_button_down() -> void:
-	if resposta_selecionada != null and problema_atual != -1:
-		_verify_answer()
-	else:
-		# Se nenhuma resposta foi selecionada, mudar de cena
-		get_tree().change_scene_to_file("res://Interface/windows95.tscn")
-
-func _on_sair_pressed():
+	get_node("Label/send").toggle_mode = false
+	
+func _on_send_button_pressed():
+	_verify_answer()	
+	
+func _on_exit_button_pressed():
 	get_tree().change_scene_to_file("res://Interface/windows95.tscn")
-
+	
+func _on_button_pressed(button: Button):
+	match button.name:
+		'b1':
+			resposta_selecionada = 'b1'
+			_update_label_text("res://Textos_jogos/Dia_1/problemas/p1.txt")
+		'b2':
+			resposta_selecionada = 'b2'
+			_update_label_text("res://Textos_jogos/Dia_1/problemas/p2.txt")
+	
+			
 func _verify_answer():
-	if problema_atual < quiz.size():
-		# Normalizar resposta selecionada e correta
-		var resposta_normalizada = resposta_selecionada.strip_edges().to_lower()
-		var resposta_correta_normalizada = quiz[problema_atual]['resposta'].strip_edges().to_lower()
-
-		# Imprimir valores para depuração
-		print("Resposta selecionada: ", resposta_normalizada)
-		print("Resposta correta: ", resposta_correta_normalizada)
-
-		# Verifica se a resposta selecionada é a correta do quiz
-		if resposta_normalizada == resposta_correta_normalizada:
-			print("Acertou!")
-			Global.acertosD1 += 1
-			Global.trys += 1
-			Global.dias[Global.dia_atual - 1]['acertou'].append(problema_atual)
-		else:
-			print("Resposta errada.")
-			Global.trys += 1
-			Global.dias[Global.dia_atual - 1]['errou'].append(problema_atual)
-		
-		# Muda de cena após verificar a resposta
+	if resposta_selecionada == problemas[problema_atual]['resposta']:
+		print("Acertou!")
+		Global.trys += 1
+		Global.acertosD1 +=1
 		get_tree().change_scene_to_file("res://Interface/windows95.tscn")
 	else:
-		print("Índice do problema atual está fora dos limites do quiz.")
+		print("Resposta errada.")
+		Global.trys += 1
+		get_tree().change_scene_to_file("res://Interface/windows95.tscn")
+
 
 func _update_problem():
-	# Atualiza o problema mostrado na tela
-	if problema_atual >= 0 and problema_atual < problemas.size():
-		get_node("ScrollContainer2/VBoxContainer/Label2").text = problemas[problema_atual]['titulo']
+	if problema_atual < problemas.size():
+		get_node("ScrollContainer2/VBoxContainer/Label2").text = problemas[problema_atual]['problema']
 	else:
-		print("Problema atual está fora dos limites.")
+		print("Todos os problemas foram respondidos.")
+
+
+func _update_label_text(file_path: String):
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file:
+		var text = file.get_as_text()
+		$ScrollContainer2/VBoxContainer/Label2.text = text
+		file.close()
+
+func _on_option_button_item_selected(index):
+	# Atualiza o índice do problema se você estiver usando um OptionButton
+	problema_atual = index
+	_update_problem()

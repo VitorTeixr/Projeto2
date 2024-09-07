@@ -53,12 +53,12 @@ font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ir0li"]
 shader = ExtResource("1_3vo1h")
-shader_parameter/crt_curve = 0.0
-shader_parameter/crt_scan_line_color = 0.309
-shader_parameter/aperture_grille_rate = 0.0
-shader_parameter/aparture_grille_cut_rate = 0.648
+shader_parameter/crt_curve = 0.005
+shader_parameter/crt_scan_line_color = 0.0
+shader_parameter/aperture_grille_rate = 0.469
+shader_parameter/aparture_grille_cut_rate = 0.473
 shader_parameter/rf_switch_esque_blur = 1.0
-shader_parameter/white_noise_rate = 0.062
+shader_parameter/white_noise_rate = 0.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_m2xbo"]
 font = ExtResource("1_sfs6i")
@@ -200,7 +200,6 @@ texture_disabled = ExtResource("8_hdhyv")
 texture_focused = ExtResource("8_hdhyv")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_ir0li")
 layout_mode = 1
 anchors_preset = 15

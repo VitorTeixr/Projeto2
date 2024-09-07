@@ -10,6 +10,7 @@ var scene_changed = false
 
 func _ready():
 	if Global.trys == 2:
+		Global.dia_atual += 1
 		janela.visible = true
 		timer1.start(2)  # Inicia o timer com 2 segundos
 		timer1.timeout.connect(Callable(self, "_on_timer_timeout"))
