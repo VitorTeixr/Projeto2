@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dmllnf4rhqqs3"]
+[gd_scene load_steps=21 format=3 uid="uid://dmllnf4rhqqs3"]
 
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="1_3vo1h"]
 [ext_resource type="Script" path="res://scripts/windows95.gd" id="1_ed1cj"]
@@ -9,13 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dtl7c4tu6c4pj" path="res://sprites/CloseRegular.png" id="5_titud"]
 [ext_resource type="Script" path="res://sprites/Time Panel.gd" id="5_vxqoj"]
 [ext_resource type="Texture2D" uid="uid://h1khqvjhtr3j" path="res://sprites/ClosePressed.png" id="6_waunn"]
-[ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="8_hdhyv"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7cwd"]
-expand_margin_left = 10.0
-expand_margin_top = 30.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
+[ext_resource type="Texture2D" uid="uid://bs5r41pjpf7rp" path="res://sprites/198645-200.png" id="9_lnker"]
+[ext_resource type="Texture2D" uid="uid://bdwohx0ykdbfj" path="res://sprites/32743.png" id="10_100e6"]
+[ext_resource type="Texture2D" uid="uid://dqhn36ajk08q2" path="res://sprites/pc-game-icon-22.png" id="11_lhjqe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa50r"]
 bg_color = Color(0.695503, 0.695503, 0.695503, 1)
@@ -73,18 +69,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ed1cj")
 
-[node name="Window" type="Window" parent="."]
-transparent_bg = true
-title = "Pop"
-initial_position = 2
-visible = false
-transparent = true
-theme_override_constants/resize_margin = 5
-theme_override_fonts/title_font = ExtResource("1_sfs6i")
-theme_override_icons/close = ExtResource("5_titud")
-theme_override_icons/close_pressed = ExtResource("6_waunn")
-theme_override_styles/embedded_border = SubResource("StyleBoxFlat_c7cwd")
-
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -93,6 +77,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.532846, 0.515367, 1)
+
+[node name="Window" type="Window" parent="."]
+title = "Pop"
+initial_position = 2
+size = Vector2i(700, 500)
+visible = false
+theme_override_constants/resize_margin = 5
+theme_override_fonts/title_font = ExtResource("1_sfs6i")
+theme_override_icons/close = ExtResource("5_titud")
+theme_override_icons/close_pressed = ExtResource("6_waunn")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -165,39 +159,45 @@ label_settings = SubResource("LabelSettings_to17k")
 
 [node name="ligacao" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 38.0
-offset_right = 101.0
-offset_bottom = 104.0
-texture_normal = ExtResource("8_hdhyv")
-texture_pressed = ExtResource("8_hdhyv")
-texture_hover = ExtResource("8_hdhyv")
-texture_disabled = ExtResource("8_hdhyv")
-texture_focused = ExtResource("8_hdhyv")
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 119.0
+offset_bottom = 105.0
+texture_normal = ExtResource("9_lnker")
+texture_pressed = ExtResource("9_lnker")
+texture_hover = ExtResource("9_lnker")
+texture_disabled = ExtResource("9_lnker")
+texture_focused = ExtResource("9_lnker")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="TextureButton2" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 120.0
-offset_right = 101.0
-offset_bottom = 186.0
-texture_normal = ExtResource("8_hdhyv")
-texture_pressed = ExtResource("8_hdhyv")
-texture_hover = ExtResource("8_hdhyv")
-texture_disabled = ExtResource("8_hdhyv")
-texture_focused = ExtResource("8_hdhyv")
+offset_left = 43.0
+offset_top = 141.0
+offset_right = 107.0
+offset_bottom = 207.0
+texture_normal = ExtResource("10_100e6")
+texture_pressed = ExtResource("10_100e6")
+texture_hover = ExtResource("10_100e6")
+texture_disabled = ExtResource("10_100e6")
+texture_focused = ExtResource("10_100e6")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="TextureButton3" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 202.0
-offset_right = 101.0
-offset_bottom = 268.0
-texture_normal = ExtResource("8_hdhyv")
-texture_pressed = ExtResource("8_hdhyv")
-texture_hover = ExtResource("8_hdhyv")
-texture_disabled = ExtResource("8_hdhyv")
-texture_focused = ExtResource("8_hdhyv")
+offset_left = 25.0
+offset_top = 252.0
+offset_right = 109.0
+offset_bottom = 331.0
+texture_normal = ExtResource("11_lhjqe")
+texture_pressed = ExtResource("11_lhjqe")
+texture_hover = ExtResource("11_lhjqe")
+texture_disabled = ExtResource("11_lhjqe")
+texture_focused = ExtResource("11_lhjqe")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ir0li")

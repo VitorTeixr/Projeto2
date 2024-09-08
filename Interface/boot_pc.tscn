@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bppeuqt51nof4"]
+[gd_scene load_steps=12 format=3 uid="uid://bppeuqt51nof4"]
 
-[ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="1_erhpk"]
 [ext_resource type="Script" path="res://scripts/boot_pc.gd" id="1_rddm0"]
+[ext_resource type="Texture2D" uid="uid://pghuu0xgq2sw" path="res://sprites/pngwing.com.png" id="2_amxjb"]
+[ext_resource type="Shader" path="res://sprites/crt.gdshader" id="3_sy487"]
 
 [sub_resource type="Animation" id="Animation_1lqaj"]
 length = 0.001
@@ -40,6 +41,31 @@ _data = {
 "blink": SubResource("Animation_vbtio")
 }
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g233t"]
+load_path = "res://.godot/imported/Novo Projeto (11).png-f7dbbbbbec6bb5b7a0c53b136263be4f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8gcbu"]
+load_path = "res://.godot/imported/Novo Projeto (12).png-16c38b93389ef093ad4fa43c6d9209c4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ko6o7"]
+load_path = "res://.godot/imported/Novo Projeto (10).png-43064b164a1b0b3c06e44d01e6524a9f.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60ook"]
+bg_color = Color(0, 0.84436, 0.934243, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xpr7r"]
+shader = ExtResource("3_sy487")
+shader_parameter/crt_curve = 0.005
+shader_parameter/crt_scan_line_color = 0.0
+shader_parameter/aperture_grille_rate = 0.469
+shader_parameter/aparture_grille_cut_rate = 0.473
+shader_parameter/rf_switch_esque_blur = 1.0
+shader_parameter/white_noise_rate = 0.0
+
 [node name="BootPc" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -59,25 +85,62 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 502.0
-offset_top = 163.0
-offset_right = 645.0
-offset_bottom = 304.0
-texture = ExtResource("1_erhpk")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = -96.0
+offset_right = 85.0
+offset_bottom = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_amxjb")
+expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_dxt7h")
 }
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 336.0
-offset_top = 487.0
-offset_right = 797.0
-offset_bottom = 539.0
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 270.0
+offset_top = 446.0
+offset_right = 870.0
+offset_bottom = 501.0
+texture_under = SubResource("CompressedTexture2D_g233t")
+texture_over = SubResource("CompressedTexture2D_8gcbu")
+texture_progress = SubResource("CompressedTexture2D_ko6o7")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = 109.5
+offset_right = 157.0
+offset_bottom = 136.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_60ook")
+show_percentage = false
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_xpr7r")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

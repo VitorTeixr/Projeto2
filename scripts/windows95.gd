@@ -7,6 +7,7 @@ var scene_changed = false
 
 @onready var janela = $Panel2
 @onready var timer1 = $Timer
+@onready var click_sound = $Click
 
 func _ready():
 	if Global.trys == 2:
@@ -54,7 +55,13 @@ func _on_double_click():
 		
 	pass # Replace with function body.
 	
+
 	
+func _input(event):
+	# Verifica se o evento é um clique do botão esquerdo do mouse
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		# Reproduz o som de clique
+		GlobalSound.play_click_sound()
 
 
 

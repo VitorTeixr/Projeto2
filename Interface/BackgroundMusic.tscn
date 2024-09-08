@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://chkv8oeagyp5i"]
+[gd_scene load_steps=2 format=3 uid="uid://ycqp0uk3o1m5"]
 
-[ext_resource type="AudioStream" uid="uid://i4g0l4vpys6y" path="res://soundtrack/Dark Cyberpunk _ Horror Synth Theme - Annihilation __ Royalty Free Copyright Safe Music - White Bat Audio.mp3" id="1_0vqep"]
+[ext_resource type="AudioStream" uid="uid://i4g0l4vpys6y" path="res://soundtrack/Music/Dark Cyberpunk _ Horror Synth Theme - Annihilation __ Royalty Free Copyright Safe Music - White Bat Audio.mp3" id="1_0vqep"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_0vqep")
