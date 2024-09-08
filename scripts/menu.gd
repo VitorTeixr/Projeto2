@@ -6,9 +6,8 @@ func _ready():
 
 	for _button in get_tree().get_nodes_in_group("button"):
 		_button.pressed.connect(_on_button_pressed.bind(_button))
-		
-	#if not BackgroundMusic.playing:
-		#BackgroundMusic.play()
+
+	MusicManager.play_music("res://soundtrack/Music/Theme.mp3")
 
 func _on_button_pressed(_button: Button) -> void:
 	match _button.name:
@@ -16,6 +15,7 @@ func _on_button_pressed(_button: Button) -> void:
 			Transition.transition()
 			await Transition.on_transition_finished
 			print("carregado")
+			MusicManager.stop_music()
 			get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn")
 			
 		"Options":

@@ -19,7 +19,7 @@ config/icon="res://sprites/icon.svg"
 
 Global="*res://scripts/global.gd"
 Transition="*res://Interface/transition.tscn"
-GlobalSound="*res://scripts/global_sound.gd"
+MusicManager="*res://scripts/MusicManager.gd"
 
 [editor]
 

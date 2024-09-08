@@ -61,7 +61,7 @@ func _input(event):
 	# Verifica se o evento é um clique do botão esquerdo do mouse
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		# Reproduz o som de clique
-		GlobalSound.play_click_sound()
+		$Click.play()
 
 
 

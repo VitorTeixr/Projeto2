@@ -42,13 +42,10 @@ _data = {
 }
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g233t"]
-load_path = "res://.godot/imported/Novo Projeto (11).png-f7dbbbbbec6bb5b7a0c53b136263be4f.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8gcbu"]
-load_path = "res://.godot/imported/Novo Projeto (12).png-16c38b93389ef093ad4fa43c6d9209c4.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ko6o7"]
-load_path = "res://.godot/imported/Novo Projeto (10).png-43064b164a1b0b3c06e44d01e6524a9f.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60ook"]
 bg_color = Color(0, 0.84436, 0.934243, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmllnf4rhqqs3"]
+[gd_scene load_steps=22 format=3 uid="uid://dmllnf4rhqqs3"]
 
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="1_3vo1h"]
 [ext_resource type="Script" path="res://scripts/windows95.gd" id="1_ed1cj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bs5r41pjpf7rp" path="res://sprites/198645-200.png" id="9_lnker"]
 [ext_resource type="Texture2D" uid="uid://bdwohx0ykdbfj" path="res://sprites/32743.png" id="10_100e6"]
 [ext_resource type="Texture2D" uid="uid://dqhn36ajk08q2" path="res://sprites/pc-game-icon-22.png" id="11_lhjqe"]
+[ext_resource type="AudioStream" uid="uid://c21vjfmq4muck" path="res://soundtrack/SFX/Click - Sound Effect (HD).mp3" id="13_ae7b1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa50r"]
 bg_color = Color(0.695503, 0.695503, 0.695503, 1)
@@ -234,6 +235,10 @@ text = "Acho que essas foram todas as ligações, melhor ir desligar o pc"
 label_settings = SubResource("LabelSettings_m2xbo")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ae7b1")
+bus = &"SFX"
 
 [connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ligacao" to="." method="_on_ligacao_pressed"]
