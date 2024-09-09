@@ -8,8 +8,18 @@ var problemas = [
 var resposta_selecionada = null  # Índice do problema atual
 var problema_atual = 0  
 
-
+func  pressionado(i):
+	var file = FileAccess.open(i['descricao'], FileAccess.READ)
+	$ScrollContainer2/VBoxContainer/Label2.text=file.get_as_text()
+	
+	print(i)
 func _ready() -> void:
+	for x in Global.dia_atual:
+		for i in Global.dias[x]['problemas']:
+			var butao=Button.new()
+			butao.text=i['titulo']
+			butao.connect('pressed',func():pressionado(i))
+			$ScrollContainer/VBoxContainer.add_child(butao)
 	# Inicializa o texto do Label com o primeiro problema
 	get_node("Sair").pressed.connect(_on_exit_button_pressed)
 	get_node("Label/send").pressed.connect(_on_send_button_pressed)
@@ -61,7 +71,6 @@ func _update_label_text(file_path: String):
 		var text = file.get_as_text()
 		$ScrollContainer2/VBoxContainer/Label2.text = text
 		file.close()
-
 func _on_option_button_item_selected(index):
 	# Atualiza o índice do problema se você estiver usando um OptionButton
 	problema_atual = index
