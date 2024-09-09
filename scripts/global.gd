@@ -77,3 +77,6 @@ var dia_atual=1
 
 var trys = 0
 var acertosD1 = 0
+
+var first_boot = true
+var first_boot_animation = true

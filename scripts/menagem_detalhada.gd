@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func _on_exit_pressed():
-	get_tree().change_scene_to_file("res://Interface/computador_contemporaneo.tscn")
+	get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn")
  # Replace with function body.
 
 

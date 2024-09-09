@@ -6,7 +6,7 @@ extends Control
 @onready var timer = $Timer  # Supondo que você tenha um Timer na cena
 
 var blink_duration = 3.1  # Tempo total para o ícone piscar (em segundos)
-var loading_speed = 25  # Velocidade de carregamento da barra (quanto maior, mais rápido)
+var loading_speed = 15  # Velocidade de carregamento da barra (quanto maior, mais rápido)
 var loading_complete = false  # Flag para verificar se o carregamento foi concluído
 
 func _ready():
@@ -31,7 +31,7 @@ func _on_animation_finished(anim_name):
 func _process(delta):
 	if loading_bar.visible and not loading_complete:
 		loading_bar.value += loading_speed * delta
-		print(loading_bar.value)
+		
 		
 		if loading_bar.value >= loading_bar.max_value:
 			# Define como completo para evitar processar mais vezes
@@ -45,5 +45,4 @@ func _process(delta):
 
 func _on_timer_timeout():
 	# Quando o timer expira, troca de cena
-	print("Carregamento concluído.")
 	get_tree().change_scene_to_file("res://Interface/windows95.tscn")

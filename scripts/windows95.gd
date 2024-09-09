@@ -9,12 +9,35 @@ var scene_changed = false
 @onready var timer1 = $Timer
 @onready var click_sound = $Click
 
+
+@onready var animation_player = $AnimationPlayer
+@onready var ui_elements = [$Panel/Start, $ligacao, $TextureButton2,$TextureButton3,$"Panel/Time Panel/Time"]  # Supondo que sejam os elementos que ficarão invisíveis
+
 func _ready():
+	MusicManager.boot_play_sound()
+	
 	if Global.trys == 2:
 		Global.dia_atual += 1
 		janela.visible = true
 		timer1.start(2)  # Inicia o timer com 2 segundos
 		timer1.timeout.connect(Callable(self, "_on_timer_timeout"))
+		
+		Global.trys = 0
+		Global.first_boot=true
+		Global.first_boot_animation=true
+		
+	
+	for element in ui_elements:
+		element.visible = false
+
+	# Verifica se é a primeira vez que a cena foi carregada
+	if Global.first_boot_animation:
+		play_intro_animation()
+		Global.first_boot_animation = false  # Marca como não sendo a primeira vez
+	else:
+		# Torna os ícones visíveis imediatamente se a animação já foi executada
+		for element in ui_elements:
+			element.visible = true
 			
 func _on_timer_timeout():
 	# Quando o timer expira, troca de cena
@@ -62,10 +85,13 @@ func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		# Reproduz o som de clique
 		$Click.play()
+		
+		
+func play_intro_animation():
+	# Torna os ícones visíveis após 1.5 segundos (via animação)
+	animation_player.play("startboot")  # Supondo que a animação seja chamada 'intro_animation'
 
-
-
-func _on_start_pressed():
-	print (Global.acertosD1)
-	get_tree().change_scene_to_file("res://Interface/mainmenu.tscn")
-	pass # Replace with function body.
+#func _on_start_pressed():
+	#print (Global.acertosD1)
+	#get_tree().change_scene_to_file("res://Interface/mainmenu.tscn")
+	#pass # Replace with function body.

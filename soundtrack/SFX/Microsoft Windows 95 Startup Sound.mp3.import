@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyd230d8o34fi"
+path="res://.godot/imported/Microsoft Windows 95 Startup Sound.mp3-6ec550b606b0e8da4794d16d1d282a61.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/SFX/Microsoft Windows 95 Startup Sound.mp3"
+dest_files=["res://.godot/imported/Microsoft Windows 95 Startup Sound.mp3-6ec550b606b0e8da4794d16d1d282a61.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

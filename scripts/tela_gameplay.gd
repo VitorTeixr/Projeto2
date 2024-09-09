@@ -66,3 +66,10 @@ func _on_option_button_item_selected(index):
 	# Atualiza o índice do problema se você estiver usando um OptionButton
 	problema_atual = index
 	_update_problem()
+	
+	
+func _input(event):
+	# Verifica se o evento é um clique do botão esquerdo do mouse
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		# Reproduz o som de clique
+		MusicManager.play_click_sound()
