@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_k57ww")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 11.0
 offset_top = 19.0
@@ -29,18 +30,18 @@ text = "enviar"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 60.0
-offset_top = 217.0
-offset_right = 233.0
-offset_bottom = 532.0
+offset_left = 35.0
+offset_top = 323.0
+offset_right = 208.0
+offset_bottom = 638.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 220.0
-offset_top = 101.0
+offset_left = 280.0
+offset_top = 145.0
 offset_right = 1131.0
 offset_bottom = 587.0
 
@@ -52,15 +53,10 @@ layout_mode = 2
 
 [node name="OptionButton" type="OptionButton" parent="."]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 76.0
-offset_right = 116.0
-offset_bottom = 113.0
-item_count = 2
-popup/item_0/text = "Problema 1"
-popup/item_0/id = 0
-popup/item_1/text = "Problema 2"
-popup/item_1/id = 1
+offset_left = 21.0
+offset_top = 206.0
+offset_right = 155.0
+offset_bottom = 243.0
 
 [node name="Sair" type="Button" parent="."]
 layout_mode = 0
@@ -74,7 +70,40 @@ text = "Sair"
 wait_time = 4.99
 autostart = true
 
+[node name="Window" type="Window" parent="."]
+title = "Aranha"
+initial_position = 2
+size = Vector2i(500, 500)
+
+[node name="Label" type="Label" parent="Window"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Piranha é um peixe voraz"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 262.0
+offset_right = 136.0
+offset_bottom = 297.0
+disabled = true
+text = "Responder"
+
+[node name="ScrollContainer3" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 367.0
+offset_bottom = 130.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ScrollContainer3/VBoxContainer"]
+layout_mode = 2
+
 [connection signal="button_down" from="Label/send" to="." method="_on_send_button_down"]
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

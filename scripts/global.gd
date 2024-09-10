@@ -35,7 +35,7 @@ var dias = [
 		'quiz': [
 			{
 				'pergunta': 'res://Textos_jogos/Dia_1/quiz/a1.txt',
-				'resposta': 'Mal contato'
+				'resposta': 'Mal Contato'
 			},
 			{
 				'pergunta': 'res://Textos_jogos/Dia_1/quiz/a2.txt',
