@@ -146,4 +146,4 @@ mouse_filter = 2
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_uhtsr")
 autoplay = true
-bus = &"SFX"
+bus = &"Music"

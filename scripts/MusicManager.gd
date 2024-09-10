@@ -1,16 +1,25 @@
 extends Node
 
 var music_player : AudioStreamPlayer
-var current_music: AudioStream = null
+var current_music: AudioStream = preload("res://soundtrack/Music/Theme.mp3")
 
 var boot_sound: AudioStream = preload("res://soundtrack/SFX/Microsoft Windows 95 Startup Sound.mp3")  # Substitua pelo caminho correto do arquivo de som
 
 var click_sound: AudioStream = preload("res://soundtrack/SFX/Click - Sound Effect (HD).mp3")
 
+var pc_sound: AudioStream = preload("res://soundtrack/Music/pc_sound.mp3")
+
+
+# Variável separada para o AudioStreamPlayer do som do PC
+var pc_player: AudioStreamPlayer
+
 func _ready() -> void:
 	# Cria e adiciona o AudioStreamPlayer à cena
 	music_player = AudioStreamPlayer.new()
 	add_child(music_player)
+	
+	
+	
 
 
 # Função para carregar e tocar a música dinamicamente
@@ -51,3 +60,21 @@ func boot_play_sound():
 		boot_player.play()  # Toca o som
 		Global.first_boot = false  # Marca como não sendo a primeira vez
 	
+func play_pc_sound():
+	if not pc_player:
+		pc_player = AudioStreamPlayer.new()
+		add_child(pc_player)
+		pc_player.stream = pc_sound
+		pc_player.bus = "Music"
+		
+		# Configura o som para tocar em loop
+		if pc_player.stream is AudioStream:
+			var audio_stream = pc_player.stream as AudioStream
+			audio_stream.loop = true  # Define o loop na stream
+		
+		pc_player.play()
+		
+
+func stop_pc_sound():
+	if pc_player.playing:
+		pc_player.stop()

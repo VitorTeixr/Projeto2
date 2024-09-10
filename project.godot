@@ -25,6 +25,11 @@ Global="*res://scripts/global.gd"
 Transition="*res://Interface/transition.tscn"
 MusicManager="*res://scripts/MusicManager.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [editor]
 
 movie_writer/movie_file="C:/Users/teixe/OneDrive - Universidade Federal do Ceará/Documentos/Godot/Disk/Projeto2/videos/Teste 1.avi"
