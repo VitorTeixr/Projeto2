@@ -9,6 +9,7 @@ var lista_on = false
 
 @onready var janela = $Panel2
 @onready var timer1 = $Timer
+@onready var timer2 = $Timer2
 @onready var click_sound = $Click
 
 @onready var janela_primaria = $ListaPopup
@@ -59,7 +60,7 @@ func _process(delta):
 			click_count = 0
 			timer = 0.0
 			
-		print($Time.text)
+
 	
 func _on_timer_timeout():
 	# Sistema de fim de dia
@@ -110,9 +111,8 @@ func _on_lista_pressed():
 		timer = 0.0
 
 func _on_double_click1():
+	pass
 	# Ação desejada ao clicar duas vezes rapidamente
-	lista_on = true
-	janela_primaria.visible = true
 	
 
 func _input(event):
@@ -147,6 +147,8 @@ func _on_ligar_internet_pressed() -> void:
 	
 	MusicManager.stop_dial_sound()
 	$Internet.visible = false
+	ligacao_ativa()
+	timer2.start()
 	
 	pass # Replace with function body.
 	
@@ -164,4 +166,11 @@ func ligacao_ativa():
 func _on_button_atender_pressed() -> void:
 	$Atender.visible = false
 	MusicManager.stop_ring_sound()
+	janela_primaria.visible = true
+	lista_on = true
 	pass # Replace with function body.
+	
+func _on_timer2_timeout():
+	ligacao_ativa()
+	
+	
