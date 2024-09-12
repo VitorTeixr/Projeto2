@@ -4,6 +4,8 @@ var click_count = 0
 var double_click_time = 0.5  # Tempo máximo permitido entre cliques (em segundos)
 var timer = 0.0
 var scene_changed = false
+var lista_on = false
+
 
 @onready var janela = $Panel2
 @onready var timer1 = $Timer
@@ -14,22 +16,26 @@ var scene_changed = false
 @onready var close_button = $ListaPopup/TextureButton  # Botão de fechar dentro do Panel
 
 @onready var animation_player = $AnimationPlayer
-@onready var ui_elements = [$Panel/Start, $ligacao, $Lista, $Jogo, $"Panel/Time Panel/Time"]  # Elementos que ficarão invisíveis
+@onready var ui_elements = [$Panel/Start, $ligacao, $Lista, $Jogo,$"Panel/Time Panel/Time"]  # Elementos que ficarão invisíveis
 
 func _ready():
-	# Conectando o sinal "pressed" do botão de fechar ao método hide_panel
-	close_button.pressed.connect(hide_panel)
-	instantiate_scene_in_panel()
 	
+	#Instancia a cena
+	instantiate_scene_in_panel()
+	#Fecha a cena
+	close_button.pressed.connect(hide_panel)
 
+	#Som do inicio e de fundo
 	MusicManager.boot_play_sound()
 	MusicManager.play_pc_sound()
 
+	#Sistema de fim de dia
 	if Global.trys == 2:
 		Global.dia_atual += 1
 		janela.visible = true
 		timer1.start(2)  # Inicia o timer com 2 segundos
 		timer1.timeout.connect(Callable(self, "_on_timer_timeout"))
+
 
 	for element in ui_elements:
 		element.visible = false
@@ -42,8 +48,21 @@ func _ready():
 		# Torna os ícones visíveis imediatamente se a animação já foi executada
 		for element in ui_elements:
 			element.visible = true
-
+			
+	
+			
+func _process(delta):
+	if click_count > 0:
+		timer += delta
+		if timer > double_click_time:
+			# Tempo excedido, resetar
+			click_count = 0
+			timer = 0.0
+			
+		print($Time.text)
+	
 func _on_timer_timeout():
+	# Sistema de fim de dia
 	# Quando o timer expira, troca de cena
 	if not scene_changed:
 		scene_changed = true
@@ -56,14 +75,8 @@ func _on_timer_timeout():
 		Global.first_boot = true
 		Global.first_boot_animation = true
 
-func _process(delta):
-	if click_count > 0:
-		timer += delta
-		if timer > double_click_time:
-			# Tempo excedido, resetar
-			click_count = 0
-			timer = 0.0
 
+			
 func _on_ligacao_pressed():
 	click_count += 1
 	if click_count == 1:
@@ -79,7 +92,9 @@ func _on_ligacao_pressed():
 
 func _on_double_click():
 	# Ação desejada ao clicar duas vezes rapidamente
-	get_tree().change_scene_to_file("res://Interface/tela_gameplay.tscn")
+	$Internet.visible = true
+	
+	pass
 
 func _on_lista_pressed():
 	click_count += 1
@@ -96,7 +111,9 @@ func _on_lista_pressed():
 
 func _on_double_click1():
 	# Ação desejada ao clicar duas vezes rapidamente
+	lista_on = true
 	janela_primaria.visible = true
+	
 
 func _input(event):
 	# Verifica se o evento é um clique do botão esquerdo do mouse
@@ -114,9 +131,37 @@ func hide_panel():
 
 # Função para instanciar e adicionar a cena dentro do Panel
 func instantiate_scene_in_panel():
-	var scene_to_instance = preload("res://Interface/lista.tscn")  # Carrega a cena que será instanciada
+	var scene_to_instance = preload("res://Interface/tela_gameplay.tscn")  # Carrega a cena que será instanciada
 	var instance = scene_to_instance.instantiate()  # Instancia a cena
 
 	# Adiciona a cena dentro do Panel
 	janela_lista.add_child(instance)
 	
+	
+func _on_ligar_internet_pressed() -> void:
+	
+	MusicManager.dial_sound()
+	$Internet/Label2.visible = true
+	animation_player.play("connect_internet")
+	await animation_player.animation_finished
+	
+	MusicManager.stop_dial_sound()
+	$Internet.visible = false
+	
+	pass # Replace with function body.
+	
+	
+func connect_internet():
+	
+	pass
+	
+func ligacao_ativa():
+	$Atender.visible = true
+	MusicManager.play_ring_sound()
+	pass
+
+
+func _on_button_atender_pressed() -> void:
+	$Atender.visible = false
+	MusicManager.stop_ring_sound()
+	pass # Replace with function body.

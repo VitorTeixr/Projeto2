@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8my6ntroh60i"
+path="res://.godot/imported/Dial Up Internet - Sound Effect (HD).mp3-08ae80120f92cee81a6ca3fdd59b96df.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/SFX/Dial Up Internet - Sound Effect (HD).mp3"
+dest_files=["res://.godot/imported/Dial Up Internet - Sound Effect (HD).mp3-08ae80120f92cee81a6ca3fdd59b96df.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

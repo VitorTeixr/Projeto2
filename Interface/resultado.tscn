@@ -17,3 +17,13 @@ offset_left = 156.0
 offset_top = 393.0
 offset_right = 1034.0
 offset_bottom = 524.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 22.0
+offset_right = 111.0
+offset_bottom = 66.0
+text = "Sair"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

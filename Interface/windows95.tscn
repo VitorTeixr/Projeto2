@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dmllnf4rhqqs3"]
+[gd_scene load_steps=33 format=3 uid="uid://dmllnf4rhqqs3"]
 
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="1_3vo1h"]
 [ext_resource type="Script" path="res://scripts/windows95.gd" id="1_ed1cj"]
@@ -8,11 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://dvr3th8tqoxdu" path="res://sprites/Flag.png" id="4_uun0y"]
 [ext_resource type="Texture2D" uid="uid://dtl7c4tu6c4pj" path="res://sprites/CloseRegular.png" id="5_titud"]
 [ext_resource type="Script" path="res://sprites/Time Panel.gd" id="5_vxqoj"]
-[ext_resource type="Texture2D" uid="uid://h1khqvjhtr3j" path="res://sprites/ClosePressed.png" id="6_waunn"]
 [ext_resource type="Texture2D" uid="uid://bs5r41pjpf7rp" path="res://sprites/198645-200.png" id="9_lnker"]
 [ext_resource type="Texture2D" uid="uid://bdwohx0ykdbfj" path="res://sprites/32743.png" id="10_100e6"]
+[ext_resource type="Texture2D" uid="uid://bb7evux4x3b" path="res://sprites/180163.png" id="11_ip4ig"]
 [ext_resource type="Texture2D" uid="uid://dqhn36ajk08q2" path="res://sprites/pc-game-icon-22.png" id="11_lhjqe"]
+[ext_resource type="Texture2D" uid="uid://b3rd6bkrqjdom" path="res://sprites/5089778.png" id="12_kgc54"]
 [ext_resource type="AudioStream" uid="uid://c21vjfmq4muck" path="res://soundtrack/SFX/Click - Sound Effect (HD).mp3" id="13_ae7b1"]
+[ext_resource type="Texture2D" uid="uid://db51vtbdv61hd" path="res://sprites/71739.png" id="13_uqxw7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa50r"]
 bg_color = Color(0.695503, 0.695503, 0.695503, 1)
@@ -48,82 +50,9 @@ font = ExtResource("1_sfs6i")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ir0li"]
-shader = ExtResource("1_3vo1h")
-shader_parameter/crt_curve = 0.003
-shader_parameter/crt_scan_line_color = 0.0
-shader_parameter/aperture_grille_rate = 0.469
-shader_parameter/aparture_grille_cut_rate = 0.473
-shader_parameter/rf_switch_esque_blur = 1.0
-shader_parameter/white_noise_rate = 0.0
-
 [sub_resource type="LabelSettings" id="LabelSettings_m2xbo"]
 font = ExtResource("1_sfs6i")
 font_size = 32
-
-[sub_resource type="Animation" id="Animation_agwja"]
-resource_name = "startboot"
-length = 2.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Time Panel/Time:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.53333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ligacao:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Lista:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Jogo:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Panel/Start:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
 
 [sub_resource type="Animation" id="Animation_h6jlk"]
 length = 0.001
@@ -187,12 +116,157 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Internet/Label2:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [". ."]
+}
+
+[sub_resource type="Animation" id="Animation_agwja"]
+resource_name = "startboot"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Time Panel/Time:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ligacao:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lista:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Jogo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/Start:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_gxekk"]
+resource_name = "connect_internet"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Internet/TextureRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Internet/Label2:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", ".", ". .", ". . .", "", ".", ". .", ". . .", "", ".", ". .", ". . ."]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wngyn"]
 _data = {
 "RESET": SubResource("Animation_h6jlk"),
+"connect_internet": SubResource("Animation_gxekk"),
 "startboot": SubResource("Animation_agwja")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ox6s"]
+texture = ExtResource("2_yvt6y")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d04bl"]
+texture = ExtResource("2_yvt6y")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ced6a"]
+font = ExtResource("1_sfs6i")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_wga51"]
+font = ExtResource("1_sfs6i")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fojse"]
+texture = ExtResource("2_yvt6y")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ir0li"]
+shader = ExtResource("1_3vo1h")
+shader_parameter/crt_curve = 0.0
+shader_parameter/crt_scan_line_color = 0.325
+shader_parameter/aperture_grille_rate = 0.0
+shader_parameter/aparture_grille_cut_rate = 0.609
+shader_parameter/rf_switch_esque_blur = 1.0
+shader_parameter/white_noise_rate = 0.0
 
 [node name="WindowsDesktop" type="Control"]
 layout_mode = 3
@@ -211,16 +285,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.532846, 0.515367, 1)
-
-[node name="Window" type="Window" parent="."]
-title = "Pop"
-initial_position = 2
-size = Vector2i(700, 500)
-visible = false
-theme_override_constants/resize_margin = 5
-theme_override_fonts/title_font = ExtResource("1_sfs6i")
-theme_override_icons/close = ExtResource("5_titud")
-theme_override_icons/close_pressed = ExtResource("6_waunn")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -338,16 +402,6 @@ texture_focused = ExtResource("11_lhjqe")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_ir0li")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="Panel2" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -383,6 +437,181 @@ libraries = {
 "": SubResource("AnimationLibrary_wngyn")
 }
 
+[node name="Atender" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -289.0
+offset_right = -24.0
+offset_bottom = -96.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_5ox6s")
+
+[node name="Button_atender" type="Button" parent="Atender"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -50.0
+offset_right = 43.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sfs6i")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxTexture_d04bl")
+text = "Atender"
+
+[node name="Label" type="Label" parent="Atender"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 107.0
+offset_right = 72.0
+offset_bottom = 130.0
+grow_horizontal = 2
+text = "Ligação em espera"
+label_settings = SubResource("LabelSettings_ced6a")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Atender"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.5
+offset_right = 49.5
+offset_bottom = 99.0
+grow_horizontal = 2
+texture = ExtResource("9_lnker")
+expand_mode = 1
+
+[node name="Internet" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -96.5
+offset_right = 128.0
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5ox6s")
+
+[node name="ligar_internet" type="Button" parent="Internet"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -50.0
+offset_right = 43.5
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sfs6i")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxTexture_d04bl")
+text = "Conectar"
+
+[node name="Label" type="Label" parent="Internet"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 107.0
+offset_right = 72.0
+offset_bottom = 130.0
+grow_horizontal = 2
+text = "Sem conexão a internet"
+label_settings = SubResource("LabelSettings_ced6a")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Internet"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -59.5
+offset_right = 66.0
+offset_bottom = -14.5
+grow_vertical = 2
+texture = ExtResource("11_ip4ig")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Internet"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -66.0
+offset_right = 36.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.785398
+texture = ExtResource("12_kgc54")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Internet"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -67.5
+offset_right = -20.0
+offset_bottom = -16.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("13_uqxw7")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="Internet"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -78.5
+offset_right = 62.0
+offset_bottom = -22.5
+grow_horizontal = 2
+grow_vertical = 2
+text = ". ."
+label_settings = SubResource("LabelSettings_wga51")
+
 [node name="ListaPopup" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -391,20 +620,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -180.0
-offset_right = 200.0
-offset_bottom = 180.0
+offset_left = -543.0
+offset_top = -296.0
+offset_right = 259.0
+offset_bottom = 248.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_fojse")
 
 [node name="TextureButton" type="TextureButton" parent="ListaPopup"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -32.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 31.0
 grow_horizontal = 0
 texture_normal = ExtResource("5_titud")
 texture_pressed = ExtResource("5_titud")
@@ -416,19 +648,31 @@ stretch_mode = 0
 
 [node name="Conteudo" type="Panel" parent="ListaPopup"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -195.0
-offset_top = -137.0
-offset_right = 192.0
-offset_bottom = 174.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 37.0
+offset_right = -10.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ir0li")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Timer2" type="Timer" parent="."]
 
 [connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ligacao" to="." method="_on_ligacao_pressed"]
 [connection signal="pressed" from="Lista" to="." method="_on_lista_pressed"]
+[connection signal="pressed" from="Atender/Button_atender" to="." method="_on_button_atender_pressed"]
+[connection signal="pressed" from="Internet/ligar_internet" to="." method="_on_ligar_internet_pressed"]
 [connection signal="pressed" from="ListaPopup/TextureButton" to="." method="_on_texture_button_pressed"]

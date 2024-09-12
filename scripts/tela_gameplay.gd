@@ -21,43 +21,20 @@ func _ready() -> void:
 			butao.text=i['titulo']
 			butao.connect('pressed',func():pressionado(i))
 			$ScrollContainer/VBoxContainer.add_child(butao)
+			
 	# Inicializa o texto do Label com o primeiro problema
-	get_node("Sair").pressed.connect(_on_exit_button_pressed)
-
 	get_node("ScrollContainer2/VBoxContainer/Label2").text = "Selecione Um Problema"
 
-	
-
 	get_node("Label/send").toggle_mode = false
-	
-
-	
-func _on_exit_button_pressed():
-	get_tree().change_scene_to_file("res://Interface/windows95.tscn")
-	
-
-			
-
-	
-
-
 	
 	
 func _input(event):
 	# Verifica se o evento é um clique do botão esquerdo do mouse
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	#if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		# Reproduz o som de clique
-		MusicManager.play_click_sound()
+		#MusicManager.play_click_sound()
+	pass
 
-
-func _on_timer_timeout():
-	# caso precise de musica MusicManager.play_click_sound()
-	
-	var file = FileAccess.open(Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['pergunta'], FileAccess.READ)
-	$ScrollContainer3/VBoxContainer/Label.text=file.get_as_text()
-	$Button.disabled=false
-	$OptionButton.disabled=false
-	$Timer.stop()
 
 
 func _on_button_pressed():
@@ -71,7 +48,17 @@ func _on_button_pressed():
 	$Button.disabled=true
 	$OptionButton.disabled=true
 	problema_atual+=1
+	
 	if problema_atual>=len(Global.dias[Global.dia_atual-1]['quiz']):
 		get_tree().change_scene_to_file('res://Interface/resultado.tscn')
 	else:
 		$Timer.start()
+		
+func _on_timer_timeout():
+	
+	var file = FileAccess.open(Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['pergunta'], FileAccess.READ)
+	$ScrollContainer3/VBoxContainer/Label.text=file.get_as_text()
+	$Button.disabled=false
+	$OptionButton.disabled=false
+	$Timer.stop()
+	pass

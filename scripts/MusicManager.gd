@@ -8,19 +8,23 @@ var boot_sound: AudioStream = preload("res://soundtrack/SFX/Microsoft Windows 95
 var click_sound: AudioStream = preload("res://soundtrack/SFX/Click - Sound Effect (HD).mp3")
 
 var pc_sound: AudioStream = preload("res://soundtrack/Music/pc_sound.mp3")
-
-
-# Variável separada para o AudioStreamPlayer do som do PC
 var pc_player: AudioStreamPlayer
+
+var ring_sound: AudioStream = preload("res://soundtrack/SFX/The Office Ringtone   Free Ringtones Download.mp3")
+var ring_player = AudioStreamPlayer.new()
+
+var dial_up_sound: AudioStream = preload("res://soundtrack/SFX/Dial Up Internet - Sound Effect (HD).mp3")
+var dial_player = AudioStreamPlayer.new()
+
+
+
+
 
 func _ready() -> void:
 	# Cria e adiciona o AudioStreamPlayer à cena
 	music_player = AudioStreamPlayer.new()
 	add_child(music_player)
 	
-	
-	
-
 
 # Função para carregar e tocar a música dinamicamente
 func play_music(music_path: String) -> void:
@@ -78,3 +82,31 @@ func play_pc_sound():
 func stop_pc_sound():
 	if pc_player.playing:
 		pc_player.stop()
+		
+
+func play_ring_sound():
+	ring_player.stream = ring_sound
+	add_child(ring_player)  # Adiciona o player na cena atual
+	ring_player.bus = "SFX"
+	
+	if ring_player.stream is AudioStream:
+			var audio_stream = ring_player.stream as AudioStream
+			audio_stream.loop = true 
+	
+	ring_player.play()
+	
+func stop_ring_sound():
+	if ring_player.playing:
+		ring_player.stop()
+		
+func dial_sound():
+	dial_player.stream = dial_up_sound
+	add_child(dial_player)  # Adiciona o player na cena atual
+	dial_player.bus = "SFX"
+	dial_player.play()
+	
+func stop_dial_sound():
+	if dial_player.playing:
+		dial_player.stop()
+	
+	
