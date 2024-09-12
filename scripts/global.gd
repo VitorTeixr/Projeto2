@@ -80,3 +80,5 @@ var acertosD1 = 0
 
 var first_boot = true
 var first_boot_animation = true
+
+var signal_atender = false

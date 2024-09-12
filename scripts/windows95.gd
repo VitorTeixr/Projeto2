@@ -6,6 +6,8 @@ var timer = 0.0
 var scene_changed = false
 var lista_on = false
 
+var scene_to_instance = preload("res://Interface/tela_gameplay.tscn")  # Carrega a cena que será instanciada
+var instance = scene_to_instance.instantiate()
 
 @onready var janela = $Panel2
 @onready var timer1 = $Timer
@@ -22,7 +24,7 @@ var lista_on = false
 func _ready():
 	
 	#Instancia a cena
-	instantiate_scene_in_panel()
+	instantiate_scene_in_panel(instance)
 	#Fecha a cena
 	close_button.pressed.connect(hide_panel)
 
@@ -130,10 +132,7 @@ func hide_panel():
 	janela_primaria.visible = false  # Esconde o Panel (você também pode usar janela_lista.hide())
 
 # Função para instanciar e adicionar a cena dentro do Panel
-func instantiate_scene_in_panel():
-	var scene_to_instance = preload("res://Interface/tela_gameplay.tscn")  # Carrega a cena que será instanciada
-	var instance = scene_to_instance.instantiate()  # Instancia a cena
-
+func instantiate_scene_in_panel(instance):
 	# Adiciona a cena dentro do Panel
 	janela_lista.add_child(instance)
 	
@@ -167,10 +166,13 @@ func _on_button_atender_pressed() -> void:
 	$Atender.visible = false
 	MusicManager.stop_ring_sound()
 	janela_primaria.visible = true
-	lista_on = true
+	instance.call("_get_text_to_tela_gameplay")
+	
 	pass # Replace with function body.
 	
 func _on_timer2_timeout():
 	ligacao_ativa()
+	
+
 	
 	

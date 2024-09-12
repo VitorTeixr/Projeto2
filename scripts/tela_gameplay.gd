@@ -5,6 +5,7 @@ extends Control
 
 var problema_atual = 0  
 @onready var popup=$Window
+@onready var atender_signal = get_parent().get_parent().get_parent().get_node("Atender")
 func  pressionado(i):
 	var file = FileAccess.open(i['descricao'], FileAccess.READ)
 	$ScrollContainer2/VBoxContainer/Label2.text=file.get_as_text()
@@ -49,16 +50,20 @@ func _on_button_pressed():
 	$OptionButton.disabled=true
 	problema_atual+=1
 	
+	
 	if problema_atual>=len(Global.dias[Global.dia_atual-1]['quiz']):
 		get_tree().change_scene_to_file('res://Interface/resultado.tscn')
 	else:
 		$Timer.start()
 		
 func _on_timer_timeout():
-	
-	var file = FileAccess.open(Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['pergunta'], FileAccess.READ)
-	$ScrollContainer3/VBoxContainer/Label.text=file.get_as_text()
+	if problema_atual > 0:
+		atender_signal.visible = true
 	$Button.disabled=false
 	$OptionButton.disabled=false
 	$Timer.stop()
 	pass
+
+func _get_text_to_tela_gameplay():
+	var file = FileAccess.open(Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['pergunta'], FileAccess.READ)
+	$ScrollContainer3/VBoxContainer/Label.text=file.get_as_text()

@@ -438,6 +438,7 @@ libraries = {
 }
 
 [node name="Atender" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -611,6 +612,7 @@ text = ". ."
 label_settings = SubResource("LabelSettings_wga51")
 
 [node name="ListaPopup" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -659,6 +661,7 @@ grow_vertical = 2
 wait_time = 3.0
 
 [node name="Atender2" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
