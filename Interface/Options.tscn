@@ -71,3 +71,4 @@ bus_name = "SFX"
 material = SubResource("ShaderMaterial_6hejp")
 offset_right = 1153.0
 offset_bottom = 648.0
+mouse_filter = 2

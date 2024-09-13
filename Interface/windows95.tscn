@@ -359,25 +359,23 @@ label_settings = SubResource("LabelSettings_to17k")
 
 [node name="ligacao" type="TextureButton" parent="."]
 visible = false
-layout_mode = 0
-offset_left = 24.0
-offset_top = 16.0
-offset_right = 119.0
-offset_bottom = 105.0
-texture_normal = ExtResource("9_lnker")
-texture_pressed = ExtResource("9_lnker")
-texture_hover = ExtResource("9_lnker")
-texture_disabled = ExtResource("9_lnker")
-texture_focused = ExtResource("9_lnker")
+layout_mode = 2
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 95.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("11_ip4ig")
 ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Lista" type="TextureButton" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 43.0
+offset_left = 40.0
 offset_top = 141.0
-offset_right = 107.0
+offset_right = 105.0
 offset_bottom = 207.0
 texture_normal = ExtResource("10_100e6")
 texture_pressed = ExtResource("10_100e6")
@@ -390,10 +388,10 @@ stretch_mode = 0
 [node name="Jogo" type="TextureButton" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 25.0
+offset_left = 30.0
 offset_top = 252.0
-offset_right = 109.0
-offset_bottom = 331.0
+offset_right = 110.0
+offset_bottom = 332.0
 texture_normal = ExtResource("11_lhjqe")
 texture_pressed = ExtResource("11_lhjqe")
 texture_hover = ExtResource("11_lhjqe")
@@ -427,6 +425,9 @@ text = "Acho que essas foram todas as ligações, melhor ir desligar o pc"
 label_settings = SubResource("LabelSettings_m2xbo")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ae7b1")
@@ -657,11 +658,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
-
-[node name="Atender2" type="Panel" parent="."]
-visible = false
+[node name="Texto_explicação" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -676,7 +673,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_5ox6s")
 
-[node name="Button_atender" type="Button" parent="Atender2"]
+[node name="Button_em_espera" type="Button" parent="Texto_explicação"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -695,18 +692,19 @@ theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxTexture_d04bl")
 text = "Colocar em espera"
 
-[node name="Label" type="Label" parent="Atender2"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -115.0
-offset_top = 15.0
-offset_right = 110.0
-offset_bottom = 240.0
-grow_horizontal = 2
+[node name="ScrollContainer" type="ScrollContainer" parent="Texto_explicação"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 8.0
+offset_right = 242.0
+offset_bottom = 235.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Texto_explicação/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Texto_explicação/ScrollContainer/VBoxContainer"]
+layout_mode = 2
 label_settings = SubResource("LabelSettings_ced6a")
-horizontal_alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
@@ -719,10 +717,14 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Timer3" type="Timer" parent="."]
+
 [connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ligacao" to="." method="_on_ligacao_pressed"]
 [connection signal="pressed" from="Lista" to="." method="_on_lista_pressed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="pressed" from="Atender/Button_atender" to="." method="_on_button_atender_pressed"]
 [connection signal="pressed" from="Internet/ligar_internet" to="." method="_on_ligar_internet_pressed"]
 [connection signal="pressed" from="ListaPopup/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Atender2/Button_atender" to="." method="_on_button_atender_pressed"]
+[connection signal="pressed" from="Texto_explicação/Button_em_espera" to="." method="_on_button_em_espera_pressed"]
+[connection signal="timeout" from="Timer3" to="." method="_on_controla_caracter_timeout"]

@@ -67,3 +67,7 @@ func _on_timer_timeout():
 func _get_text_to_tela_gameplay():
 	var file = FileAccess.open(Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['pergunta'], FileAccess.READ)
 	$ScrollContainer3/VBoxContainer/Label.text=file.get_as_text()
+	
+func get_pergunta_text():
+	var file = FileAccess.open(Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['pergunta'], FileAccess.READ)
+	return file.get_as_text()  # Retorna o texto da pergunta

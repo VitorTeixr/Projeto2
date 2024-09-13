@@ -21,12 +21,28 @@ var instance = scene_to_instance.instantiate()
 @onready var animation_player = $AnimationPlayer
 @onready var ui_elements = [$Panel/Start, $ligacao, $Lista, $Jogo,$"Panel/Time Panel/Time"]  # Elementos que ficarão invisíveis
 
+@onready var label_em_espera = $"Texto_explicação/ScrollContainer/VBoxContainer/Label"  # O Label onde o texto vai aparecer
+@onready var controla_caracter = $Timer3  # Um Timer que controla a velocidade de exibição do texto
+
+var texto_completo = ""
+var indice_caractere = 0  # Para controlar o caractere atual
+
 func _ready():
 	
 	#Instancia a cena
 	instantiate_scene_in_panel(instance)
 	#Fecha a cena
 	close_button.pressed.connect(hide_panel)
+	
+	if instance.has_method("get_pergunta_text"):
+		texto_completo = instance.get_pergunta_text()
+		
+
+		
+	
+	label_em_espera.text = ""  # Começa com o Label vazio
+	controla_caracter.wait_time = 0.05  # Define o intervalo de tempo entre os caracteres (em segundos)
+	controla_caracter.timeout.connect(_on_controla_caracter_timeout)
 
 	#Som do inicio e de fundo
 	MusicManager.boot_play_sound()
@@ -52,6 +68,7 @@ func _ready():
 		for element in ui_elements:
 			element.visible = true
 			
+			
 	
 			
 func _process(delta):
@@ -62,7 +79,6 @@ func _process(delta):
 			click_count = 0
 			timer = 0.0
 			
-
 	
 func _on_timer_timeout():
 	# Sistema de fim de dia
@@ -146,15 +162,15 @@ func _on_ligar_internet_pressed() -> void:
 	
 	MusicManager.stop_dial_sound()
 	$Internet.visible = false
-	ligacao_ativa()
-	timer2.start()
+	timer2.start(5)
 	
 	pass # Replace with function body.
 	
+func _on_timer_2_timeout() -> void:
+	ligacao_ativa()
+	timer2.stop()
+	pass # Replace with function body.
 	
-func connect_internet():
-	
-	pass
 	
 func ligacao_ativa():
 	$Atender.visible = true
@@ -165,14 +181,23 @@ func ligacao_ativa():
 func _on_button_atender_pressed() -> void:
 	$Atender.visible = false
 	MusicManager.stop_ring_sound()
-	janela_primaria.visible = true
-	instance.call("_get_text_to_tela_gameplay")
-	
-	pass # Replace with function body.
-	
-func _on_timer2_timeout():
-	ligacao_ativa()
-	
+	$"Texto_explicação".visible = true
+	controla_caracter.start()
 
-	
-	
+
+
+
+func _on_controla_caracter_timeout() -> void:
+	if indice_caractere < texto_completo.length():
+		# Adiciona o próximo caractere ao Label
+		label_em_espera.text += texto_completo[indice_caractere]
+		indice_caractere += 1
+	else:
+		# Para o timer quando todos os caracteres já foram exibidos
+		controla_caracter.stop()
+		
+func _on_button_em_espera_pressed() -> void:
+	janela_primaria.visible = true
+	$"Texto_explicação".visible = false
+	instance.call("_get_text_to_tela_gameplay")
+	pass # Replace with function body.
