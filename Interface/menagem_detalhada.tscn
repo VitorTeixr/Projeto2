@@ -58,7 +58,6 @@ offset_left = 249.0
 offset_top = 47.0
 offset_right = 429.0
 offset_bottom = 100.0
-text = "ssd"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
@@ -66,7 +65,6 @@ offset_left = 255.0
 offset_top = 114.0
 offset_right = 435.0
 offset_bottom = 167.0
-text = "sss"
 
 [node name="Label4" type="Label" parent="."]
 layout_mode = 0
@@ -75,7 +73,7 @@ offset_top = 44.0
 offset_right = 430.0
 offset_bottom = 97.0
 text = "
-Para:Marcos Castro
+
 "
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
@@ -90,9 +88,6 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "SADFASDASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASDSADASDAS
-DSASDASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDASDDADS
-ASDADASDASASASASASASASASASASASASASAddddSASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

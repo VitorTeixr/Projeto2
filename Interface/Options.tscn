@@ -87,8 +87,13 @@ bus_name = "SFX"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6hejp")
+<<<<<<< HEAD
 offset_left = 68.0
 offset_top = 46.0
 offset_right = 1078.0
 offset_bottom = 598.0
+=======
+offset_right = 1153.0
+offset_bottom = 648.0
+>>>>>>> de69d595057921bc2b7127dcdea753b9fe99b843
 mouse_filter = 2

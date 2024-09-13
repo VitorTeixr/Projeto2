@@ -10,7 +10,7 @@ var click_sound: AudioStream = preload("res://soundtrack/SFX/Click - Sound Effec
 var pc_sound: AudioStream = preload("res://soundtrack/Music/pc_sound.mp3")
 var pc_player: AudioStreamPlayer
 
-var ring_sound: AudioStream = preload("res://soundtrack/SFX/The Office Ringtone   Free Ringtones Download.mp3")
+var ring_sound: AudioStream = preload("res://soundtrack/SFX/ringtone.mp3")
 var ring_player = AudioStreamPlayer.new()
 
 var dial_up_sound: AudioStream = preload("res://soundtrack/SFX/Dial Up Internet - Sound Effect (HD).mp3")
