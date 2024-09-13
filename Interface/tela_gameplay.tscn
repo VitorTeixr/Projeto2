@@ -24,6 +24,7 @@ grow_vertical = 2
 script = ExtResource("1_k57ww")
 
 [node name="Cor fundo cinza" type="ColorRect" parent="."]
+layout_mode = 0
 offset_top = -1.0
 offset_right = 790.0
 offset_bottom = 502.0

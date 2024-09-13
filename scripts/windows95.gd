@@ -24,7 +24,7 @@ var instance = scene_to_instance.instantiate()
 @onready var label_em_espera = $"Texto_explicação/ScrollContainer/VBoxContainer/Label"  # O Label onde o texto vai aparecer
 @onready var controla_caracter = $Timer3  # Um Timer que controla a velocidade de exibição do texto
 
-var texto_completo = ""
+var texto_completo = "ASKJDKABSDKAS"
 var indice_caractere = 0  # Para controlar o caractere atual
 
 func _ready():
@@ -38,7 +38,6 @@ func _ready():
 		texto_completo = instance.get_pergunta_text()
 		
 
-		
 	
 	label_em_espera.text = ""  # Começa com o Label vazio
 	controla_caracter.wait_time = 0.05  # Define o intervalo de tempo entre os caracteres (em segundos)
@@ -169,6 +168,7 @@ func _on_ligar_internet_pressed() -> void:
 func _on_timer_2_timeout() -> void:
 	ligacao_ativa()
 	timer2.stop()
+	print("timer terminou")
 	pass # Replace with function body.
 	
 	
@@ -185,8 +185,6 @@ func _on_button_atender_pressed() -> void:
 	controla_caracter.start()
 
 
-
-
 func _on_controla_caracter_timeout() -> void:
 	if indice_caractere < texto_completo.length():
 		# Adiciona o próximo caractere ao Label
@@ -201,3 +199,4 @@ func _on_button_em_espera_pressed() -> void:
 	$"Texto_explicação".visible = false
 	instance.call("_get_text_to_tela_gameplay")
 	pass # Replace with function body.
+	

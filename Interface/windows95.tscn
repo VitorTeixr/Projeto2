@@ -627,6 +627,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_fojse")
 
 [node name="Cor azul contorno topo" type="ColorRect" parent="ListaPopup"]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 5.0
 offset_right = 794.0
@@ -674,7 +675,7 @@ grow_vertical = 2
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Atender2" type="Panel" parent="."]
+[node name="Texto_explicação" type="Panel" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -690,7 +691,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_5ox6s")
 
-[node name="Button_atender" type="Button" parent="Atender2"]
+[node name="button em espera" type="Button" parent="Texto_explicação"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -709,18 +710,19 @@ theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxTexture_d04bl")
 text = "Colocar em espera"
 
-[node name="Label" type="Label" parent="Atender2"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -115.0
-offset_top = 15.0
-offset_right = 110.0
-offset_bottom = 240.0
-grow_horizontal = 2
+[node name="ScrollContainer" type="ScrollContainer" parent="Texto_explicação"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 17.0
+offset_right = 242.0
+offset_bottom = 236.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Texto_explicação/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Texto_explicação/ScrollContainer/VBoxContainer"]
+layout_mode = 2
 label_settings = SubResource("LabelSettings_ced6a")
-horizontal_alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
@@ -733,10 +735,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Timer3" type="Timer" parent="."]
+
 [connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ligacao" to="." method="_on_ligacao_pressed"]
 [connection signal="pressed" from="Lista" to="." method="_on_lista_pressed"]
 [connection signal="pressed" from="Atender/Button_atender" to="." method="_on_button_atender_pressed"]
 [connection signal="pressed" from="Internet/ligar_internet" to="." method="_on_ligar_internet_pressed"]
 [connection signal="pressed" from="ListaPopup/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Atender2/Button_atender" to="." method="_on_button_atender_pressed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="pressed" from="Texto_explicação/button em espera" to="." method="_on_button_em_espera_pressed"]
