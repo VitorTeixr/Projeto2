@@ -1,56 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck6mwpvcnjgx6"]
+[gd_scene load_steps=7 format=3 uid="uid://ck6mwpvcnjgx6"]
 
 [ext_resource type="Script" path="res://scripts/Options.gd" id="1_dodn2"]
 [ext_resource type="PackedScene" uid="uid://dhmfce4wycv1j" path="res://Interface/volume_slider.tscn" id="2_8cjxq"]
+[ext_resource type="Texture2D" uid="uid://djxsva0ok41f" path="res://sprites/teste2.png" id="2_33ufd"]
+[ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Battlenet.ttf" id="3_4ed68"]
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="3_4pym6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6hejp"]
 shader = ExtResource("3_4pym6")
-shader_parameter/crt_curve = 0.003
+shader_parameter/crt_curve = 0.015
 shader_parameter/crt_scan_line_color = 0.0
-shader_parameter/aperture_grille_rate = 0.469
-shader_parameter/aparture_grille_cut_rate = 0.473
-shader_parameter/rf_switch_esque_blur = 1.0
-shader_parameter/white_noise_rate = 0.0
+shader_parameter/aperture_grille_rate = 0.548
+shader_parameter/aparture_grille_cut_rate = 0.417
+shader_parameter/rf_switch_esque_blur = 0.663
+shader_parameter/white_noise_rate = 0.236
 
 [node name="Options" type="Node2D"]
 script = ExtResource("1_dodn2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -60.0
+offset_top = -23.0
+offset_right = 1197.0
+offset_bottom = 675.0
+texture = ExtResource("2_33ufd")
+expand_mode = 1
 
 [node name="text" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 544.0
-offset_top = 16.0
-offset_right = 691.0
-offset_bottom = 39.0
+offset_left = 447.0
+offset_top = 95.0
+offset_right = 664.0
+offset_bottom = 127.0
 grow_horizontal = 2
 size_flags_horizontal = 4
-text = "Opções carregadas"
+theme_override_fonts/font = ExtResource("3_4ed68")
+theme_override_font_sizes/font_size = 35
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="voltar" type="Button" parent="." groups=["button"]]
-offset_left = 19.0
-offset_top = 15.0
-offset_right = 74.0
-offset_bottom = 46.0
+offset_left = 911.0
+offset_top = 70.0
+offset_right = 1044.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("3_4ed68")
+theme_override_font_sizes/font_size = 45
 text = "Voltar"
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = 168.0
 offset_top = 173.0
 offset_right = 358.0
 offset_bottom = 523.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 519.0
-offset_top = 345.0
-offset_right = 709.0
-offset_bottom = 394.0
+offset_left = 412.0
+offset_top = 265.0
+offset_right = 758.0
+offset_bottom = 418.0
 
 [node name="Music_label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4ed68")
+theme_override_font_sizes/font_size = 45
 text = "Music Volume"
 horizontal_alignment = 1
 
@@ -60,6 +76,8 @@ bus_name = "Music"
 
 [node name="SFX_label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4ed68")
+theme_override_font_sizes/font_size = 45
 text = "SFX Volume"
 horizontal_alignment = 1
 
@@ -69,5 +87,8 @@ bus_name = "SFX"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_6hejp")
-offset_right = 1153.0
-offset_bottom = 648.0
+offset_left = 68.0
+offset_top = 46.0
+offset_right = 1078.0
+offset_bottom = 598.0
+mouse_filter = 2

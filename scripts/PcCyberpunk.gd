@@ -4,6 +4,8 @@ var click_count = 0
 var double_click_time = 0.3  # Tempo máximo permitido entre cliques (em segundos)
 var timer = 0.0
 
+
+
 var click_count1 = 0
 var double_click_time1 = 0.3  # Tempo máximo permitido entre cliques (em segundos)
 var timer1 = 0.0
@@ -22,7 +24,9 @@ func _process(delta):
 			# Tempo excedido, resetar
 			click_count1 = 0
 			timer1 = 0.0
-
+	
+	var time = Time.get_time_dict_from_system()
+	$Time.text = "%02d:%02d" % [time.hour,time.minute]
 
 func _on_pc_antigo_pressed():
 	click_count += 1

@@ -1,22 +1,26 @@
 Mal Contato:
+
 Descrição:
-“O mais comum dos problemas com chips. Devido a alta 
-taxa de chips pirateados e colocados de maneira 
-clandestina, acabam que em pouco tempo de colocação é 
-relatado problemas. Por muitas vezes, os chips são 
-pequenos demais para a entrada que são inseridos ou 
-grande demais.”
+“O mais comum dos problemas com chips.
+Devido a alta taxa de chips pirateados
+e colocados de maneira clandestina, 
+acabam que em pouco tempo de colocação 
+é relatado problemas. Por muitas vezes, 
+os chips são pequenos demais para a 
+entrada que são inseridos ou grande 
+demais.”
 
 Perigo: 
-A sua taxa de perigo é baixa, mas pode causar 
-incômodo aos usuários ao se desenvolver 
-interferências na frequência, presença de pixels 
-de várias cores na visão, perda de sensibilidade 
-e falha ao sentir cheiros. 
+A sua taxa de perigo é baixa, mas pode
+causar incômodo aos usuários ao se 
+desenvolver interferências na frequência,
+presença de pixel morto na visão, perda de 
+sensibilidade e falha ao sentir cheiros. 
 
 Resolução:
-Dependendo do chip, orienta-se a colocar uma 
-extensão de chip para caso seja menor que a 
-entrada. Caso seja maior, guiar para o posto 
-mais próximo para reduzir o tamanho de maneira 
-segura para introdução adequada na entrada. 
+Dependendo do chip, orienta-se a colocar
+uma extensão de chip para caso seja menor
+que a entrada. Caso seja maior, guiar para
+o posto mais próximo para reduzir o tamanho
+de maneira segura para introdução adequada
+na entrada. 

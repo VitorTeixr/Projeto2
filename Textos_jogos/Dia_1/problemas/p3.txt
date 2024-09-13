@@ -1,9 +1,32 @@
 Arranhões:
+
 Descrição: 
-“Causado comumente por constante remoções do chip num costume regional de compartilhamento de bens, os arranhões vêm do mal manuseio. Com a grande febre do “Chip Dourado” em 2100, a prática se tornou frequente devido o slogan das empresas serem “Chip tão bom que você pode comprar um para toda a família e ainda irá durar!”. Com isso, a população começou a compartilhar até mesmo chips de outras empresas que são descartáveis, acarretando no crescimento do defeito.”
+“Causado comumente por constante remoções 
+do chip num costume regional de 
+compartilhamento de bens, os arranhões 
+vêm do mal manuseio. Com a grande febre 
+do “Chip Dourado” em 2100, a prática se 
+tornou frequente devido o slogan das 
+empresas serem “Chip tão bom que você 
+pode comprar um para toda a família e 
+ainda irá durar!”. Com isso, a população 
+começou a compartilharaté mesmo chips de 
+outras empresas que são descartáveis, 
+acarretando no crescimento do defeito.”
 
 Perigo: 
-Os arranhões podem dificultar a leitura do sistema para o chip, que terá como notificação para o usuário de que o chip está vazio ou a entrada de reconhecimento do chip está com chip não adaptado para a entrada. Funções do sistema podem parar. 
+Os arranhões podem dificultar a leitura 
+do sistema para o chip, que terá como 
+notificação para o usuário de que o chip 
+está vazio ou a entrada de reconhecimento 
+do chip está com chip não adaptado para a 
+entrada. Funções do sistema podem parar. 
 
 Resolução: 
-As vezes, a limpeza do chip pode resolver o problema, mas em grande maioria dos casos ele pode estar em um nível não recuperável. Com isso, é recomendado tentar encontrar aparelhos focados em leitura de chips danificados e tentar recuperar o seu conteúdo para transferir para outro. 
+As vezes, a limpeza do chip pode resolver 
+o problema, mas em grande maioria dos casos 
+ele pode estar em um nível não recuperável. 
+Com isso, é recomendado tentar encontrar 
+aparelhos focados em leitura de chips 
+danificados e tentar recuperar o seu 
+conteúdo para transferir para outro. 

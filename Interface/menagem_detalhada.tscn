@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://byfc6trregqta"]
+[gd_scene load_steps=5 format=3 uid="uid://byfc6trregqta"]
 
 [ext_resource type="Script" path="res://scripts/menagem_detalhada.gd" id="1_3725c"]
 [ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="1_mc6no"]
+[ext_resource type="Texture2D" uid="uid://ddp66tnmetc4r" path="res://sprites/EmailIcon.png" id="2_krjgs"]
+[ext_resource type="Texture2D" uid="uid://gud6d32e0b3e" path="res://sprites/teste3 (email).png" id="4_f1hf0"]
 
 [node name="Menagem detalhada" type="Control"]
 layout_mode = 3
@@ -12,17 +14,34 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3725c")
 
+[node name="Plano de Fundo" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_right = 1157.0
+offset_bottom = 665.0
+texture = ExtResource("4_f1hf0")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 34.0
+offset_top = 29.0
+offset_right = 166.0
+offset_bottom = 150.0
+texture = ExtResource("2_krjgs")
+expand_mode = 1
+
 [node name="Icon" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(101, 90)
 scale = Vector2(2.14062, 1.98351)
 texture = ExtResource("1_mc6no")
 
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1047.0
-offset_top = 17.0
-offset_right = 1126.0
-offset_bottom = 93.0
+offset_left = 1049.0
+offset_top = 14.0
+offset_right = 1128.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 25
 text = "Sair"
 
 [node name="Button4" type="Button" parent="."]

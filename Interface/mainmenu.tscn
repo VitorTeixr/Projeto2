@@ -101,7 +101,7 @@ theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1
 theme_override_fonts/font = ExtResource("4_o55h6")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
-text = "Dias"
+text = "Começar"
 flat = true
 
 [node name="Options" type="Button" parent="ButtonsContainer" groups=["button"]]

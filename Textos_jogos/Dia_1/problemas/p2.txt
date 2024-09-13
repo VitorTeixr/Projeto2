@@ -1,9 +1,31 @@
 Oxidação:
+
 Descrição: 
-“Causado por contato com água ou fluídos, a oxidação tem um risco considerado moderado pois embora não cause tanto incômodo de primeira ao usuário, pode comprometer o uso de algumas funções atreladas ao chip em seu sistema. Problema muito comum em trabalhadores de áreas relacionadas com o mar, aquários e bordéis.”
+“Causado por contato com água ou fluídos,
+a oxidação tem um risco considerado 
+moderado pois embora não cause tanto 
+incômodo de primeira ao usuário, pode 
+comprometer o uso de algumas funções 
+atreladas ao chip em seu sistema. Problema
+muito comum em trabalhadores de áreas 
+relacionadas com o mar, aquários e bordéis.”
 
 Perigo: 
-Risco moderado. Pode comprometer a área inteira na qual está relacionado, como acabar causando perda da audição, perda de sinal, falha em botões e outras falhas de outros sistemas. É lento para se manifestar, incentivando o usuário a “usar força bruta” como argumento de que isso irá ajudar a resolver o problema. Um dos sinais mais fortes dele é o cheiro de metal enferrujado que ele emana.
+Risco moderado. Pode comprometer a área
+inteira na qual está relacionado, como
+acabar causando perda da audição,perda 
+de sinal, falha em botões e outras falhas 
+de outrossistemas. É lento para se manifestar, 
+incentivando o usuário a “usar força bruta” 
+como argumento de que issoirá ajudar a 
+resolver o problema. Um dos sinais mais fortes
+dele é o cheiro de metal enferrujado que 
+ele emana.
 
 Resolução: 
-Dependendo da severidade da oxidação, uma simples raspagem para remover a camada oxidada pode recuperar o chip do defeito, mas ele posteriormente pode apresentar o mesmo problema. Recomenda-se trocar o chip por outro. 
+Dependendo da severidade da oxidação, 
+uma simples raspagem para remover a camada 
+oxidada pode recuperar o chip do defeito,
+mas ele posteriormente pode apresentar o 
+mesmo problema. 
+Recomenda-se trocar o chip por outro. 

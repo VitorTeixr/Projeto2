@@ -595,7 +595,6 @@ texture = ExtResource("13_uqxw7")
 expand_mode = 1
 
 [node name="Label2" type="Label" parent="Internet"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -627,14 +626,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_fojse")
 
+[node name="Cor azul contorno topo" type="ColorRect" parent="ListaPopup"]
+offset_left = 6.0
+offset_top = 5.0
+offset_right = 794.0
+offset_bottom = 33.0
+color = Color(0.0267072, 0, 0.888479, 1)
+
 [node name="TextureButton" type="TextureButton" parent="ListaPopup"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -32.0
-offset_top = 6.0
-offset_right = -6.0
+offset_left = -39.0
+offset_top = 9.0
+offset_right = -13.0
 offset_bottom = 31.0
 grow_horizontal = 0
 texture_normal = ExtResource("5_titud")
@@ -645,14 +651,22 @@ texture_focused = ExtResource("5_titud")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Cor fundo cinza" type="ColorRect" parent="ListaPopup"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 36.0
+offset_right = 792.0
+offset_bottom = 539.0
+color = Color(0.741385, 0.741385, 0.741385, 1)
+
 [node name="Conteudo" type="Panel" parent="ListaPopup"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 11.0
+offset_left = 6.0
 offset_top = 37.0
-offset_right = -10.0
+offset_right = -8.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
