@@ -9,7 +9,7 @@ var lista_on = false
 var scene_to_instance = preload("res://Interface/tela_gameplay.tscn")  # Carrega a cena que será instanciada
 var instance = scene_to_instance.instantiate()
 
-@onready var janela = $Panel2
+
 @onready var timer1 = $Timer
 @onready var timer2 = $Timer2
 @onready var click_sound = $Click
@@ -21,10 +21,10 @@ var instance = scene_to_instance.instantiate()
 @onready var animation_player = $AnimationPlayer
 @onready var ui_elements = [$Panel/Start, $ligacao, $Lista, $Jogo,$"Panel/Time Panel/Time"]  # Elementos que ficarão invisíveis
 
-@onready var label_em_espera = $"Texto_explicação/ScrollContainer/VBoxContainer/Label"  # O Label onde o texto vai aparecer
+@onready var label_em_espera = $"Texto_explicação/ColorRect/ScrollContainer/VBoxContainer/Label"  # O Label onde o texto vai aparecer
 @onready var controla_caracter = $Timer3  # Um Timer que controla a velocidade de exibição do texto
 
-var texto_completo = "ASKJDKABSDKAS"
+var texto_completo
 var indice_caractere = 0  # Para controlar o caractere atual
 
 func _ready():
@@ -34,26 +34,18 @@ func _ready():
 	#Fecha a cena
 	close_button.pressed.connect(hide_panel)
 	
-	if instance.has_method("get_pergunta_text"):
-		texto_completo = instance.get_pergunta_text()
 		
 
 	
 	label_em_espera.text = ""  # Começa com o Label vazio
 	controla_caracter.wait_time = 0.05  # Define o intervalo de tempo entre os caracteres (em segundos)
 	controla_caracter.timeout.connect(_on_controla_caracter_timeout)
-
+	
 	#Som do inicio e de fundo
 	MusicManager.boot_play_sound()
 	MusicManager.play_pc_sound()
 
-	#Sistema de fim de dia
-	if Global.trys == 2:
-		Global.dia_atual += 1
-		janela.visible = true
-		timer1.start(2)  # Inicia o timer com 2 segundos
-		timer1.timeout.connect(Callable(self, "_on_timer_timeout"))
-
+	$"Fim do dia/Panel/Label2".text=" Você acertou "+str(Global.dias[Global.dia_atual-1]['pontuacao']) + " de " + str(len(Global.dias[Global.dia_atual-1]['quiz']))
 
 	for element in ui_elements:
 		element.visible = false
@@ -78,8 +70,18 @@ func _process(delta):
 			click_count = 0
 			timer = 0.0
 			
+	instance.problema_atual
 	
-func _on_timer_timeout():
+	if instance.problema_atual <= 2:
+		if instance.has_method("get_pergunta_text"):
+			texto_completo = instance.call("get_pergunta_text")
+
+		
+			
+			
+	
+	
+func fim_do_dia_transition():
 	# Sistema de fim de dia
 	# Quando o timer expira, troca de cena
 	if not scene_changed:
@@ -128,6 +130,9 @@ func _on_lista_pressed():
 		timer = 0.0
 
 func _on_double_click1():
+	janela_primaria.visible = true
+	instance.get_node("OptionButton").disabled = true
+	instance.get_node("Button").disabled = true
 	pass
 	# Ação desejada ao clicar duas vezes rapidamente
 	
@@ -156,6 +161,8 @@ func _on_ligar_internet_pressed() -> void:
 	
 	MusicManager.dial_sound()
 	$Internet/Label2.visible = true
+	$Internet/ligar_internet.visible = false
+	$Internet/Label.text = "Conectando . . ."
 	animation_player.play("connect_internet")
 	await animation_player.animation_finished
 	
@@ -195,8 +202,21 @@ func _on_controla_caracter_timeout() -> void:
 		controla_caracter.stop()
 		
 func _on_button_em_espera_pressed() -> void:
+	label_em_espera.text = ""  # Começa com o Label vazio
+	controla_caracter.stop()
 	janela_primaria.visible = true
 	$"Texto_explicação".visible = false
+	indice_caractere = 0  # Reinicia o contador de caracteres
 	instance.call("_get_text_to_tela_gameplay")
+	instance.get_node("OptionButton").disabled = false
+	instance.get_node("Button").disabled = false
 	pass # Replace with function body.
 	
+
+
+func _on_fechar_pressed() -> void:
+	$"Fim do dia".visible = false
+	$ListaPopup.visible = false
+	fim_do_dia_transition()
+	
+	pass # Replace with function body.

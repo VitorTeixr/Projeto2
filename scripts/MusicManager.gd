@@ -3,7 +3,7 @@ extends Node
 var music_player : AudioStreamPlayer
 var current_music: AudioStream = preload("res://soundtrack/Music/Theme.mp3")
 
-var boot_sound: AudioStream = preload("res://soundtrack/SFX/Microsoft Windows 95 Startup Sound.mp3")  # Substitua pelo caminho correto do arquivo de som
+var boot_sound: AudioStream = preload("res://soundtrack/Music/boot-sound-noise_eavdfikv.mp3")  # Substitua pelo caminho correto do arquivo de som
 
 var click_sound: AudioStream = preload("res://soundtrack/SFX/Click - Sound Effect (HD).mp3")
 
@@ -15,6 +15,9 @@ var ring_player = AudioStreamPlayer.new()
 
 var dial_up_sound: AudioStream = preload("res://soundtrack/SFX/Dial Up Internet - Sound Effect (HD).mp3")
 var dial_player = AudioStreamPlayer.new()
+
+var radio_sound: AudioStream = preload("res://soundtrack/SFX/Radio Tuning sound effect.mp3")
+var radio_player = AudioStreamPlayer.new()
 
 
 
@@ -108,5 +111,15 @@ func dial_sound():
 func stop_dial_sound():
 	if dial_player.playing:
 		dial_player.stop()
+		
+func play_radio_sound():
+	radio_player.stream = radio_sound
+	add_child(radio_player)  # Adiciona o player na cena atual
+	radio_player.bus = "SFX"
+	radio_player.play()
+	
+func stop_radio_sound():
+	if radio_player.playing:
+		radio_player.stop()
 	
 	

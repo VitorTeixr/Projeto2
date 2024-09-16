@@ -3,17 +3,17 @@
 [ext_resource type="Script" path="res://scripts/Options.gd" id="1_dodn2"]
 [ext_resource type="PackedScene" uid="uid://dhmfce4wycv1j" path="res://Interface/volume_slider.tscn" id="2_8cjxq"]
 [ext_resource type="Texture2D" uid="uid://djxsva0ok41f" path="res://sprites/teste2.png" id="2_33ufd"]
-[ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Battlenet.ttf" id="3_4ed68"]
+[ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="3_4ed68"]
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="3_4pym6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hejp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4mnus"]
 shader = ExtResource("3_4pym6")
 shader_parameter/crt_curve = 0.015
 shader_parameter/crt_scan_line_color = 0.0
 shader_parameter/aperture_grille_rate = 0.548
 shader_parameter/aparture_grille_cut_rate = 0.417
 shader_parameter/rf_switch_esque_blur = 0.663
-shader_parameter/white_noise_rate = 0.236
+shader_parameter/white_noise_rate = 0.149
 
 [node name="Options" type="Node2D"]
 script = ExtResource("1_dodn2")
@@ -86,7 +86,7 @@ layout_mode = 2
 bus_name = "SFX"
 
 [node name="ColorRect2" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_6hejp")
+material = SubResource("ShaderMaterial_4mnus")
 offset_left = 68.0
 offset_top = 46.0
 offset_right = 1078.0

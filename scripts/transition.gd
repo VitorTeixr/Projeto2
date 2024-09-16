@@ -6,7 +6,9 @@ signal on_transition_finished
 @onready var animation_player = $AnimationPlayer
 
 func _ready():
+	print(animation_player)
 	color_rect.visible = false
+	$Label.visible = false
 	animation_player.animation_finished.connect(_on_animation_finished)
 	
 func _on_animation_finished(anim_name):
@@ -18,5 +20,7 @@ func _on_animation_finished(anim_name):
 		color_rect.visible = false
 	
 func transition():
+	$Label.text = "Dia " + str(Global.dia_atual)
 	color_rect.visible = true
+	$Label.visible = true
 	animation_player.play("Fadeout")

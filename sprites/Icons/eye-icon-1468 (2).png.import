@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pghuu0xgq2sw"
-path="res://.godot/imported/pngwing.com.png-2b87ace334657233d4edfcc6aa503a12.ctex"
+uid="uid://bj5i3jteml6q1"
+path="res://.godot/imported/eye-icon-1468 (2).png-fbec7af54b35c5d4f2dc518b7f211ef8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pngwing.com.png"
-dest_files=["res://.godot/imported/pngwing.com.png-2b87ace334657233d4edfcc6aa503a12.ctex"]
+source_file="res://sprites/Icons/eye-icon-1468 (2).png"
+dest_files=["res://.godot/imported/eye-icon-1468 (2).png-fbec7af54b35c5d4f2dc518b7f211ef8.ctex"]
 
 [params]
 

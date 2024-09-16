@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://clnxcog40vxtn"]
 
-[ext_resource type="Script" path="res://Interface/resultado.gd" id="1_f8ids"]
+[ext_resource type="Script" path="res://scripts/resultado.gd" id="1_f8ids"]
 
 [node name="Resultado" type="Control"]
 layout_mode = 3

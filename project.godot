@@ -24,9 +24,11 @@ buses/default_bus_layout="res://soundtrack/default_bus_layout.tres"
 Global="*res://scripts/global.gd"
 Transition="*res://Interface/transition.tscn"
 MusicManager="*res://scripts/MusicManager.gd"
+Intro="*res://scripts/intro.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

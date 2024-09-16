@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtl7c4tu6c4pj"
-path="res://.godot/imported/CloseRegular.png-575a71b1fefabb5549319744e82e7b9a.ctex"
+uid="uid://b3rd6bkrqjdom"
+path="res://.godot/imported/5089778.png-798b058a4388d98f85aef1d13e5a88c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/CloseRegular.png"
-dest_files=["res://.godot/imported/CloseRegular.png-575a71b1fefabb5549319744e82e7b9a.ctex"]
+source_file="res://sprites/Icons/5089778.png"
+dest_files=["res://.godot/imported/5089778.png-798b058a4388d98f85aef1d13e5a88c9.ctex"]
 
 [params]
 

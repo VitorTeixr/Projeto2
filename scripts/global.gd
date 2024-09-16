@@ -82,3 +82,5 @@ var first_boot = true
 var first_boot_animation = true
 
 var signal_atender = false
+
+var start_game = false

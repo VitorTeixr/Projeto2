@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddp66tnmetc4r"
-path="res://.godot/imported/EmailIcon.png-e8eec978f60526ec4cefa53ad3db364e.ctex"
+uid="uid://dnfm4tp0v8hsa"
+path="res://.godot/imported/call_icon.png-df743c6a7a4355ea2fa820dc67baa3dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/EmailIcon.png"
-dest_files=["res://.godot/imported/EmailIcon.png-e8eec978f60526ec4cefa53ad3db364e.ctex"]
+source_file="res://sprites/Icons/call_icon.png"
+dest_files=["res://.godot/imported/call_icon.png-df743c6a7a4355ea2fa820dc67baa3dd.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://csjbgays5pru8"
-path="res://.godot/imported/True Lies.ttf-20371f707c038dceb55bd1bdbcbac5a6.fontdata"
+path="res://.godot/imported/True Lies.ttf-f6c42aa6d33052ca72fb72d62256f9b5.fontdata"
 
 [deps]
 
-source_file="res://sprites/True Lies.ttf"
-dest_files=["res://.godot/imported/True Lies.ttf-20371f707c038dceb55bd1bdbcbac5a6.fontdata"]
+source_file="res://sprites/Fonts/True Lies.ttf"
+dest_files=["res://.godot/imported/True Lies.ttf-f6c42aa6d33052ca72fb72d62256f9b5.fontdata"]
 
 [params]
 

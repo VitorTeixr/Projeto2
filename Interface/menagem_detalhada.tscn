@@ -1,9 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://byfc6trregqta"]
+[gd_scene load_steps=9 format=3 uid="uid://byfc6trregqta"]
 
 [ext_resource type="Script" path="res://scripts/menagem_detalhada.gd" id="1_3725c"]
-[ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="1_mc6no"]
-[ext_resource type="Texture2D" uid="uid://ddp66tnmetc4r" path="res://sprites/EmailIcon.png" id="2_krjgs"]
+[ext_resource type="Texture2D" uid="uid://ddp66tnmetc4r" path="res://sprites/Icons/EmailIcon.png" id="2_krjgs"]
+[ext_resource type="FontFile" uid="uid://chh4kwoe6juml" path="res://sprites/Fonts/CornDemo-Regular.ttf" id="4_7uwsx"]
 [ext_resource type="Texture2D" uid="uid://gud6d32e0b3e" path="res://sprites/teste3 (email).png" id="4_f1hf0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3i0hk"]
+font = ExtResource("4_7uwsx")
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_18myv"]
+font = ExtResource("4_7uwsx")
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_eb4dp"]
+font = ExtResource("4_7uwsx")
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_b7lnl"]
+font = ExtResource("4_7uwsx")
+font_size = 13
+outline_size = 1
 
 [node name="Menagem detalhada" type="Control"]
 layout_mode = 3
@@ -31,54 +48,53 @@ offset_bottom = 150.0
 texture = ExtResource("2_krjgs")
 expand_mode = 1
 
-[node name="Icon" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(101, 90)
-scale = Vector2(2.14062, 1.98351)
-texture = ExtResource("1_mc6no")
-
 [node name="Exit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1049.0
 offset_top = 14.0
 offset_right = 1128.0
 offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("4_7uwsx")
 theme_override_font_sizes/font_size = 25
 text = "Sair"
 
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
-offset_left = 56.0
-offset_top = 174.0
-offset_right = 148.0
-offset_bottom = 205.0
+offset_left = 36.0
+offset_top = 180.0
+offset_right = 128.0
+offset_bottom = 211.0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_7uwsx")
 text = "Voltar"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 249.0
+offset_left = 198.0
 offset_top = 47.0
-offset_right = 429.0
-offset_bottom = 100.0
-text = "ssd"
+offset_right = 378.0
+offset_bottom = 63.0
+text = "envio"
+label_settings = SubResource("LabelSettings_3i0hk")
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 255.0
+offset_left = 195.0
 offset_top = 114.0
-offset_right = 435.0
+offset_right = 375.0
 offset_bottom = 167.0
-text = "sss"
+label_settings = SubResource("LabelSettings_18myv")
 
 [node name="Label4" type="Label" parent="."]
 layout_mode = 0
-offset_left = 250.0
-offset_top = 44.0
-offset_right = 430.0
-offset_bottom = 97.0
+offset_left = 198.0
+offset_top = 55.0
+offset_right = 378.0
+offset_bottom = 90.0
 text = "
-Para:Marcos Castro
+Para: Marcos Castro
 "
+label_settings = SubResource("LabelSettings_eb4dp")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
@@ -92,9 +108,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "SADFASDASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASDSADASDAS
-DSASDASDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDASDDADS
-ASDADASDASASASASASASASASASASASASASAddddSASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASASAS"
+label_settings = SubResource("LabelSettings_b7lnl")
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

@@ -1,8 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqg36pt6yfia0"]
 
 [ext_resource type="Script" path="res://scripts/tela_gameplay.gd" id="1_k57ww"]
-[ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Battlenet.ttf" id="2_nxe21"]
-[ext_resource type="Texture2D" uid="uid://dtl7c4tu6c4pj" path="res://sprites/CloseRegular.png" id="2_udg2p"]
+[ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="2_nxe21"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_53ilo"]
 font = ExtResource("2_nxe21")
@@ -13,6 +12,13 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("2_nxe21")
 font_size = 24
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8qi80"]
+font = ExtResource("2_nxe21")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Tela_gameplay" type="Control"]
 layout_mode = 3
@@ -30,47 +36,42 @@ offset_right = 790.0
 offset_bottom = 502.0
 color = Color(0.741385, 0.741385, 0.741385, 1)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.400698, 0.400698, 0.400698, 1)
-
-[node name="Label" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 11.0
-offset_top = 19.0
-offset_right = 209.0
-offset_bottom = 56.0
-text = "Problema asdasdadasds"
-
-[node name="send" type="Button" parent="Label"]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 131.0
-offset_right = 98.0
-offset_bottom = 162.0
-text = "enviar"
-
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 25.0
-offset_top = 313.0
-offset_right = 340.0
-offset_bottom = 563.0
+offset_left = 8.0
+offset_top = 270.0
+offset_right = 108.0
+offset_bottom = 489.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 180.0
+offset_right = 108.0
+offset_bottom = 217.0
+theme_override_fonts/font = ExtResource("2_nxe21")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 221.0
+offset_right = 108.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("2_nxe21")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "Responder"
 
 [node name="Cor branca (Descrições)" type="ColorRect" parent="."]
 layout_mode = 0
-offset_left = 276.0
-offset_top = 7.0
+offset_left = 192.0
+offset_top = 8.0
 offset_right = 782.0
 offset_bottom = 494.0
 color = Color(0.977937, 0.977937, 0.977937, 1)
@@ -82,7 +83,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
+offset_left = -258.0
 offset_top = -39.0
 offset_right = 376.0
 offset_bottom = 220.0
@@ -96,126 +97,55 @@ layout_mode = 2
 layout_mode = 2
 label_settings = SubResource("LabelSettings_53ilo")
 
-[node name="OptionButton" type="OptionButton" parent="."]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 206.0
-offset_right = 159.0
-offset_bottom = 243.0
-
-[node name="Sair" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -80.0
-offset_top = 15.0
-offset_right = -19.0
-offset_bottom = 49.0
-grow_horizontal = 0
-text = "Sair"
-
-[node name="Window" type="Window" parent="."]
-title = "Aranha"
-initial_position = 2
-size = Vector2i(500, 500)
-visible = false
-
-[node name="Label" type="Label" parent="Window"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Piranha é um peixe voraz"
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 251.0
-offset_right = 134.0
-offset_bottom = 286.0
-disabled = true
-text = "Responder"
-
 [node name="Cor branca (Ligações)" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 8.0
-offset_top = 4.0
+offset_top = 8.0
 offset_right = 263.0
-offset_bottom = 193.0
+offset_bottom = 197.0
 
-[node name="ScrollContainer3" type="ScrollContainer" parent="."]
+[node name="Texto_Ligação" type="ScrollContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 21.0
 offset_top = 12.0
 offset_right = 251.0
 offset_bottom = 188.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer3"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Texto_Ligação"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ScrollContainer3/VBoxContainer"]
+[node name="Label" type="Label" parent="Texto_Ligação/VBoxContainer"]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_kttld")
-
-[node name="ListaPopup" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -543.0
-offset_top = -296.0
-offset_right = 259.0
-offset_bottom = 248.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Conteudo" type="Panel" parent="ListaPopup"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 11.0
-offset_top = 40.0
-offset_right = -10.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="ListaPopup"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 6.0
-offset_right = 796.0
-offset_bottom = 34.0
-color = Color(0.0267072, 0, 0.888479, 1)
-
-[node name="TextureButton" type="TextureButton" parent="ListaPopup"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -39.0
-offset_top = 7.0
-offset_right = -10.0
-offset_bottom = 36.0
-grow_horizontal = 0
-texture_normal = ExtResource("2_udg2p")
-texture_pressed = ExtResource("2_udg2p")
-texture_hover = ExtResource("2_udg2p")
-texture_disabled = ExtResource("2_udg2p")
-texture_focused = ExtResource("2_udg2p")
-ignore_texture_size = true
-stretch_mode = 0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
-[connection signal="button_down" from="Label/send" to="." method="_on_send_button_down"]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 187.0
+offset_bottom = 168.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 177.0
+offset_bottom = 164.0
+text = "Leia atentamente os tipos 
+de problemas e compare 
+com o que o cliente está 
+descrevendo. Após isso, 
+escolha o tipo de proble-
+ma nas opções abaixo e 
+responda."
+label_settings = SubResource("LabelSettings_8qi80")
+
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
-[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

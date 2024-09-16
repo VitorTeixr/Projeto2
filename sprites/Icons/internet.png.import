@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqjuox5afxq10"
-path="res://.godot/imported/phone-90s-pop-art-icon-isolated-png.png-d68f2505703ecf9ac2f8bce6bca56d4a.ctex"
+uid="uid://ccshsj7715f0i"
+path="res://.godot/imported/internet.png-3091cc7b3ad3e03968bb31029ba6ecd3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/phone-90s-pop-art-icon-isolated-png.png"
-dest_files=["res://.godot/imported/phone-90s-pop-art-icon-isolated-png.png-d68f2505703ecf9ac2f8bce6bca56d4a.ctex"]
+source_file="res://sprites/Icons/internet.png"
+dest_files=["res://.godot/imported/internet.png-3091cc7b3ad3e03968bb31029ba6ecd3.ctex"]
 
 [params]
 

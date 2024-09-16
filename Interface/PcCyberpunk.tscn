@@ -1,16 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1gx8mnmqrqv3"]
+[gd_scene load_steps=11 format=3 uid="uid://c1gx8mnmqrqv3"]
 
-[ext_resource type="Texture2D" uid="uid://pghuu0xgq2sw" path="res://sprites/pngwing.com.png" id="1_hrfsr"]
+[ext_resource type="Texture2D" uid="uid://pghuu0xgq2sw" path="res://sprites/Icons/pngwing.com.png" id="1_hrfsr"]
 [ext_resource type="Script" path="res://scripts/PcCyberpunk.gd" id="1_q8175"]
 [ext_resource type="Texture2D" uid="uid://bjbxgp4jlbgiu" path="res://sprites/teste1.png" id="2_lder3"]
-[ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Battlenet.ttf" id="2_m0yot"]
-[ext_resource type="Texture2D" uid="uid://ddp66tnmetc4r" path="res://sprites/EmailIcon.png" id="3_i36o8"]
+[ext_resource type="Texture2D" uid="uid://ddp66tnmetc4r" path="res://sprites/Icons/EmailIcon.png" id="3_i36o8"]
 [ext_resource type="Script" path="res://scripts/PcAntigo.gd" id="3_wnulo"]
+[ext_resource type="FontFile" uid="uid://chh4kwoe6juml" path="res://sprites/Fonts/CornDemo-Regular.ttf" id="5_d2tut"]
 [ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="7_5jwro"]
+[ext_resource type="FontFile" uid="uid://c0hw3jbmkq1dp" path="res://sprites/Fonts/ONEDAY.ttf" id="8_wir4h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lwnxj"]
-font = ExtResource("2_m0yot")
-font_size = 32
+font = ExtResource("5_d2tut")
+font_size = 13
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3tj5"]
+font = ExtResource("8_wir4h")
+font_size = 50
 
 [node name="PcCyberpunk" type="Control"]
 layout_mode = 3
@@ -38,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.381703, 0.381703, 0.381703, 1)
 
-[node name="PcAntigo" type="TextureButton" parent="." groups=["button"]]
+[node name="PcAntigo" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 34.0
 offset_top = 29.0
@@ -128,11 +134,17 @@ layout_mode = 2
 text = "Menu iniciar"
 
 [node name="Time" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1016.0
-offset_top = 25.0
-offset_right = 1111.0
-offset_bottom = 71.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_right = 86.0
+offset_bottom = 75.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_c3tj5")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="PcAntigo" to="." method="_on_pc_antigo_pressed"]
 [connection signal="pressed" from="Emails" to="." method="_on_emails_pressed"]

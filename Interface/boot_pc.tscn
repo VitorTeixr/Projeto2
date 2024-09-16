@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://bppeuqt51nof4"]
 
 [ext_resource type="Script" path="res://scripts/boot_pc.gd" id="1_rddm0"]
-[ext_resource type="Texture2D" uid="uid://pghuu0xgq2sw" path="res://sprites/pngwing.com.png" id="2_amxjb"]
+[ext_resource type="Texture2D" uid="uid://pghuu0xgq2sw" path="res://sprites/Icons/pngwing.com.png" id="2_amxjb"]
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="3_sy487"]
 [ext_resource type="AudioStream" uid="uid://bui5r1bmjq07r" path="res://soundtrack/SFX/90s PC boot sequence with sound HD.mp3" id="4_uhtsr"]
 
