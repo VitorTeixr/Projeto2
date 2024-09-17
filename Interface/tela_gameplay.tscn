@@ -1,7 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqg36pt6yfia0"]
+[gd_scene load_steps=21 format=3 uid="uid://bqg36pt6yfia0"]
 
 [ext_resource type="Script" path="res://scripts/tela_gameplay.gd" id="1_k57ww"]
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="2_nxe21"]
+[ext_resource type="Texture2D" uid="uid://dw61owhynrmmc" path="res://sprites/pixelframenormal.png" id="3_uth28"]
+[ext_resource type="Texture2D" uid="uid://q1r8bb5n18j0" path="res://sprites/pixeframeinverted.png" id="4_rh00v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7df1g"]
+texture = ExtResource("3_uth28")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mq2un"]
+texture = ExtResource("3_uth28")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ke8jq"]
+texture = ExtResource("4_rh00v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hkp4e"]
+texture = ExtResource("4_rh00v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tu1v8"]
+texture = ExtResource("3_uth28")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1mab8"]
+texture = ExtResource("4_rh00v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4na0y"]
+texture = ExtResource("4_rh00v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b5k3s"]
+texture = ExtResource("3_uth28")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jc20c"]
+texture = ExtResource("3_uth28")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flmjl"]
+texture = ExtResource("3_uth28")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vh5ge"]
+texture = ExtResource("4_rh00v")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gin4k"]
+texture = ExtResource("3_uth28")
 
 [sub_resource type="LabelSettings" id="LabelSettings_53ilo"]
 font = ExtResource("2_nxe21")
@@ -19,6 +57,11 @@ font_size = 20
 font_color = Color(0, 0, 0, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fyfd5"]
+font = ExtResource("2_nxe21")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
 
 [node name="Tela_gameplay" type="Control"]
 layout_mode = 3
@@ -39,9 +82,9 @@ color = Color(0.741385, 0.741385, 0.741385, 1)
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 270.0
+offset_top = 322.0
 offset_right = 108.0
-offset_bottom = 489.0
+offset_bottom = 541.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -55,7 +98,22 @@ offset_left = 8.0
 offset_top = 180.0
 offset_right = 108.0
 offset_bottom = 217.0
+theme_override_colors/font_disabled_color = Color(0.385493, 0.385492, 0.385492, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_nxe21")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7df1g")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mq2un")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_ke8jq")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hkp4e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tu1v8")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_1mab8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4na0y")
+theme_override_styles/normal = SubResource("StyleBoxTexture_b5k3s")
+alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -63,8 +121,17 @@ offset_left = 8.0
 offset_top = 221.0
 offset_right = 108.0
 offset_bottom = 256.0
+theme_override_colors/font_disabled_color = Color(0.529067, 0.529067, 0.529067, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_nxe21")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/disabled = SubResource("StyleBoxTexture_jc20c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_flmjl")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vh5ge")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gin4k")
 disabled = true
 text = "Responder"
 
@@ -83,9 +150,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -258.0
+offset_left = -187.0
 offset_top = -39.0
-offset_right = 376.0
+offset_right = 371.0
 offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -145,6 +212,15 @@ escolha o tipo de proble-
 ma nas opções abaixo e 
 responda."
 label_settings = SubResource("LabelSettings_8qi80")
+
+[node name="Lista de problemas" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 285.0
+offset_right = 164.0
+offset_bottom = 311.0
+text = "Lista de Problemas:"
+label_settings = SubResource("LabelSettings_fyfd5")
 
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

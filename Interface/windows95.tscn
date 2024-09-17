@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dmllnf4rhqqs3"]
+[gd_scene load_steps=44 format=3 uid="uid://dmllnf4rhqqs3"]
 
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="1_3vo1h"]
 [ext_resource type="Script" path="res://scripts/windows95.gd" id="1_ed1cj"]
@@ -270,14 +270,29 @@ texture_margin_top = 1.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nviro"]
+texture = ExtResource("4_dqt12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5c7p"]
+texture = ExtResource("4_dqt12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p5jkc"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp0cg"]
+texture = ExtResource("4_dqt12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_to765"]
+texture = ExtResource("3_5cnb1")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b1vrb"]
 shader = ExtResource("1_3vo1h")
-shader_parameter/crt_curve = 0.015
-shader_parameter/crt_scan_line_color = 0.0
-shader_parameter/aperture_grille_rate = 0.79
-shader_parameter/aparture_grille_cut_rate = 0.0
-shader_parameter/rf_switch_esque_blur = 0.651
-shader_parameter/white_noise_rate = 0.026
+shader_parameter/crt_curve = 0.012
+shader_parameter/crt_scan_line_color = 0.188
+shader_parameter/aperture_grille_rate = 0.506
+shader_parameter/aparture_grille_cut_rate = 0.675
+shader_parameter/rf_switch_esque_blur = 0.528
+shader_parameter/white_noise_rate = 0.1
 
 [node name="WindowsDesktop" type="Control"]
 layout_mode = 3
@@ -709,9 +724,19 @@ offset_right = 90.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.41598, 0.41598, 0.41598, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_sfs6i")
 theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxTexture_nviro")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_g5c7p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_p5jkc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dp0cg")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_to765")
 theme_override_styles/normal = SubResource("StyleBoxTexture_d04bl")
 text = "Colocar em espera"
 

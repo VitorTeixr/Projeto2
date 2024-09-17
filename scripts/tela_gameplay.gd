@@ -16,51 +16,64 @@ func  pressionado(i):
 	print(i)
 func _ready() -> void:
 	
+	$OptionButton.disabled=true
+	$Button.disabled=true
+	$OptionButton.clear()
 
 	
 	var font = FontFile.new()
 	var font_file = load("res://sprites/Fonts/Battlenet.ttf") as FontFile
 	font.font_data = font_file
 	
+	var texture = load("res://sprites/pixelframenormal.png")
+	var stylebox_texture = StyleBoxTexture.new()
+	stylebox_texture.texture = texture
+	
+	var texture2 = load("res://sprites/pixeframeinverted.png")
+	var stylebox_texture2 = StyleBoxTexture.new()
+	stylebox_texture2.texture = texture2
+	
+	var black_color = Color(0, 0, 0)
+	var red_color = Color(1, 0, 0)  # Exemplo de cor para o pressed
 	
 	
-	$OptionButton.disabled=true
-	$OptionButton.clear()
 
 	for x in Global.dia_atual:
 		for i in Global.dias[x]['problemas']:
 			var butao=Button.new()
+			
 			butao.custom_minimum_size = Vector2(100, 40)  # Largura = 200, Altura = 50
+			
 			butao.add_theme_font_override("font", font)
+			butao.add_theme_font_size_override("font_size", 22)
+			
+			butao.add_theme_stylebox_override("normal", stylebox_texture)
+			butao.add_theme_stylebox_override("hover", stylebox_texture)   # Estado hover
+			butao.add_theme_stylebox_override("pressed", stylebox_texture2)  # Estado pressionado
+			
+			butao.add_theme_color_override("font_color", black_color)
+			butao.add_theme_color_override("font_hover_color", black_color)  # Cor quando o mouse estiver sobre o botão
+			butao.add_theme_color_override("font_pressed_color", black_color)  # Cor quando o botão for pressionado
+			butao.add_theme_color_override("font_focus_color", black_color)  # Cor quando o botão for pressionado
+			
 			$OptionButton.add_item(i['titulo'])
 			butao.text=i['titulo']
 	
 			
 			butao.connect('pressed',func():pressionado(i))
 			$ScrollContainer/VBoxContainer.add_child(butao)
-			
-	# Inicializa o texto do Label com o primeiro problema
-	get_node("ScrollContainer2/VBoxContainer/Label2").text = "Selecione Um Problema"
-
-	
-	
-func _input(event):
-	# Verifica se o evento é um clique do botão esquerdo do mouse
-	#if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		# Reproduz o som de clique
-		#MusicManager.play_click_sound()
-	pass
 
 
 
 func _on_button_pressed():
 	var player_ans=$OptionButton.text
+	print(str(Global.dias[Global.dia_atual-1]['pontuacao']))
 
 	if player_ans==Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['resposta']:
 		
 		Global.dias[Global.dia_atual-1]['pontuacao']+=1
 	
-	$ScrollContainer3/VBoxContainer/Label.text=''
+	$"Texto_Ligação/VBoxContainer/Label".text=''
 	$Button.disabled=true
 	$OptionButton.disabled=true
 	problema_atual+=1
@@ -76,15 +89,13 @@ func _on_timer_timeout():
 	if problema_atual > 0:
 		atender_signal.visible = true
 		MusicManager.play_ring_sound()
-	$OptionButton.disabled=false
-	$Button.disabled=false
 	$Timer.stop()
 	
 	pass
 
 func _get_text_to_tela_gameplay():
 	var file = FileAccess.open(Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['pergunta'], FileAccess.READ)
-	$ScrollContainer3/VBoxContainer/Label.text=file.get_as_text()
+	$"Texto_Ligação/VBoxContainer/Label".text=file.get_as_text()
 	
 func get_pergunta_text():
 	var file = FileAccess.open(Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['pergunta'], FileAccess.READ)
