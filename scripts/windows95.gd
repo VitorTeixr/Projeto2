@@ -45,7 +45,6 @@ func _ready():
 	MusicManager.boot_play_sound()
 	MusicManager.play_pc_sound()
 
-	$"Fim do dia/Panel/Label2".text=" Você acertou "+str(Global.dias[Global.dia_atual-1]['pontuacao']) + " de " + str(len(Global.dias[Global.dia_atual-1]['quiz']))
 
 	for element in ui_elements:
 		element.visible = false
@@ -84,13 +83,16 @@ func _process(delta):
 func fim_do_dia_transition():
 	# Sistema de fim de dia
 	# Quando o timer expira, troca de cena
+	Global.dia_atual += 1
+	
+	
 	if not scene_changed:
 		scene_changed = true
 		Transition.transition()
 		await Transition.on_transition_finished
 		MusicManager.stop_pc_sound()
 		get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn")
-
+		
 		Global.trys = 0
 		Global.first_boot = true
 		Global.first_boot_animation = true

@@ -7,7 +7,7 @@ var problema_atual = 0
 @onready var popup=$Window
 @onready var atender_signal = get_parent().get_parent().get_parent().get_node("Atender")
 @onready var fim_do_dia = get_parent().get_parent().get_parent().get_node("Fim do dia")
-
+@onready var pontuação_texto = get_parent().get_parent().get_parent().get_node("Fim do dia/Panel/Label2")
 
 func  pressionado(i):
 	var file = FileAccess.open(i['descricao'], FileAccess.READ)
@@ -70,7 +70,6 @@ func _on_button_pressed():
 	print(str(Global.dias[Global.dia_atual-1]['pontuacao']))
 
 	if player_ans==Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['resposta']:
-		
 		Global.dias[Global.dia_atual-1]['pontuacao']+=1
 	
 	$"Texto_Ligação/VBoxContainer/Label".text=''
@@ -80,8 +79,8 @@ func _on_button_pressed():
 	
 	
 	if problema_atual>=len(Global.dias[Global.dia_atual-1]['quiz']):
+		pontuação_texto.text=" Você acertou "+str(Global.dias[Global.dia_atual-1]['pontuacao']) + " de " + str(len(Global.dias[Global.dia_atual-1]['quiz']))
 		fim_do_dia.visible = true
-		Global.dia_atual += 1
 	else:
 		$Timer.start()
 		
