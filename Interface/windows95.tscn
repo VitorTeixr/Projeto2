@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dw61owhynrmmc" path="res://sprites/pixelframenormal.png" id="4_dqt12"]
 [ext_resource type="Texture2D" uid="uid://bdi42knjm20k" path="res://sprites/Icons/Perabook_icon.png" id="5_57ywt"]
 [ext_resource type="Texture2D" uid="uid://dtl7c4tu6c4pj" path="res://sprites/Icons/CloseRegular.png" id="5_titud"]
-[ext_resource type="Script" path="res://sprites/Time Panel.gd" id="5_vxqoj"]
+[ext_resource type="Script" path="res://scripts/Time Panel.gd" id="5_vxqoj"]
 [ext_resource type="Texture2D" uid="uid://b3aky3j77bb8n" path="res://sprites/Icons/internet_icon.png" id="7_jrebl"]
 [ext_resource type="Texture2D" uid="uid://jx7diqxdl3v5" path="res://sprites/Icons/folder_icon.png" id="8_uscn3"]
 [ext_resource type="Texture2D" uid="uid://cow330puspkse" path="res://sprites/Icons/game_icon.png" id="9_s5ckw"]
@@ -696,7 +696,6 @@ grow_vertical = 2
 wait_time = 3.0
 
 [node name="Texto_explicação" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -27,7 +27,11 @@ var instance = scene_to_instance.instantiate()
 var texto_completo
 var indice_caractere = 0  # Para controlar o caractere atual
 
+@onready var cursor_sprite = $Cursor  # Sprite que vai seguir o mouse
+
 func _ready():
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 	#Instancia a cena
 	instantiate_scene_in_panel(instance)
@@ -62,6 +66,10 @@ func _ready():
 	
 			
 func _process(delta):
+	
+	var mouse_position = get_viewport().get_mouse_position()
+	cursor_sprite.position = Vector2(mouse_position)
+	
 	if click_count > 0:
 		timer += delta
 		if timer > double_click_time:
@@ -204,14 +212,31 @@ func _on_controla_caracter_timeout() -> void:
 		controla_caracter.stop()
 		
 func _on_button_em_espera_pressed() -> void:
-	label_em_espera.text = ""  # Começa com o Label vazio
-	controla_caracter.stop()
+	
+	# Verifica se o texto ainda não foi completamente exibido
+	if indice_caractere < texto_completo.length():
+		# Para o timer para interromper a exibição gradual
+		controla_caracter.stop()
+		# Exibe o texto completo no Label imediatamente
+		label_em_espera.text = texto_completo
+		# Atualiza o índice para o comprimento total do texto
+		indice_caractere = texto_completo.length()
+	
+	
 	janela_primaria.visible = true
-	$"Texto_explicação".visible = false
 	indice_caractere = 0  # Reinicia o contador de caracteres
 	instance.call("_get_text_to_tela_gameplay")
 	instance.get_node("OptionButton").disabled = false
 	instance.get_node("Button").disabled = false
+	
+	
+	
+	$"Texto_explicação".position = Vector2 (858, 28)
+	$"Texto_explicação".size = Vector2(263, 293)
+	$"Texto_explicação/ColorRect".size = Vector2(240, 228)
+	$"Texto_explicação/ColorRect/ScrollContainer".size = Vector2(150,220)
+	$"Texto_explicação/button em espera".visible = false
+	
 	pass # Replace with function body.
 	
 
