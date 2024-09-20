@@ -1,9 +1,20 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqg36pt6yfia0"]
+[gd_scene load_steps=29 format=3 uid="uid://bqg36pt6yfia0"]
 
 [ext_resource type="Script" path="res://scripts/tela_gameplay.gd" id="1_k57ww"]
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="2_nxe21"]
-[ext_resource type="Texture2D" uid="uid://dw61owhynrmmc" path="res://sprites/pixelframenormal.png" id="3_uth28"]
-[ext_resource type="Texture2D" uid="uid://q1r8bb5n18j0" path="res://sprites/pixeframeinverted.png" id="4_rh00v"]
+[ext_resource type="Texture2D" uid="uid://dw61owhynrmmc" path="res://sprites/Imagens/pixelframenormal.png" id="3_uth28"]
+[ext_resource type="Texture2D" uid="uid://q1r8bb5n18j0" path="res://sprites/Imagens/pixeframeinverted.png" id="4_rh00v"]
+[ext_resource type="Texture2D" uid="uid://c7piu1s775s8d" path="res://sprites/Imagens/pixil-frame-0 (11).png" id="5_14vy7"]
+[ext_resource type="Texture2D" uid="uid://p5e4yjmhbw40" path="res://sprites/Imagens/pixil-frame-0 (10).png" id="6_gwfr3"]
+[ext_resource type="Texture2D" uid="uid://dkdql1ch6opst" path="res://sprites/Imagens/pixil-frame-0 (13).png" id="8_ttvuv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwpxj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i8vee"]
+
+[sub_resource type="Theme" id="Theme_bgi7r"]
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_gwpxj")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_i8vee")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7df1g"]
 texture = ExtResource("3_uth28")
@@ -55,13 +66,19 @@ font_color = Color(0, 0, 0, 1)
 font = ExtResource("2_nxe21")
 font_size = 20
 font_color = Color(0, 0, 0, 1)
-outline_size = 2
+outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fyfd5"]
 font = ExtResource("2_nxe21")
 font_size = 25
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlul8"]
+texture = ExtResource("8_ttvuv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4elv"]
+texture = ExtResource("8_ttvuv")
 
 [node name="Tela_gameplay" type="Control"]
 layout_mode = 3
@@ -83,8 +100,9 @@ color = Color(0.741385, 0.741385, 0.741385, 1)
 layout_mode = 0
 offset_left = 8.0
 offset_top = 322.0
-offset_right = 108.0
-offset_bottom = 541.0
+offset_right = 143.0
+offset_bottom = 492.0
+theme = SubResource("Theme_bgi7r")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
@@ -114,6 +132,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_1mab8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4na0y")
 theme_override_styles/normal = SubResource("StyleBoxTexture_b5k3s")
 alignment = 1
+item_count = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -221,6 +240,36 @@ offset_right = 164.0
 offset_bottom = 311.0
 text = "Lista de Problemas:"
 label_settings = SubResource("LabelSettings_fyfd5")
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 320.0
+offset_right = 127.0
+offset_bottom = 494.0
+theme_override_icons/increment = ExtResource("5_14vy7")
+theme_override_icons/increment_highlight = ExtResource("5_14vy7")
+theme_override_icons/increment_pressed = ExtResource("5_14vy7")
+theme_override_icons/decrement = ExtResource("6_gwfr3")
+theme_override_icons/decrement_highlight = ExtResource("6_gwfr3")
+theme_override_icons/decrement_pressed = ExtResource("6_gwfr3")
+theme_override_styles/scroll = SubResource("StyleBoxTexture_mlul8")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_l4elv")
+
+[node name="VScrollBar2" type="VScrollBar" parent="."]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 192.0
+offset_right = 768.0
+offset_bottom = 489.0
+theme_override_icons/increment = ExtResource("5_14vy7")
+theme_override_icons/increment_highlight = ExtResource("5_14vy7")
+theme_override_icons/increment_pressed = ExtResource("5_14vy7")
+theme_override_icons/decrement = ExtResource("6_gwfr3")
+theme_override_icons/decrement_highlight = ExtResource("6_gwfr3")
+theme_override_icons/decrement_pressed = ExtResource("6_gwfr3")
+theme_override_styles/scroll = SubResource("StyleBoxTexture_mlul8")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_l4elv")
 
 [connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

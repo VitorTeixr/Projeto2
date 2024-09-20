@@ -1,0 +1,32 @@
+Descrição: 
+“Tripala é um malware antigo de repetição de 
+palavras, que provoca ao usuário afetado a 
+repetição das três primeiras palavras que ele 
+escutou em seu dia de forma prolongada até o 
+final de vinte e quatro horas, onde o processo 
+irá se repetir com as próximas palavras ouvidas. 
+Foi reconhecido pela primeira vez após ter sido 
+utilizado como uma provocação contra um político 
+discursando em campanha eleitoral no ano de 2098, 
+embora ele já existisse antes dessa data. Devido 
+o nível de gravidade contra pessoas “de poder”, 
+o malware agora se tornou simples e uma isca 
+contraída em sites de pornografia por aqueles 
+que se aventuram por vídeos desprotegido.”
+
+Perigo: 
+“Seu nível de perigo é considerado leve, pois além 
+da repetição de palavras o problema com o chip não 
+parece afetar mais nenhuma outra função do corpo 
+para além de servir como malware vocal.”
+
+Resolução: 
+“Lidar com Tripala é simples: além da instalação 
+geral de um antivírus, o uso de um VPN e bloqueador 
+de anúncios consegue impedir futuras infecções com 
+ela. Infelizmente, Tripala foi criado por uma empre-
+sa de antivírus como uma forma de venda do próprio 
+produto, e até o momento é a única capaz de lidar 
+com o próprio problema criado. Isso irá pedir que o 
+usuário pague obrigatoriamente o serviço dela e sua 
+mensalidade.”

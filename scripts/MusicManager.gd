@@ -23,6 +23,8 @@ var radio_player = AudioStreamPlayer.new()
 
 
 
+
+
 func _ready() -> void:
 	# Cria e adiciona o AudioStreamPlayer à cena
 	music_player = AudioStreamPlayer.new()
@@ -121,5 +123,8 @@ func play_radio_sound():
 func stop_radio_sound():
 	if radio_player.playing:
 		radio_player.stop()
+		
+
+	
 	
 	

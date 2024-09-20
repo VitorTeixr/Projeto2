@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://pghuu0xgq2sw" path="res://sprites/Icons/pngwing.com.png" id="1_hrfsr"]
 [ext_resource type="Script" path="res://scripts/PcCyberpunk.gd" id="1_q8175"]
-[ext_resource type="Texture2D" uid="uid://bjbxgp4jlbgiu" path="res://sprites/teste1.png" id="2_lder3"]
+[ext_resource type="Texture2D" uid="uid://bjbxgp4jlbgiu" path="res://sprites/Imagens/teste1.png" id="2_lder3"]
 [ext_resource type="Texture2D" uid="uid://ddp66tnmetc4r" path="res://sprites/Icons/EmailIcon.png" id="3_i36o8"]
 [ext_resource type="Script" path="res://scripts/PcAntigo.gd" id="3_wnulo"]
 [ext_resource type="FontFile" uid="uid://chh4kwoe6juml" path="res://sprites/Fonts/CornDemo-Regular.ttf" id="5_d2tut"]

@@ -35,21 +35,25 @@ var dias = [
 		'quiz': [
 			{
 				'pergunta': 'res://Textos_jogos/Dia_1/quiz/a1.txt',
-				'resposta': 'Mal Contato'
+				'resposta': 'Mal Contato',
+				'emocao': 'fem_neutra'  # Adicionando a emoção aqui
 			},
 			{
 				'pergunta': 'res://Textos_jogos/Dia_1/quiz/a2.txt',
-				'resposta': 'Oxidação'
+				'resposta': 'Oxidação',
+				'emocao': 'mas_neutra'
 			},
 			{
 				'pergunta': 'res://Textos_jogos/Dia_1/quiz/a3.txt',
-				'resposta': 'Arranhões'
+				'resposta': 'Arranhões',
+				'emocao': 'mas_raiva'
 			}
 		],
 		'problemas': [
 			{
 				'titulo': 'Mal Contato',
 				'descricao': 'res://Textos_jogos/Dia_1/problemas/p1.txt'
+				
 			},
 			{
 				'titulo': 'Oxidação',
@@ -66,8 +70,107 @@ var dias = [
 		],
 		'errou': [],
 		'acertou': []
+	},
+	{
+		'nome': "Dia 2",
+		'emails': [
+			{
+				'remetente': "Vitória, do Departamento de Controle de Danos",
+				'assunto': "Parabenização do primeiro dia",
+				'msg': "res://Textos_jogos/Dia_2/emails/msg1.txt"
+			
+			}
+		],
+		'id_dia': 2,
+		'pontuacao': 0,
+		'quiz': [
+			{
+				'pergunta': 'res://Textos_jogos/Dia_2/quiz/a4.txt',
+				'resposta': 'Arranhões',
+				'emocao': 'fem_neutro'
+			},
+			{
+				'pergunta': 'res://Textos_jogos/Dia_2/quiz/a5.txt',
+				'resposta': 'Danificado',
+				'emocao': 'fem_raiva'
+			},
+			{
+				'pergunta': 'res://Textos_jogos/Dia_2/quiz/a6.txt',
+				'resposta': 'Memória RAM',
+				'emocao': 'mas_feliz'
+			}
+		],
+		'problemas': [
+			{
+				'titulo': 'Memória RAM',
+				'descricao': 'res://Textos_jogos/Dia_2/problemas/p5.txt'
+			},
+			{
+				'titulo': 'Danificado',
+				'descricao': 'res://Textos_jogos/Dia_2/problemas/p6.txt'
+			},
+			{
+				'titulo': 'Virús',
+				'descricao': 'res://Textos_jogos/Dia_2/problemas/p7.txt'
+			}
+		],
+		'errou': [],
+		'acertou': []
+	},
+	{
+		'nome': "Dia 3",
+		'emails': [
+			{
+				'remetente': "Vitória, do Departamento de Controle de Danos",
+				'assunto': "Parabenização do primeiro dia",
+				'msg': "res://Textos_jogos/Dia_3/emails/msg1.txt"
+			
+			},
+			{
+				'remetente': "Lucas Castro",
+				'assunto': "Mais uma súplica",
+				'msg': "res://Textos_jogos/Dia_3/emails/msg2.txt"
+			
+			}
+		],
+		'id_dia': 3,
+		'pontuacao': 0,
+		'quiz': [
+			{
+				'pergunta': 'res://Textos_jogos/Dia_3/quiz/a7.txt',
+				'resposta': 'Detritos',
+				'emocao': 'mas_feliz'
+			},
+			{
+				'pergunta': 'res://Textos_jogos/Dia_3/quiz/a8.txt',
+				'resposta': 'Vírus',
+				'emocao': 'mas_raiva'
+			},
+			{
+				'pergunta': 'res://Textos_jogos/Dia_3/quiz/a9.txt',
+				'resposta': 'Tripala',
+				'emocao': 'fem_raiva'
+			}
+		],
+		'problemas': [
+			{
+				'titulo': 'Modo Avião',
+				'descricao': 'res://Textos_jogos/Dia_3/problemas/p8.txt'
+			},
+			{
+				'titulo': 'Tripala',
+				'descricao': 'res://Textos_jogos/Dia_3/problemas/p9.txt'
+			},
+			{
+				'titulo': 'Guaraná',
+				'descricao': 'res://Textos_jogos/Dia_3/problemas/p10.txt'
+			}
+		],
+		'errou': [],
+		'acertou': []
 	}
 ]
+
 
 
 var email_atual={}

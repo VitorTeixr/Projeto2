@@ -1,0 +1,27 @@
+Descrição: 
+“Causado pelo uso exorbitante de diversos chips si-
+multaneamente, a memória ram presente neles pode 
+acabar começando a travar e a acumular grande quan-
+tidade de cachê. Tornando-se uma nova moda na atua-
+lidade, a junção de vários chips para causar mais 
+efeitos de felicidade ou de festejo tem se tornado 
+comum em festas tanto de classe alta como baixa. 
+Como drogas acabaram sendo mais difíceis de serem 
+cultivadas pela ausência de terra, misturas de chips 
+viraram seus sucessores..” 
+
+Perigo: 
+Seu nível de perigo é mediano, pois a memória ram 
+podeatrasar o processamento de funções mais impor-
+tantes no corpo, causando lentidão e aquecimento 
+em excesso da máquina. Mesmo que um sistema de 
+ventilação eficiente possa retardar o problema, 
+ele ainda irá aparecer com mais frequência futu-
+ramente.
+
+Resolução: 
+A solução acaba sendo reiniciar o sistema. Isso 
+irá parar processos abertos desnecessários e 
+impedir a continuidade de chips extras funcio-
+narem. Caso persista, desinstale os chips e 
+limpe a memória cachê

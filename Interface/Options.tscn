@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Options.gd" id="1_dodn2"]
 [ext_resource type="PackedScene" uid="uid://dhmfce4wycv1j" path="res://Interface/volume_slider.tscn" id="2_8cjxq"]
-[ext_resource type="Texture2D" uid="uid://djxsva0ok41f" path="res://sprites/teste2.png" id="2_33ufd"]
+[ext_resource type="Texture2D" uid="uid://djxsva0ok41f" path="res://sprites/Imagens/teste2.png" id="2_33ufd"]
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="3_4ed68"]
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="3_4pym6"]
 

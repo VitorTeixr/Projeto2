@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://btvq06nj36u2s"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_r2i3s"]
-[ext_resource type="Texture2D" uid="uid://djxsva0ok41f" path="res://sprites/teste2.png" id="2_8aydh"]
+[ext_resource type="Texture2D" uid="uid://djxsva0ok41f" path="res://sprites/Imagens/teste2.png" id="2_8aydh"]
 [ext_resource type="VideoStream" path="res://videos/Cyberpunk-Hi-Tech-Line-Background-video-Footage-Screensaver.ogv" id="2_pino5"]
 [ext_resource type="FontFile" uid="uid://csjbgays5pru8" path="res://sprites/Fonts/True Lies.ttf" id="3_k375d"]
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="4_o55h6"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfg5h0d06gbei"]
+[gd_scene load_steps=7 format=3 uid="uid://cfg5h0d06gbei"]
 
 [ext_resource type="Script" path="res://scripts/Mensagem.gd" id="1_kk0ja"]
 [ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="1_x2h1u"]
-[ext_resource type="Texture2D" uid="uid://gud6d32e0b3e" path="res://sprites/teste3 (email).png" id="2_f5ysl"]
+[ext_resource type="Texture2D" uid="uid://gud6d32e0b3e" path="res://sprites/Imagens/teste3 (email).png" id="2_f5ysl"]
 [ext_resource type="Texture2D" uid="uid://ddp66tnmetc4r" path="res://sprites/Icons/EmailIcon.png" id="3_lqjm7"]
-[ext_resource type="Texture2D" uid="uid://cmx5u4x1p30ay" path="res://sprites/png semi transparente de email.png" id="5_l0ano"]
+[ext_resource type="FontFile" uid="uid://chh4kwoe6juml" path="res://sprites/Fonts/CornDemo-Regular.ttf" id="4_6jlla"]
+[ext_resource type="Texture2D" uid="uid://cmx5u4x1p30ay" path="res://sprites/Imagens/png semi transparente de email.png" id="5_l0ano"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -35,6 +36,7 @@ offset_left = 1049.0
 offset_top = 14.0
 offset_right = 1128.0
 offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("4_6jlla")
 theme_override_font_sizes/font_size = 25
 text = "Sair"
 
@@ -66,21 +68,21 @@ mouse_filter = 2
 texture = ExtResource("5_l0ano")
 expand_mode = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Semitransparente"]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -377.5
-offset_top = -189.5
-offset_right = 384.5
-offset_bottom = 190.5
+offset_left = -358.0
+offset_top = -123.0
+offset_right = 404.0
+offset_bottom = 257.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Semitransparente/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 alignment = 1
 

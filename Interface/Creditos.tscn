@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dp70764ld7a5g"]
 
 [ext_resource type="Script" path="res://scripts/Creditos.gd" id="1_1527r"]
-[ext_resource type="Texture2D" uid="uid://djxsva0ok41f" path="res://sprites/teste2.png" id="2_pq05o"]
+[ext_resource type="Texture2D" uid="uid://djxsva0ok41f" path="res://sprites/Imagens/teste2.png" id="2_pq05o"]
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="3_ckx32"]
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="3_xgna6"]
 

@@ -9,7 +9,6 @@ var lista_on = false
 var scene_to_instance = preload("res://Interface/tela_gameplay.tscn")  # Carrega a cena que será instanciada
 var instance = scene_to_instance.instantiate()
 
-
 @onready var timer1 = $Timer
 @onready var timer2 = $Timer2
 @onready var click_sound = $Click
@@ -19,27 +18,40 @@ var instance = scene_to_instance.instantiate()
 @onready var close_button = $ListaPopup/TextureButton  # Botão de fechar dentro do Panel
 
 @onready var animation_player = $AnimationPlayer
+@onready var animation_player2 = $AnimationPlayer2
 @onready var ui_elements = [$Panel/Start, $ligacao, $Lista, $Jogo,$"Panel/Time Panel/Time"]  # Elementos que ficarão invisíveis
 
-@onready var label_em_espera = $"Texto_explicação/ColorRect/ScrollContainer/VBoxContainer/Label"  # O Label onde o texto vai aparecer
+@onready var label_em_espera = $"Texto_explicação/ColorRect/ScrollContainer/VBoxContainer/Label1" as Label  # O Label onde o texto vai aparecer
 @onready var controla_caracter = $Timer3  # Um Timer que controla a velocidade de exibição do texto
-
-var texto_completo
+var texto_completo 
 var indice_caractere = 0  # Para controlar o caractere atual
 
-@onready var cursor_sprite = $Cursor  # Sprite que vai seguir o mouse
+@onready var label_mensagem = $Panel2  # Substitua "$Label" pelo caminho do seu Label
+@onready var timer4 = $Timer4          # Substitua "$Timer" pelo caminho do seu Timer
+
+@onready var cursor_sprite = $Cursor  # Sprite que vai seguir o 
+
+@onready var fem_neutro = preload("res://soundtrack/Voices/fem_neutro.mp3")
+@onready var fem_feliz = preload("res://soundtrack/Voices/fem_feliz.mp3")
+@onready var fem_raiva = preload("res://soundtrack/Voices/fem_raiva.mp3")
+
+@onready var mas_neutro = preload("res://soundtrack/Voices/mas_neutro.mp3")
+@onready var mas_feliz = preload("res://soundtrack/Voices/mas_feliz.mp3")
+@onready var mas_raiva = preload("res://soundtrack/Voices/mas_raiva.mp3")
+
+@onready var audio_player = $AudioStreamPlayer
+
 
 func _ready():
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
+
 	#Instancia a cena
 	instantiate_scene_in_panel(instance)
 	#Fecha a cena
 	close_button.pressed.connect(hide_panel)
 	
-		
-
 	
 	label_em_espera.text = ""  # Começa com o Label vazio
 	controla_caracter.wait_time = 0.05  # Define o intervalo de tempo entre os caracteres (em segundos)
@@ -48,6 +60,11 @@ func _ready():
 	#Som do inicio e de fundo
 	MusicManager.boot_play_sound()
 	MusicManager.play_pc_sound()
+	
+	if label_em_espera is Label:
+		print("label_em_espera é um Label")
+	else:
+		print("label_em_espera não é um Label")
 
 
 	for element in ui_elements:
@@ -63,21 +80,23 @@ func _ready():
 			element.visible = true
 			
 			
+	label_mensagem.visible = false  # Inicialmente, a mensagem está invisível
+	timer4.timeout.connect(Callable(self, "_on_timer4_timeout"))  # Conecta o timeout do Timer a uma função
 	
+
 			
-func _process(delta):
+func _process(_delta):
 	
 	var mouse_position = get_viewport().get_mouse_position()
-	cursor_sprite.position = Vector2(mouse_position)
+	cursor_sprite.position = mouse_position
 	
 	if click_count > 0:
-		timer += delta
+		timer += _delta
 		if timer > double_click_time:
 			# Tempo excedido, resetar
 			click_count = 0
 			timer = 0.0
 			
-	instance.problema_atual
 	
 	if instance.problema_atual <= 2:
 		if instance.has_method("get_pergunta_text"):
@@ -85,8 +104,7 @@ func _process(delta):
 
 		
 			
-			
-	
+
 	
 func fim_do_dia_transition():
 	# Sistema de fim de dia
@@ -198,7 +216,10 @@ func ligacao_ativa():
 func _on_button_atender_pressed() -> void:
 	$Atender.visible = false
 	MusicManager.stop_ring_sound()
+	$"Texto_explicação/ColorRect/VScrollBar".visible = false
 	$"Texto_explicação".visible = true
+	
+	
 	controla_caracter.start()
 
 
@@ -207,9 +228,13 @@ func _on_controla_caracter_timeout() -> void:
 		# Adiciona o próximo caractere ao Label
 		label_em_espera.text += texto_completo[indice_caractere]
 		indice_caractere += 1
+		animation_player2.play("sound_voice")
+		tocar_som_emocao()
+		
 	else:
 		# Para o timer quando todos os caracteres já foram exibidos
 		controla_caracter.stop()
+		$"Texto_explicação/Person/TextureRect".visible = false
 		
 func _on_button_em_espera_pressed() -> void:
 	
@@ -230,12 +255,12 @@ func _on_button_em_espera_pressed() -> void:
 	instance.get_node("Button").disabled = false
 	
 	
-	
 	$"Texto_explicação".position = Vector2 (858, 28)
 	$"Texto_explicação".size = Vector2(263, 293)
 	$"Texto_explicação/ColorRect".size = Vector2(240, 228)
-	$"Texto_explicação/ColorRect/ScrollContainer".size = Vector2(150,220)
+	$"Texto_explicação/ColorRect/ScrollContainer".size = Vector2(230,220)
 	$"Texto_explicação/button em espera".visible = false
+	$"Texto_explicação/ColorRect/VScrollBar".visible = true
 	
 	pass # Replace with function body.
 	
@@ -247,3 +272,34 @@ func _on_fechar_pressed() -> void:
 	fim_do_dia_transition()
 	
 	pass # Replace with function body.
+	
+func tocar_som_emocao() -> void:
+	var emocao_atual = Global.dias[Global.dia_atual-1]['quiz'][instance.problema_atual]['emocao']
+	
+	match emocao_atual:
+		"fem_neutra":
+			audio_player.stream = fem_neutro
+		"fem_feliz":
+			audio_player.stream = fem_feliz
+		"fem_raiva":
+			audio_player.stream = fem_raiva
+			
+		"mas_neutra":
+			audio_player.stream = mas_neutro
+		"mas_feliz":
+			audio_player.stream = mas_feliz
+		"mas_raiva":
+			audio_player.stream = mas_raiva
+			
+	audio_player.play()
+	audio_player.bus = "SFX"
+			
+
+
+func _on_jogo_pressed() -> void:
+	label_mensagem.visible = true  # Torna a mensagem visível
+	timer4.start(3)  # Inicia o timer para 2 segundos
+	
+func _on_timer4_timeout():
+	label_mensagem.visible = false  # Esconde a mensagem quando o tempo acabar
+	

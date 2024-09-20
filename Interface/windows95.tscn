@@ -1,11 +1,11 @@
-[gd_scene load_steps=44 format=3 uid="uid://dmllnf4rhqqs3"]
+[gd_scene load_steps=66 format=3 uid="uid://dmllnf4rhqqs3"]
 
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="1_3vo1h"]
 [ext_resource type="Script" path="res://scripts/windows95.gd" id="1_ed1cj"]
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="1_sfs6i"]
 [ext_resource type="Texture2D" uid="uid://3p4w03sv5xnn" path="res://sprites/PatchRegular.png" id="2_yvt6y"]
-[ext_resource type="Texture2D" uid="uid://q1r8bb5n18j0" path="res://sprites/pixeframeinverted.png" id="3_5cnb1"]
-[ext_resource type="Texture2D" uid="uid://dw61owhynrmmc" path="res://sprites/pixelframenormal.png" id="4_dqt12"]
+[ext_resource type="Texture2D" uid="uid://q1r8bb5n18j0" path="res://sprites/Imagens/pixeframeinverted.png" id="3_5cnb1"]
+[ext_resource type="Texture2D" uid="uid://dw61owhynrmmc" path="res://sprites/Imagens/pixelframenormal.png" id="4_dqt12"]
 [ext_resource type="Texture2D" uid="uid://bdi42knjm20k" path="res://sprites/Icons/Perabook_icon.png" id="5_57ywt"]
 [ext_resource type="Texture2D" uid="uid://dtl7c4tu6c4pj" path="res://sprites/Icons/CloseRegular.png" id="5_titud"]
 [ext_resource type="Script" path="res://scripts/Time Panel.gd" id="5_vxqoj"]
@@ -16,6 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://b3rd6bkrqjdom" path="res://sprites/Icons/5089778.png" id="12_kgc54"]
 [ext_resource type="Texture2D" uid="uid://pghuu0xgq2sw" path="res://sprites/Icons/pngwing.com.png" id="13_1i55o"]
 [ext_resource type="AudioStream" uid="uid://c21vjfmq4muck" path="res://soundtrack/SFX/Click - Sound Effect (HD).mp3" id="13_ae7b1"]
+[ext_resource type="Texture2D" uid="uid://bgjvmu53c4r75" path="res://sprites/Icons/person.png" id="15_mx7un"]
+[ext_resource type="Texture2D" uid="uid://c7piu1s775s8d" path="res://sprites/Imagens/pixil-frame-0 (11).png" id="15_s7f4y"]
+[ext_resource type="Texture2D" uid="uid://brahi3shq1nqg" path="res://sprites/Imagens/sound1.png" id="16_coqru"]
+[ext_resource type="Texture2D" uid="uid://p5e4yjmhbw40" path="res://sprites/Imagens/pixil-frame-0 (10).png" id="16_wo3t6"]
+[ext_resource type="Texture2D" uid="uid://cq5u72oie000y" path="res://sprites/Icons/Cursor.png" id="16_ypr35"]
+[ext_resource type="Texture2D" uid="uid://dkdql1ch6opst" path="res://sprites/Imagens/pixil-frame-0 (13).png" id="17_07lxj"]
+[ext_resource type="Texture2D" uid="uid://b7trbs0mt1i3h" path="res://sprites/Imagens/sound2.png" id="20_qlvy0"]
+[ext_resource type="Texture2D" uid="uid://cxjixfpoqx4vo" path="res://sprites/Imagens/sound3.png" id="21_rt8r0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa50r"]
 bg_color = Color(0.695503, 0.695503, 0.695503, 1)
@@ -46,6 +54,115 @@ texture_margin_bottom = 1.0
 font = ExtResource("1_sfs6i")
 font_size = 50
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ox6s"]
+texture = ExtResource("4_dqt12")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vdy3w"]
+texture = ExtResource("4_dqt12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oc7jl"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plv4l"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d04bl"]
+texture = ExtResource("4_dqt12")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ced6a"]
+font = ExtResource("1_sfs6i")
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ptlsn"]
+texture = ExtResource("4_dqt12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o138m"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0if4h"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wga51"]
+font = ExtResource("1_sfs6i")
+font_size = 64
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fojse"]
+texture = ExtResource("2_yvt6y")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ry6pk"]
+texture = ExtResource("17_07lxj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_im74y"]
+texture = ExtResource("17_07lxj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pm8ms"]
+texture = ExtResource("4_dqt12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_upppb"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bauh"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgigk"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uws8d"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c2art"]
+texture = ExtResource("4_dqt12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_axhka"]
+texture = ExtResource("4_dqt12")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2ep0t"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a5in2"]
+texture = ExtResource("3_5cnb1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6o0hy"]
+texture = ExtResource("4_dqt12")
+texture_margin_left = 1.0
+texture_margin_right = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bwsv"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ngk2"]
+font = ExtResource("1_sfs6i")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7qxfd"]
+font = ExtResource("1_sfs6i")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b1vrb"]
+shader = ExtResource("1_3vo1h")
+shader_parameter/crt_curve = 0.012
+shader_parameter/crt_scan_line_color = 0.188
+shader_parameter/aperture_grille_rate = 0.506
+shader_parameter/aparture_grille_cut_rate = 0.675
+shader_parameter/rf_switch_esque_blur = 0.528
+shader_parameter/white_noise_rate = 0.1
 
 [sub_resource type="Animation" id="Animation_h6jlk"]
 length = 0.001
@@ -221,78 +338,46 @@ _data = {
 "startboot": SubResource("Animation_agwja")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ox6s"]
-texture = ExtResource("4_dqt12")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
+[sub_resource type="Animation" id="Animation_qova0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto_explicação/Person/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_coqru")]
+}
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vdy3w"]
-texture = ExtResource("4_dqt12")
+[sub_resource type="Animation" id="Animation_6sd8w"]
+resource_name = "sound_voice"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto_explicação/Person/TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("16_coqru"), ExtResource("20_qlvy0"), ExtResource("21_rt8r0")]
+}
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oc7jl"]
-texture = ExtResource("3_5cnb1")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w1tpc"]
+_data = {
+"RESET": SubResource("Animation_qova0"),
+"sound_voice": SubResource("Animation_6sd8w")
+}
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_plv4l"]
-texture = ExtResource("3_5cnb1")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d04bl"]
-texture = ExtResource("4_dqt12")
-texture_margin_left = 1.0
-texture_margin_top = 1.0
-texture_margin_right = 1.0
-texture_margin_bottom = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_ced6a"]
+[sub_resource type="LabelSettings" id="LabelSettings_cwopi"]
 font = ExtResource("1_sfs6i")
-font_size = 25
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ptlsn"]
-texture = ExtResource("4_dqt12")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o138m"]
-texture = ExtResource("3_5cnb1")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0if4h"]
-texture = ExtResource("3_5cnb1")
-
-[sub_resource type="LabelSettings" id="LabelSettings_wga51"]
-font = ExtResource("1_sfs6i")
-font_size = 64
-font_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fojse"]
-texture = ExtResource("2_yvt6y")
-texture_margin_left = 1.0
-texture_margin_top = 1.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nviro"]
-texture = ExtResource("4_dqt12")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g5c7p"]
-texture = ExtResource("4_dqt12")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p5jkc"]
-texture = ExtResource("3_5cnb1")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp0cg"]
-texture = ExtResource("4_dqt12")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_to765"]
-texture = ExtResource("3_5cnb1")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b1vrb"]
-shader = ExtResource("1_3vo1h")
-shader_parameter/crt_curve = 0.012
-shader_parameter/crt_scan_line_color = 0.188
-shader_parameter/aperture_grille_rate = 0.506
-shader_parameter/aparture_grille_cut_rate = 0.675
-shader_parameter/rf_switch_esque_blur = 0.528
-shader_parameter/white_noise_rate = 0.1
+font_size = 22
 
 [node name="WindowsDesktop" type="Control"]
 layout_mode = 3
@@ -435,17 +520,6 @@ texture_disabled = ExtResource("9_s5ckw")
 texture_focused = ExtResource("9_s5ckw")
 ignore_texture_size = true
 stretch_mode = 0
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("13_ae7b1")
-bus = &"SFX"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_wngyn")
-}
 
 [node name="Atender" type="Panel" parent="."]
 visible = false
@@ -692,10 +766,8 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 3.0
-
 [node name="Texto_explicação" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -709,35 +781,6 @@ offset_bottom = 147.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_5ox6s")
-
-[node name="button em espera" type="Button" parent="Texto_explicação"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -90.0
-offset_top = -46.0
-offset_right = 90.0
-offset_bottom = -9.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_disabled_color = Color(0.41598, 0.41598, 0.41598, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_sfs6i")
-theme_override_font_sizes/font_size = 26
-theme_override_styles/focus = SubResource("StyleBoxTexture_nviro")
-theme_override_styles/disabled = SubResource("StyleBoxTexture_g5c7p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_p5jkc")
-theme_override_styles/hover = SubResource("StyleBoxTexture_dp0cg")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_to765")
-theme_override_styles/normal = SubResource("StyleBoxTexture_d04bl")
-text = "Colocar em espera"
 
 [node name="ColorRect" type="ColorRect" parent="Texto_explicação"]
 layout_mode = 0
@@ -760,9 +803,112 @@ follow_focus = true
 [node name="VBoxContainer" type="VBoxContainer" parent="Texto_explicação/ColorRect/ScrollContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Texto_explicação/ColorRect/ScrollContainer/VBoxContainer"]
+[node name="Label1" type="Label" parent="Texto_explicação/ColorRect/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_ced6a")
+
+[node name="VScrollBar" type="VScrollBar" parent="Texto_explicação/ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 228.0
+offset_top = -15.0
+offset_right = 243.0
+offset_bottom = 213.0
+grow_vertical = 0
+rotation = 1.5708
+mouse_filter = 2
+theme_override_icons/increment = ExtResource("15_s7f4y")
+theme_override_icons/increment_highlight = ExtResource("15_s7f4y")
+theme_override_icons/increment_pressed = ExtResource("15_s7f4y")
+theme_override_icons/decrement = ExtResource("16_wo3t6")
+theme_override_icons/decrement_highlight = ExtResource("16_wo3t6")
+theme_override_icons/decrement_pressed = ExtResource("16_wo3t6")
+theme_override_styles/scroll = SubResource("StyleBoxTexture_ry6pk")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_im74y")
+
+[node name="VScrollBar3" type="VScrollBar" parent="Texto_explicação/ColorRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -114.0
+offset_bottom = 114.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_icons/increment = ExtResource("15_s7f4y")
+theme_override_icons/increment_highlight = ExtResource("15_s7f4y")
+theme_override_icons/increment_pressed = ExtResource("15_s7f4y")
+theme_override_icons/decrement = ExtResource("16_wo3t6")
+theme_override_icons/decrement_highlight = ExtResource("16_wo3t6")
+theme_override_icons/decrement_pressed = ExtResource("16_wo3t6")
+theme_override_styles/scroll = SubResource("StyleBoxTexture_ry6pk")
+theme_override_styles/grabber = SubResource("StyleBoxTexture_im74y")
+
+[node name="button em espera" type="Button" parent="Texto_explicação"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -46.0
+offset_right = 90.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0.41598, 0.41598, 0.41598, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_sfs6i")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxTexture_pm8ms")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_upppb")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7bauh")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_wgigk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_uws8d")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_c2art")
+theme_override_styles/hover = SubResource("StyleBoxTexture_axhka")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_2ep0t")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_a5in2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_6o0hy")
+text = "Colocar em espera"
+
+[node name="Person" type="TextureRect" parent="Texto_explicação"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -49.0
+offset_right = 49.0
+offset_bottom = -9.0
+grow_vertical = 0
+texture = ExtResource("15_mx7un")
+
+[node name="TextureRect" type="TextureRect" parent="Texto_explicação/Person"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -13.0
+offset_right = 28.0
+offset_bottom = 13.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("16_coqru")
 
 [node name="Fim do dia" type="Panel" parent="."]
 visible = false
@@ -817,6 +963,7 @@ offset_right = -8.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4bwsv")
 
 [node name="Label" type="Label" parent="Fim do dia/Panel"]
 layout_mode = 1
@@ -832,10 +979,12 @@ offset_bottom = 57.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Parábens, você concluiu seu primeiro dia de trabalho!
-Aqui está o seus resultados
+Aqui está o seus resultados:
 
 "
+label_settings = SubResource("LabelSettings_5ngk2")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="Fim do dia/Panel"]
 layout_mode = 1
@@ -844,14 +993,22 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -103.0
-offset_top = -116.0
-offset_right = 103.0
-offset_bottom = -79.0
+offset_left = -106.0
+offset_top = -119.0
+offset_right = 100.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 0
+label_settings = SubResource("LabelSettings_7qxfd")
+horizontal_alignment = 1
 
-[node name="Timer3" type="Timer" parent="."]
+[node name="Cursor" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 15.0
+offset_bottom = 23.0
+mouse_filter = 2
+texture = ExtResource("16_ypr35")
+expand_mode = 1
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 visible = false
@@ -868,12 +1025,70 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Timer3" type="Timer" parent="."]
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ae7b1")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wngyn")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w1tpc")
+}
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -179.5
+offset_top = -168.0
+offset_right = 179.5
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -12.0
+offset_right = 171.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Acho que agora não é hora de ficar jogando"
+label_settings = SubResource("LabelSettings_cwopi")
+horizontal_alignment = 1
+
+[node name="Timer4" type="Timer" parent="."]
+
 [connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ligacao" to="." method="_on_ligacao_pressed"]
 [connection signal="pressed" from="Lista" to="." method="_on_lista_pressed"]
+[connection signal="pressed" from="Jogo" to="." method="_on_jogo_pressed"]
 [connection signal="pressed" from="Atender/Button_atender" to="." method="_on_button_atender_pressed"]
 [connection signal="pressed" from="Internet/ligar_internet" to="." method="_on_ligar_internet_pressed"]
 [connection signal="pressed" from="ListaPopup/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="pressed" from="Texto_explicação/button em espera" to="." method="_on_button_em_espera_pressed"]
 [connection signal="pressed" from="Fim do dia/fechar" to="." method="_on_fechar_pressed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

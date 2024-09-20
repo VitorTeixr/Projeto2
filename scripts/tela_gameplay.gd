@@ -1,14 +1,14 @@
 extends Control
 
 # Lista de problemas e suas respostas corretas
+@onready var scroll_container = $ScrollContainer  # Substitua pelo caminho correto do seu ScrollContainer
 
-
-var problema_atual = 0  
-@onready var popup=$Window
+var problema_atual = 0 
 @onready var atender_signal = get_parent().get_parent().get_parent().get_node("Atender")
 @onready var fim_do_dia = get_parent().get_parent().get_parent().get_node("Fim do dia")
 @onready var pontuação_texto = get_parent().get_parent().get_parent().get_node("Fim do dia/Panel/Label2")
-@onready var parent_scene = get_parent()  # Obtém a Cena Principal
+@onready var parent_scene = get_parent().get_parent().get_parent()  # Obtém a Cena Principal
+@onready var janela_explicação = get_parent().get_parent().get_parent().get_node("Texto_explicação")
 
 func  pressionado(i):
 	var file = FileAccess.open(i['descricao'], FileAccess.READ)
@@ -17,6 +17,7 @@ func  pressionado(i):
 	print(i)
 func _ready() -> void:
 	
+	print(parent_scene)
 	$OptionButton.disabled=true
 	$Button.disabled=true
 	$OptionButton.clear()
@@ -26,16 +27,15 @@ func _ready() -> void:
 	var font_file = load("res://sprites/Fonts/Battlenet.ttf") as FontFile
 	font.font_data = font_file
 	
-	var texture = load("res://sprites/pixelframenormal.png")
+	var texture = load("res://sprites/Imagens/pixelframenormal.png")
 	var stylebox_texture = StyleBoxTexture.new()
 	stylebox_texture.texture = texture
 	
-	var texture2 = load("res://sprites/pixeframeinverted.png")
+	var texture2 = load("res://sprites/Imagens/pixeframeinverted.png")
 	var stylebox_texture2 = StyleBoxTexture.new()
 	stylebox_texture2.texture = texture2
 	
 	var black_color = Color(0, 0, 0)
-	var red_color = Color(1, 0, 0)  # Exemplo de cor para o pressed
 	
 	
 
@@ -58,6 +58,7 @@ func _ready() -> void:
 			butao.add_theme_color_override("font_focus_color", black_color)  # Cor quando o botão for pressionado
 			
 			$OptionButton.add_item(i['titulo'])
+			$OptionButton.add_theme_font_override("font", font)
 			butao.text=i['titulo']
 	
 			
@@ -68,7 +69,14 @@ func _ready() -> void:
 
 func _on_button_pressed():
 	var player_ans=$OptionButton.text
-	parent_scene.label_em_espera = ""
+	parent_scene.label_em_espera.text = ""
+	
+	janela_explicação.visible = false
+	janela_explicação.position = Vector2 (310, 178)
+	janela_explicação.size = Vector2(521, 293)
+	janela_explicação.get_node("ColorRect").size = Vector2(496, 228)
+	janela_explicação.get_node("ColorRect/ScrollContainer").size = Vector2(483,228)
+	janela_explicação.get_node("button em espera").visible = true
 
 	if player_ans==Global.dias[Global.dia_atual-1]['quiz'][problema_atual]['resposta']:
 		Global.dias[Global.dia_atual-1]['pontuacao']+=1

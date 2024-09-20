@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/menagem_detalhada.gd" id="1_3725c"]
 [ext_resource type="Texture2D" uid="uid://ddp66tnmetc4r" path="res://sprites/Icons/EmailIcon.png" id="2_krjgs"]
 [ext_resource type="FontFile" uid="uid://chh4kwoe6juml" path="res://sprites/Fonts/CornDemo-Regular.ttf" id="4_7uwsx"]
-[ext_resource type="Texture2D" uid="uid://gud6d32e0b3e" path="res://sprites/teste3 (email).png" id="4_f1hf0"]
+[ext_resource type="Texture2D" uid="uid://gud6d32e0b3e" path="res://sprites/Imagens/teste3 (email).png" id="4_f1hf0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3i0hk"]
 font = ExtResource("4_7uwsx")
