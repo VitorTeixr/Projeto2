@@ -12,6 +12,10 @@ var problema_atual = 0
 
 func  pressionado(i):
 	var file = FileAccess.open(i['descricao'], FileAccess.READ)
+	var  img_path = i['img']
+	print(img_path)
+	var actual_img=load(img_path)
+	$ScrollContainer2/VBoxContainer/TextureRect.texture=actual_img
 	$ScrollContainer2/VBoxContainer/Label2.text=file.get_as_text()
 	
 	print(i)

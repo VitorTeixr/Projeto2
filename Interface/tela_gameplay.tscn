@@ -1,10 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://bqg36pt6yfia0"]
+[gd_scene load_steps=30 format=3 uid="uid://bqg36pt6yfia0"]
 
 [ext_resource type="Script" path="res://scripts/tela_gameplay.gd" id="1_k57ww"]
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="2_nxe21"]
 [ext_resource type="Texture2D" uid="uid://dw61owhynrmmc" path="res://sprites/Imagens/pixelframenormal.png" id="3_uth28"]
 [ext_resource type="Texture2D" uid="uid://q1r8bb5n18j0" path="res://sprites/Imagens/pixeframeinverted.png" id="4_rh00v"]
 [ext_resource type="Texture2D" uid="uid://c7piu1s775s8d" path="res://sprites/Imagens/pixil-frame-0 (11).png" id="5_14vy7"]
+[ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="5_51ttw"]
 [ext_resource type="Texture2D" uid="uid://p5e4yjmhbw40" path="res://sprites/Imagens/pixil-frame-0 (10).png" id="6_gwfr3"]
 [ext_resource type="Texture2D" uid="uid://dkdql1ch6opst" path="res://sprites/Imagens/pixil-frame-0 (13).png" id="8_ttvuv"]
 
@@ -164,20 +165,25 @@ color = Color(0.977937, 0.977937, 0.977937, 1)
 
 [node name="ScrollContainer2" type="ScrollContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.545
 anchor_bottom = 0.5
-offset_left = -187.0
-offset_top = -39.0
-offset_right = 371.0
-offset_bottom = 220.0
+offset_left = -170.0
+offset_top = -57.0
+offset_right = 332.16
+offset_bottom = 243.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer2"]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_51ttw")
+stretch_mode = 2
 
 [node name="Label2" type="Label" parent="ScrollContainer2/VBoxContainer"]
 layout_mode = 2

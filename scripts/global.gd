@@ -52,20 +52,24 @@ var dias = [
 		'problemas': [
 			{
 				'titulo': 'Mal Contato',
-				'descricao': 'res://Textos_jogos/Dia_1/problemas/p1.txt'
+				'descricao': 'res://Textos_jogos/Dia_1/problemas/p1.txt',
+				'img':'res://sprites/Ícone problemas/Mal-contato.png'
 				
 			},
 			{
 				'titulo': 'Oxidação',
-				'descricao': 'res://Textos_jogos/Dia_1/problemas/p2.txt'
+				'descricao': 'res://Textos_jogos/Dia_1/problemas/p2.txt',
+				'img':"res://sprites/Ícone problemas/Oxidação.png"
 			},
 			{
 				'titulo': 'Arranhões',
-				'descricao': 'res://Textos_jogos/Dia_1/problemas/p3.txt'
+				'descricao': 'res://Textos_jogos/Dia_1/problemas/p3.txt',
+				'img':"res://sprites/Ícone problemas/Arranhões.jpg"
 			},
 			{
 				'titulo': 'Detritos',
-				'descricao': 'res://Textos_jogos/Dia_1/problemas/p4.txt'
+				'descricao': 'res://Textos_jogos/Dia_1/problemas/p4.txt',
+				'img':"res://sprites/Ícone problemas/Detritos.png"
 			}
 		],
 		'errou': [],
