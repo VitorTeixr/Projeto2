@@ -15,13 +15,12 @@ func  pressionado(i):
 	var  img_path = i['img']
 	print(img_path)
 	var actual_img=load(img_path)
-	$ScrollContainer2/VBoxContainer/TextureRect.texture=actual_img
+	$"Panel Imagens/Imagens".texture=actual_img
 	$ScrollContainer2/VBoxContainer/Label2.text=file.get_as_text()
-	
+	$"Panel Imagens".visible = true	
 	print(i)
 func _ready() -> void:
 	
-	print(parent_scene)
 	$OptionButton.disabled=true
 	$Button.disabled=true
 	$OptionButton.clear()
@@ -75,6 +74,9 @@ func _on_button_pressed():
 	var player_ans=$OptionButton.text
 	parent_scene.label_em_espera.text = ""
 	
+	#if problema_atual >= 1:
+		#parent_scene.get_node("Tela Azul").visible = true
+	
 	janela_explicação.visible = false
 	janela_explicação.position = Vector2 (310, 178)
 	janela_explicação.size = Vector2(521, 293)
@@ -92,6 +94,8 @@ func _on_button_pressed():
 	
 	
 	if problema_atual>=len(Global.dias[Global.dia_atual-1]['quiz']):
+		if Global.dia_atual >=2:
+			fim_do_dia.get_node("Panel/Label").text = "Parabéns por hoje, aqui está seus resultados:"
 		pontuação_texto.text=" Você acertou "+str(Global.dias[Global.dia_atual-1]['pontuacao']) + " de " + str(len(Global.dias[Global.dia_atual-1]['quiz']))
 		fim_do_dia.visible = true
 	else:

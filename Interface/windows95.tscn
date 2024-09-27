@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dmllnf4rhqqs3"]
+[gd_scene load_steps=68 format=3 uid="uid://dmllnf4rhqqs3"]
 
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="1_3vo1h"]
 [ext_resource type="Script" path="res://scripts/windows95.gd" id="1_ed1cj"]
@@ -155,21 +155,12 @@ font = ExtResource("1_sfs6i")
 font_size = 32
 font_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b1vrb"]
-shader = ExtResource("1_3vo1h")
-shader_parameter/crt_curve = 0.012
-shader_parameter/crt_scan_line_color = 0.188
-shader_parameter/aperture_grille_rate = 0.506
-shader_parameter/aparture_grille_cut_rate = 0.675
-shader_parameter/rf_switch_esque_blur = 0.528
-shader_parameter/white_noise_rate = 0.1
-
 [sub_resource type="Animation" id="Animation_h6jlk"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Time Panel/Time:visible")
+tracks/0/path = NodePath("Barra Inferior/Time Panel/Time:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -217,7 +208,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Panel/Start:visible")
+tracks/4/path = NodePath("Barra Inferior/Start:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -273,7 +264,7 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/Time Panel/Time:visible")
+tracks/0/path = NodePath("Barra Inferior/Time Panel/Time:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -321,7 +312,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Panel/Start:visible")
+tracks/4/path = NodePath("Barra Inferior/Start:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -379,6 +370,24 @@ _data = {
 font = ExtResource("1_sfs6i")
 font_size = 22
 
+[sub_resource type="LabelSettings" id="LabelSettings_6ukhp"]
+font = ExtResource("1_sfs6i")
+font_size = 35
+font_color = Color(0, 0, 128.498, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2koya"]
+font = ExtResource("1_sfs6i")
+font_size = 38
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b1vrb"]
+shader = ExtResource("1_3vo1h")
+shader_parameter/crt_curve = 0.012
+shader_parameter/crt_scan_line_color = 0.188
+shader_parameter/aperture_grille_rate = 0.506
+shader_parameter/aparture_grille_cut_rate = 0.675
+shader_parameter/rf_switch_esque_blur = 0.528
+shader_parameter/white_noise_rate = 0.1
+
 [node name="WindowsDesktop" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -397,7 +406,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.532846, 0.515367, 1)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Barra Inferior" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -408,7 +417,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pa50r")
 
-[node name="Panel" type="Panel" parent="Panel"]
+[node name="Panel" type="Panel" parent="Barra Inferior"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -418,7 +427,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_sw66v")
 
-[node name="Start" type="Button" parent="Panel"]
+[node name="Start" type="Button" parent="Barra Inferior"]
 visible = false
 layout_mode = 0
 offset_left = 5.0
@@ -436,7 +445,7 @@ keep_pressed_outside = true
 text = "    Start"
 expand_icon = true
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Start"]
+[node name="TextureRect" type="TextureRect" parent="Barra Inferior/Start"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 4.0
@@ -445,7 +454,7 @@ offset_bottom = 48.0
 texture = ExtResource("5_57ywt")
 expand_mode = 1
 
-[node name="Time Panel" type="Panel" parent="Panel"]
+[node name="Time Panel" type="Panel" parent="Barra Inferior"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -460,7 +469,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_df2sy")
 script = ExtResource("5_vxqoj")
 
-[node name="Time" type="Label" parent="Panel/Time Panel"]
+[node name="Time" type="Label" parent="Barra Inferior/Time Panel"]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -1010,21 +1019,6 @@ mouse_filter = 2
 texture = ExtResource("16_ypr35")
 expand_mode = 1
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
-material = SubResource("ShaderMaterial_b1vrb")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -16.0
-offset_top = -29.0
-offset_right = 20.0
-offset_bottom = 43.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Timer2" type="Timer" parent="."]
@@ -1080,9 +1074,119 @@ text = "Acho que agora não é hora de ficar jogando"
 label_settings = SubResource("LabelSettings_cwopi")
 horizontal_alignment = 1
 
+[node name="Panel3" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -179.5
+offset_top = -168.0
+offset_right = 179.5
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -12.0
+offset_right = 171.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Preciso terminar meu trabalho antes"
+label_settings = SubResource("LabelSettings_cwopi")
+horizontal_alignment = 1
+
 [node name="Timer4" type="Timer" parent="."]
 
-[connection signal="pressed" from="Panel/Start" to="." method="_on_start_pressed"]
+[node name="Tela Azul" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 128.498, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Tela Azul"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -141.0
+offset_right = 68.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.678944, 0.678944, 0.678944, 1)
+
+[node name="Label" type="Label" parent="Tela Azul/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.5
+offset_top = -11.5
+offset_right = 18.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PearOS"
+label_settings = SubResource("LabelSettings_6ukhp")
+
+[node name="Label" type="Label" parent="Tela Azul"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -451.5
+offset_top = -332.0
+offset_right = 451.5
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "A fatal exception OE has occurred at 0028:C0011E36 in UXD UMM(01) + 
+00010E36. The current application will be terminated
+
+* 	Press any key to terminate the current application.
+* Press CTRL+ALT+DEL again to restar your computer. You will
+  lose any unsaved information in all application.
+
+                      Press any key to continue _"
+label_settings = SubResource("LabelSettings_2koya")
+
+[node name="CRT" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_b1vrb")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -29.0
+offset_right = 20.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="Barra Inferior/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ligacao" to="." method="_on_ligacao_pressed"]
 [connection signal="pressed" from="Lista" to="." method="_on_lista_pressed"]
 [connection signal="pressed" from="Jogo" to="." method="_on_jogo_pressed"]

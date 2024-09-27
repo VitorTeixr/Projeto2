@@ -64,7 +64,7 @@ var dias = [
 			{
 				'titulo': 'Arranhões',
 				'descricao': 'res://Textos_jogos/Dia_1/problemas/p3.txt',
-				'img':"res://sprites/Ícone problemas/Arranhões.jpg"
+				'img':"res://sprites/Ícone problemas/Arranhões.png"
 			},
 			{
 				'titulo': 'Detritos',

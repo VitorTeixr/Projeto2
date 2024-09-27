@@ -19,7 +19,7 @@ var instance = scene_to_instance.instantiate()
 
 @onready var animation_player = $AnimationPlayer
 @onready var animation_player2 = $AnimationPlayer2
-@onready var ui_elements = [$Panel/Start, $ligacao, $Lista, $Jogo,$"Panel/Time Panel/Time"]  # Elementos que ficarão invisíveis
+@onready var ui_elements = [$"Barra Inferior/Start", $ligacao, $Lista, $Jogo,$"Barra Inferior/Time Panel/Time"]  # Elementos que ficarão invisíveis
 
 @onready var label_em_espera = $"Texto_explicação/ColorRect/ScrollContainer/VBoxContainer/Label1" as Label  # O Label onde o texto vai aparecer
 @onready var controla_caracter = $Timer3  # Um Timer que controla a velocidade de exibição do texto
@@ -28,6 +28,8 @@ var indice_caractere = 0  # Para controlar o caractere atual
 
 @onready var label_mensagem = $Panel2  # Substitua "$Label" pelo caminho do seu Label
 @onready var timer4 = $Timer4          # Substitua "$Timer" pelo caminho do seu Timer
+
+@onready var label_mensagem1 = $Panel3  # Substitua "$Label" pelo caminho do seu Label
 
 @onready var cursor_sprite = $Cursor  # Sprite que vai seguir o 
 
@@ -111,17 +113,31 @@ func fim_do_dia_transition():
 	# Quando o timer expira, troca de cena
 	Global.dia_atual += 1
 	
-	
-	if not scene_changed:
+	if Global.dia_atual <=3:
+		if not scene_changed:
+			scene_changed = true
+			Transition.transition()
+			await Transition.on_transition_finished
+			MusicManager.stop_pc_sound()
+			get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn")
+		
+			Global.trys = 0
+			Global.first_boot = true
+			Global.first_boot_animation = true
+			
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	else:
 		scene_changed = true
 		Transition.transition()
 		await Transition.on_transition_finished
 		MusicManager.stop_pc_sound()
-		get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn")
+		get_tree().change_scene_to_file("res://Interface/mainmenu.tscn")
 		
+		Global.dia_atual = 1
 		Global.trys = 0
 		Global.first_boot = true
 		Global.first_boot_animation = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 			
@@ -300,6 +316,12 @@ func _on_jogo_pressed() -> void:
 	label_mensagem.visible = true  # Torna a mensagem visível
 	timer4.start(3)  # Inicia o timer para 2 segundos
 	
+func _on_start_pressed() -> void:
+	label_mensagem1.visible = true  # Torna a mensagem visível
+	timer4.start(3)  # Inicia o timer para 2 segundos
+	pass # Replace with function body.
+	
 func _on_timer4_timeout():
 	label_mensagem.visible = false  # Esconde a mensagem quando o tempo acabar
+	label_mensagem1.visible = false  # Esconde a mensagem quando o tempo acabar
 	

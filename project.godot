@@ -28,9 +28,10 @@ Intro="*res://scripts/intro.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [editor]
 
-movie_writer/movie_file="C:/Users/teixe/OneDrive - Universidade Federal do Ceará/Documentos/Godot/Disk/Projeto2/videos/Teste 1.avi"
+movie_writer/movie_file="C:/Users/teixe/OneDrive - Universidade Federal do Ceará/Documentos/Godot/Disk/Projeto2/videos/Teste 2.avi"

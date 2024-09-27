@@ -185,13 +185,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -160.0
+offset_left = -58.0
 offset_top = -29.0
-offset_right = 7.0
+offset_right = -9.0
 offset_bottom = 6.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "Version Alpha"
+text = "Demo"
 label_settings = SubResource("LabelSettings_obyyy")
 
 [node name="ColorRect2" type="ColorRect" parent="."]

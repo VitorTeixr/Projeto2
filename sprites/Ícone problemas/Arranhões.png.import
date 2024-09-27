@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dltwbiycg6gje"
-path="res://.godot/imported/Arranhões.jpg-be66f8da626d44ff52990527983749fe.ctex"
+uid="uid://cq8n5ybu1to3y"
+path="res://.godot/imported/Arranhões.png-cb95e1ec44238974eff7d5242508e607.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Ícone problemas/Arranhões.jpg"
-dest_files=["res://.godot/imported/Arranhões.jpg-be66f8da626d44ff52990527983749fe.ctex"]
+source_file="res://sprites/Ícone problemas/Arranhões.png"
+dest_files=["res://.godot/imported/Arranhões.png-cb95e1ec44238974eff7d5242508e607.ctex"]
 
 [params]
 
