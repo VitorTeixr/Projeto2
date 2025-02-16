@@ -91,7 +91,7 @@ var dias = [
 			{
 				'pergunta': 'res://Textos_jogos/Dia_2/quiz/a4.txt',
 				'resposta': 'Arranhões',
-				'emocao': 'fem_neutro'
+				'emocao': 'fem_neutra'
 			},
 			{
 				'pergunta': 'res://Textos_jogos/Dia_2/quiz/a5.txt',
@@ -180,7 +180,7 @@ var dias = [
 var email_atual={}
 var pergunta_atual={}
 #Sabe o dia atual referente ao seu idOxidação
-var dia_atual=1
+var dia_atual=2
 
 var trys = 0
 var acertosD1 = 0

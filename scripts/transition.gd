@@ -6,6 +6,7 @@ signal on_transition_finished
 @onready var animation_player = $AnimationPlayer
 
 func _ready():
+	
 	color_rect.visible = false
 	$Label.visible = false
 	animation_player.animation_finished.connect(_on_animation_finished)
@@ -20,6 +21,7 @@ func _on_animation_finished(anim_name):
 	
 func transition():
 	if Global.dia_atual <= 3:
+		MusicManager.play_radio_sound()
 		$Label.text = "Dia " + str(Global.dia_atual)
 		color_rect.visible = true
 		$Label.visible = true

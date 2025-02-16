@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3soid5s7tmvq"
+path="res://.godot/imported/Speaker Bug.mp3-4afc7529ba532e5908977e3d3f5d8032.mp3str"
+
+[deps]
+
+source_file="res://soundtrack/SFX/Speaker Bug.mp3"
+dest_files=["res://.godot/imported/Speaker Bug.mp3-4afc7529ba532e5908977e3d3f5d8032.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

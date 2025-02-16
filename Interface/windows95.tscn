@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dmllnf4rhqqs3"]
+[gd_scene load_steps=69 format=3 uid="uid://dmllnf4rhqqs3"]
 
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="1_3vo1h"]
 [ext_resource type="Script" path="res://scripts/windows95.gd" id="1_ed1cj"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dkdql1ch6opst" path="res://sprites/Imagens/pixil-frame-0 (13).png" id="17_07lxj"]
 [ext_resource type="Texture2D" uid="uid://b7trbs0mt1i3h" path="res://sprites/Imagens/sound2.png" id="20_qlvy0"]
 [ext_resource type="Texture2D" uid="uid://cxjixfpoqx4vo" path="res://sprites/Imagens/sound3.png" id="21_rt8r0"]
+[ext_resource type="Texture2D" uid="uid://bxh807rg3tlw6" path="res://sprites/Imagens/The-Mandela-Catalogue-Vol.-1-8-37-screenshot-1200x675.jpg" id="25_vhjew"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa50r"]
 bg_color = Color(0.695503, 0.695503, 0.695503, 1)
@@ -1026,6 +1027,18 @@ wait_time = 3.0
 
 [node name="Timer3" type="Timer" parent="."]
 
+[node name="Timer4" type="Timer" parent="."]
+
+[node name="Timer5" type="Timer" parent="."]
+
+[node name="Timer6" type="Timer" parent="."]
+
+[node name="Timer7" type="Timer" parent="."]
+
+[node name="Timer8" type="Timer" parent="."]
+
+[node name="Timer9" type="Timer" parent="."]
+
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_ae7b1")
 bus = &"SFX"
@@ -1106,8 +1119,6 @@ text = "Preciso terminar meu trabalho antes"
 label_settings = SubResource("LabelSettings_cwopi")
 horizontal_alignment = 1
 
-[node name="Timer4" type="Timer" parent="."]
-
 [node name="Tela Azul" type="ColorRect" parent="."]
 visible = false
 layout_mode = 1
@@ -1172,6 +1183,13 @@ text = "A fatal exception OE has occurred at 0028:C0011E36 in UXD UMM(01) +
                       Press any key to continue _"
 label_settings = SubResource("LabelSettings_2koya")
 
+[node name="LinhaRoxa" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 12.0
+offset_bottom = 669.0
+color = Color(0.999999, 0.37157, 0.991019, 1)
+
 [node name="CRT" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_b1vrb")
 layout_mode = 1
@@ -1186,6 +1204,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Elimar Gonzales" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("25_vhjew")
+expand_mode = 1
+
 [connection signal="pressed" from="Barra Inferior/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="ligacao" to="." method="_on_ligacao_pressed"]
 [connection signal="pressed" from="Lista" to="." method="_on_lista_pressed"]
@@ -1196,3 +1228,4 @@ mouse_filter = 2
 [connection signal="pressed" from="Texto_explicação/button em espera" to="." method="_on_button_em_espera_pressed"]
 [connection signal="pressed" from="Fim do dia/fechar" to="." method="_on_fechar_pressed"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer8" to="." method="_on_timer_8_timeout"]

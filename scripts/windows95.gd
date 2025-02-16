@@ -44,10 +44,31 @@ var indice_caractere = 0  # Para controlar o caractere atual
 @onready var audio_player = $AudioStreamPlayer
 
 
+@onready var linha_roxa = $LinhaRoxa  # Caminho do ColorRect (linha roxa)
+
+
+var mouse_override_active = false  # Controla se o movimento do mouse está sendo forçado
+var random_direction = Vector2.ZERO  # Direção do movimento aleatório
+@onready var move_timer5 = $Timer5  # Timer para parar o movimento aleatório
+@onready var random_timer5 = $Timer5  # Timer para iniciar o movimento aleatório
+
+@onready var move_timer6 = $Timer6  # Timer para parar o movimento aleatório
+@onready var random_timer7 = $Timer7  # Timer para iniciar o movimento aleatório
+
+@onready var timer8 = $Timer8  # Substitua pelo caminho correto do Timer
+
+@onready var imagem9 = $"Elimar Gonzales"  # Substitua pelo caminho correto da sua imagem
+@onready var timer9 = $Timer9  # Certifique-se de que este é um nó Timer na cena
+
+var blink_count = 0
+
+
+
 func _ready():
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
+	linha_roxa.visible = false  # Começa invisível
 
 	#Instancia a cena
 	instantiate_scene_in_panel(instance)
@@ -85,8 +106,47 @@ func _ready():
 	label_mensagem.visible = false  # Inicialmente, a mensagem está invisível
 	timer4.timeout.connect(Callable(self, "_on_timer4_timeout"))  # Conecta o timeout do Timer a uma função
 	
+	var chance = randf()  # Número entre 0 e 1
+	if chance < 0.3:  # 30% de chance do bug aparecer
+		# Define uma posição X aleatória dentro dos limites da tela
+		var screen_width = get_viewport().get_visible_rect().size.x
+		var random_x = randi_range(0, screen_width - linha_roxa.size.x)
+		linha_roxa.position.x = random_x
 
-			
+		linha_roxa.visible = true
+	else:
+		linha_roxa.visible = false
+		
+	
+	if Global.dia_atual >= 2: 
+	# Configurações dos timers
+		move_timer5.one_shot = true
+		random_timer5.one_shot = true
+		move_timer5.timeout.connect(_on_move_timer5_timeout)
+		random_timer5.timeout.connect(_on_random_timer5_timeout)
+	
+	# Inicia o ciclo para o evento aleatório
+		start_random_timer5()
+		
+	# Configurações dos timers
+		move_timer6.one_shot = true
+		random_timer7.one_shot = true
+		move_timer6.timeout.connect(_on_move_timer6_timeout)
+		random_timer7.timeout.connect(_on_random_timer7_timeout)
+	
+	# Inicia o ciclo para o evento aleatório
+		start_random_timer7()
+	
+	
+	# Configura o Timer para ser único
+	tocar_som_em_momento_aleatorio()
+	
+	
+	imagem9.visible = false  # Inicialmente, a imagem está invisível
+	
+	if Global.dia_atual == 3:
+		configurar_proximo_evento()  # Configura o próximo evento aleatório
+	
 func _process(_delta):
 	
 	var mouse_position = get_viewport().get_mouse_position()
@@ -106,11 +166,16 @@ func _process(_delta):
 
 		
 			
-
+	if mouse_override_active:
+		# Move o mouse em uma direção aleatória enquanto o efeito está ativo
+		var mouse_pos = get_viewport().get_mouse_position()
+		get_viewport().warp_mouse(mouse_pos + random_direction * _delta * 200)  # Ajuste a velocidade
 	
 func fim_do_dia_transition():
 	# Sistema de fim de dia
 	# Quando o timer expira, troca de cena
+	linha_roxa.visible = false  # A linha some no final do dia
+	MusicManager.stop_pc_sound()
 	Global.dia_atual += 1
 	
 	if Global.dia_atual <=3:
@@ -118,7 +183,6 @@ func fim_do_dia_transition():
 			scene_changed = true
 			Transition.transition()
 			await Transition.on_transition_finished
-			MusicManager.stop_pc_sound()
 			get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn")
 		
 			Global.trys = 0
@@ -325,3 +389,96 @@ func _on_timer4_timeout():
 	label_mensagem.visible = false  # Esconde a mensagem quando o tempo acabar
 	label_mensagem1.visible = false  # Esconde a mensagem quando o tempo acabar
 	
+
+func _on_random_timer5_timeout() -> void:
+	# Quando o tempo aleatório expira, ativa o movimento forçado
+	mouse_override_active = true
+	random_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	print("Movimento aleatório iniciado: %s" % str(random_direction))
+	move_timer5.start(randf_range(2.0, 4.0))  # Duração do movimento aleatório (2 a 4 segundos)
+
+func _on_move_timer5_timeout() -> void:
+	# Quando o tempo do movimento expira, desativa o movimento forçado
+	mouse_override_active = false
+	print("Movimento aleatório finalizado.")
+	start_random_timer5()  # Reinicia o ciclo para o próximo evento
+
+func start_random_timer5() -> void:
+	# Define um momento aleatório para o próximo movimento aleatório (entre 5 e 15 segundos)
+	var tempo_aleatorio = randf_range(5.0, 3000.0)
+	print("Próximo movimento aleatório em %.2f segundos." % tempo_aleatorio)
+	random_timer5.start(tempo_aleatorio)
+	
+	
+func _on_random_timer7_timeout() -> void:
+	# Quando o tempo aleatório expira, ativa o movimento forçado
+	mouse_override_active = true
+	random_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	print("Movimento aleatório iniciado: %s" % str(random_direction))
+	move_timer6.start(randf_range(2.0, 4.0))  # Duração do movimento aleatório (2 a 4 segundos)
+
+func _on_move_timer6_timeout() -> void:
+	# Quando o tempo do movimento expira, desativa o movimento forçado
+	mouse_override_active = false
+	print("Movimento aleatório finalizado.")
+	start_random_timer7()  # Reinicia o ciclo para o próximo evento
+
+func start_random_timer7() -> void:
+	# Define um momento aleatório para o próximo movimento aleatório (entre 5 e 15 segundos)
+	var tempo_aleatorio = randf_range(5.0, 300.0)
+	print("Próximo movimento aleatório em %.2f segundos." % tempo_aleatorio)
+	random_timer7.start(tempo_aleatorio)
+	
+func tocar_som_em_momento_aleatorio():
+	# Define um intervalo aleatório entre 3 e 10 segundos
+	var intervalo_aleatorio = randf_range(8.0, 300.0)
+	
+	# Ajusta o tempo do Timer e inicia
+	timer8.start(intervalo_aleatorio)
+
+func _on_timer_8_timeout() -> void:
+	# Toca o som
+	MusicManager.play_speaker_sound()
+	# Configura o próximo evento aleatório
+	tocar_som_em_momento_aleatorio()
+	pass # Replace with function body.
+
+
+func configurar_proximo_evento():
+	# Define um tempo aleatório para o próximo evento (entre 5 e 15 segundos, por exemplo)
+	timer9.stop()  # Garante que o Timer esteja reiniciado
+	timer9.wait_time = randf_range(5, 500)  # Define o tempo de espera
+	timer9.one_shot = true  # O Timer será executado apenas uma vez
+	timer9.timeout.connect(_on_timer9_timeout)  # Conecta o timeout ao evento
+	timer9.start()  # Inicia o Timer
+
+func _on_timer9_timeout():
+	print("Iniciando o piscar da imagem!")  # Indica que o evento de piscar foi acionado
+	piscar_imagem()  # Chama a função para piscar a imagem
+
+func piscar_imagem():
+	var max_blinks = 3  # Número de piscadas rápidas
+	var blink_speed = 0.1  # Velocidade de cada piscada (em segundos)
+
+	var blink_timer = Timer.new()
+	add_child(blink_timer)  # Adiciona o Timer à árvore
+	blink_timer.wait_time = blink_speed
+	blink_timer.one_shot = true
+
+	blink_timer.timeout.connect(func():
+		imagem9.visible = not imagem9.visible  # Alterna entre visível e invisível
+		print("Imagem está visível: %s" % imagem9.visible)  # Loga o estado atual da imagem
+		print (blink_count)
+		
+		if blink_count <= max_blinks:  # Verifica se ainda há piscadas restantes
+			blink_count += 1
+			blink_timer.start()  # Reinicia o Timer para continuar piscando
+		else:
+			blink_timer.queue_free()  # Libera o Timer auxiliar
+			imagem9.visible = false  # Garante que a imagem termine invisível
+			blink_count = 0
+			print("Piscar concluído. Configurando próximo evento...")
+			configurar_proximo_evento()  # Configura o próximo evento aleatório após piscar
+	)
+
+	blink_timer.start()

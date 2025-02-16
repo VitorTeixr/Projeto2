@@ -34,7 +34,6 @@ func _on_button_pressed(_button: Button) -> void:
 		"NewGame":
 			MusicManager.stop_music()
 			Transition.transition()
-			MusicManager.play_radio_sound()
 			await Transition.on_transition_finished
 			MusicManager.stop_radio_sound()			
 			get_tree().change_scene_to_file("res://Interface/PcCyberpunk.tscn")

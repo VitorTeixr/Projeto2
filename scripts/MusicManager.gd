@@ -19,6 +19,9 @@ var dial_player = AudioStreamPlayer.new()
 var radio_sound: AudioStream = preload("res://soundtrack/SFX/Radio Tuning sound effect.mp3")
 var radio_player = AudioStreamPlayer.new()
 
+var speaker_sound: AudioStream = preload("res://soundtrack/SFX/Speaker Bug.mp3")
+var speaker_player = AudioStreamPlayer.new()
+
 
 
 
@@ -123,6 +126,12 @@ func play_radio_sound():
 func stop_radio_sound():
 	if radio_player.playing:
 		radio_player.stop()
+		
+func play_speaker_sound():
+	speaker_player.stream = speaker_sound
+	add_child(speaker_player)  # Adiciona o player na cena atual
+	speaker_player.bus = "SFX"
+	speaker_player.play()
 		
 
 	
