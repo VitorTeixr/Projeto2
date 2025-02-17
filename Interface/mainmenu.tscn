@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://btvq06nj36u2s"]
+[gd_scene load_steps=15 format=3 uid="uid://btvq06nj36u2s"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_r2i3s"]
 [ext_resource type="Texture2D" uid="uid://djxsva0ok41f" path="res://sprites/Imagens/teste2.png" id="2_8aydh"]
 [ext_resource type="VideoStream" path="res://videos/Cyberpunk-Hi-Tech-Line-Background-video-Footage-Screensaver.ogv" id="2_pino5"]
 [ext_resource type="FontFile" uid="uid://csjbgays5pru8" path="res://sprites/Fonts/True Lies.ttf" id="3_k375d"]
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="4_o55h6"]
+[ext_resource type="Texture2D" uid="uid://cq5u72oie000y" path="res://sprites/Icons/Cursor.png" id="5_v2ep1"]
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="6_2bjfl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3r26w"]
@@ -19,6 +20,8 @@ outline_size = 2
 [sub_resource type="LabelSettings" id="LabelSettings_6tnv8"]
 font = ExtResource("3_k375d")
 font_size = 90
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7erag"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h8x1f"]
 
@@ -66,15 +69,6 @@ stream = ExtResource("2_pino5")
 autoplay = true
 expand = true
 loop = true
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = -59.0
-offset_top = -23.0
-offset_right = 1197.0
-offset_bottom = 675.0
-texture = ExtResource("2_8aydh")
-expand_mode = 1
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -141,7 +135,7 @@ theme_override_colors/font_hover_color = Color(0.255659, 0.255659, 0.255659, 1)
 theme_override_colors/font_pressed_color = Color(0.169245, 0.169245, 0.169245, 1)
 theme_override_fonts/font = ExtResource("4_o55h6")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/focus = SubResource("StyleBoxEmpty_h8x1f")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7erag")
 text = "Começar"
 flat = true
 
@@ -193,6 +187,23 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Demo"
 label_settings = SubResource("LabelSettings_obyyy")
+
+[node name="Cursor" type="TextureRect" parent="."]
+offset_right = 15.0
+offset_bottom = 23.0
+mouse_filter = 2
+texture = ExtResource("5_v2ep1")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -59.0
+offset_top = -23.0
+offset_right = 1197.0
+offset_bottom = 675.0
+mouse_filter = 2
+texture = ExtResource("2_8aydh")
+expand_mode = 1
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_mcjlp")

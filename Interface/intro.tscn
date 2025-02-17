@@ -169,14 +169,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -76.0
-offset_top = -233.0
-offset_right = 83.0
-offset_bottom = -197.0
+offset_left = -292.0
+offset_top = -241.0
+offset_right = 299.0
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Recomenda-se o uso de fones de ouvido e que se jogue em 
-um ambiente escuro para uma melhor experiência"
+um ambiente escuro para uma melhor experiência
+
+Este jogo se encontra em sua fase demo, não representando o produto final."
 label_settings = SubResource("LabelSettings_n2fo6")
 horizontal_alignment = 1
 

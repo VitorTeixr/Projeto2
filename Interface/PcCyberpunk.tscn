@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1gx8mnmqrqv3"]
+[gd_scene load_steps=12 format=3 uid="uid://c1gx8mnmqrqv3"]
 
 [ext_resource type="Texture2D" uid="uid://pghuu0xgq2sw" path="res://sprites/Icons/pngwing.com.png" id="1_hrfsr"]
 [ext_resource type="Script" path="res://scripts/PcCyberpunk.gd" id="1_q8175"]
@@ -18,6 +18,10 @@ outline_size = 1
 font = ExtResource("8_wir4h")
 font_size = 50
 
+[sub_resource type="LabelSettings" id="LabelSettings_pry2h"]
+font = ExtResource("5_d2tut")
+font_size = 15
+
 [node name="PcCyberpunk" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -29,7 +33,7 @@ script = ExtResource("1_q8175")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1263.0
+offset_right = 1152.0
 offset_bottom = 653.0
 texture = ExtResource("2_lder3")
 expand_mode = 1
@@ -145,6 +149,38 @@ grow_horizontal = 2
 label_settings = SubResource("LabelSettings_c3tj5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MensagemLabel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -179.5
+offset_top = -129.0
+offset_right = 179.5
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="MensagemLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -12.0
+offset_right = 171.5
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Eu preciso verificar os
+emais de hoje antes"
+label_settings = SubResource("LabelSettings_pry2h")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="PcAntigo" to="." method="_on_pc_antigo_pressed"]
 [connection signal="pressed" from="Emails" to="." method="_on_emails_pressed"]

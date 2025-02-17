@@ -4,7 +4,11 @@ class_name MainMenu
 var animacao_scene = preload("res://Interface/intro.tscn")
 var animacao_instance
 
+@onready var cursor_sprite = $Cursor
+
 func _ready():
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 	MusicManager.play_music("res://soundtrack/Music/Theme.mp3")
 	
@@ -46,7 +50,15 @@ func _on_button_pressed(_button: Button) -> void:
 			
 		"Left":
 			get_tree().quit()
-		
-			
-		
-			
+
+func _input(event):
+	# Verifica se o evento é um clique do botão esquerdo do mouse
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		# Reproduz o som de clique
+		MusicManager.play_click_sound()
+		return  # Retorna para permitir que os botões processem o evento
+
+func _process(delta):
+	var mouse_position = get_viewport().get_mouse_position()
+	cursor_sprite.position = mouse_position
+	

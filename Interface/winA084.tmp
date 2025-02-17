@@ -920,105 +920,6 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("16_coqru")
 
-[node name="Fim do dia2" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -204.5
-offset_top = -147.0
-offset_right = 204.5
-offset_bottom = 147.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_fojse")
-
-[node name="Cor azul contorno topo" type="ColorRect" parent="Fim do dia2"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 5.0
-offset_right = 403.0
-offset_bottom = 33.0
-color = Color(0.0267072, 0, 0.888479, 1)
-
-[node name="fechar_sair" type="TextureButton" parent="Fim do dia2"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -39.0
-offset_top = 9.0
-offset_right = -13.0
-offset_bottom = 31.0
-grow_horizontal = 0
-texture_normal = ExtResource("5_titud")
-texture_pressed = ExtResource("5_titud")
-texture_hover = ExtResource("5_titud")
-texture_disabled = ExtResource("5_titud")
-texture_focused = ExtResource("5_titud")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Panel" type="Panel" parent="Fim do dia2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 6.0
-offset_top = 37.0
-offset_right = -8.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4bwsv")
-
-[node name="Label" type="Label" parent="Fim do dia2/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -204.0
-offset_top = -60.0
-offset_right = 210.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "
-Você tem certeza que deseja sair?
-"
-label_settings = SubResource("LabelSettings_5ngk2")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sair do jogo" type="Button" parent="Fim do dia2/Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -60.0
-offset_top = -102.0
-offset_right = 50.0
-offset_bottom = -53.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_sfs6i")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxTexture_ptlsn")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_o138m")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_0if4h")
-theme_override_styles/normal = SubResource("StyleBoxTexture_d04bl")
-text = "Sair"
-
 [node name="Fim do dia" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -1328,9 +1229,6 @@ mouse_filter = 2
 [connection signal="pressed" from="Internet/ligar_internet" to="." method="_on_ligar_internet_pressed"]
 [connection signal="pressed" from="ListaPopup/TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="Texto_explicação/button em espera" to="." method="_on_button_em_espera_pressed"]
-[connection signal="pressed" from="Fim do dia2/fechar_sair" to="." method="_on_fechar_sair_pressed"]
-[connection signal="pressed" from="Fim do dia2/Panel/Sair do jogo" to="." method="_on_sair_do_jogo_pressed"]
 [connection signal="pressed" from="Fim do dia/fechar" to="." method="_on_fechar_pressed"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
-[connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]
 [connection signal="timeout" from="Timer8" to="." method="_on_timer_8_timeout"]

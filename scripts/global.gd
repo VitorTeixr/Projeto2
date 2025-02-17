@@ -191,3 +191,5 @@ var first_boot_animation = true
 var signal_atender = false
 
 var start_game = false
+
+var emails_checked = false  # Variável para rastrear se os emails foram verificados
