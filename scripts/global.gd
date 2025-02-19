@@ -107,15 +107,18 @@ var dias = [
 		'problemas': [
 			{
 				'titulo': 'Memória RAM',
-				'descricao': 'res://Textos_jogos/Dia_2/problemas/p5.txt'
+				'descricao': 'res://Textos_jogos/Dia_2/problemas/p5.txt',
+				'img':"res://sprites/Ícone problemas/RAM.png"
 			},
 			{
 				'titulo': 'Danificado',
-				'descricao': 'res://Textos_jogos/Dia_2/problemas/p6.txt'
+				'descricao': 'res://Textos_jogos/Dia_2/problemas/p6.txt',
+				'img':"res://sprites/Ícone problemas/Danificado.png"
 			},
 			{
 				'titulo': 'Virús',
-				'descricao': 'res://Textos_jogos/Dia_2/problemas/p7.txt'
+				'descricao': 'res://Textos_jogos/Dia_2/problemas/p7.txt',
+				'img':"res://sprites/Ícone problemas/Virus.png"
 			}
 		],
 		'errou': [],
@@ -159,15 +162,18 @@ var dias = [
 		'problemas': [
 			{
 				'titulo': 'Modo Avião',
-				'descricao': 'res://Textos_jogos/Dia_3/problemas/p8.txt'
+				'descricao': 'res://Textos_jogos/Dia_3/problemas/p8.txt',
+				'img':"res://sprites/Ícone problemas/Modo_aviao.png"
 			},
 			{
 				'titulo': 'Tripala',
-				'descricao': 'res://Textos_jogos/Dia_3/problemas/p9.txt'
+				'descricao': 'res://Textos_jogos/Dia_3/problemas/p9.txt',
+				'img':"res://sprites/Ícone problemas/Tripala.png"
 			},
 			{
 				'titulo': 'Guaraná',
-				'descricao': 'res://Textos_jogos/Dia_3/problemas/p10.txt'
+				'descricao': 'res://Textos_jogos/Dia_3/problemas/p10.txt',
+				'img':"res://sprites/Ícone problemas/Guaraná.png"
 			}
 		],
 		'errou': [],
@@ -180,7 +186,7 @@ var dias = [
 var email_atual={}
 var pergunta_atual={}
 #Sabe o dia atual referente ao seu idOxidação
-var dia_atual=2
+var dia_atual=1
 
 var trys = 0
 var acertosD1 = 0

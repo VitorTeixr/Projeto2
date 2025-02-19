@@ -8,6 +8,7 @@ var animacao_instance
 
 func _ready():
 	
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	
 	MusicManager.play_music("res://soundtrack/Music/Theme.mp3")

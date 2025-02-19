@@ -172,7 +172,7 @@ func setup_random_movement_timers():
 
 # Métodos para eventos aleatórios
 func tocar_som_em_momento_aleatorio():
-	var intervalo_aleatorio = randf_range(8.0, 300.0)
+	var intervalo_aleatorio = randf_range(8.0, 150.0)
 	timer8.start(intervalo_aleatorio)
 
 func _on_timer_8_timeout():
@@ -181,7 +181,7 @@ func _on_timer_8_timeout():
 
 func configurar_proximo_evento():
 	timer9.stop()
-	timer9.wait_time = randf_range(5, 200)
+	timer9.wait_time = randf_range(5, 150)
 	timer9.one_shot = true
 	timer9.timeout.connect(_on_timer9_timeout)
 	timer9.start()
@@ -317,6 +317,7 @@ func fim_do_dia_transition():
 	Global.dia_atual += 1
 	
 	
+	
 	if Global.dia_atual <= 3:
 		if not scene_changed:
 			scene_changed = true
@@ -383,7 +384,7 @@ func _on_move_timer5_timeout():
 	start_random_timer5()
 
 func start_random_timer5():
-	var tempo_aleatorio = randf_range(5.0, 3000.0)
+	var tempo_aleatorio = randf_range(5.0, 1000.0)
 	random_timer5.start(tempo_aleatorio)
 
 func _on_random_timer7_timeout():
@@ -396,7 +397,7 @@ func _on_move_timer6_timeout():
 	start_random_timer7()
 
 func start_random_timer7():
-	var tempo_aleatorio = randf_range(5.0, 200.0)
+	var tempo_aleatorio = randf_range(5.0, 100.0)
 	random_timer7.start(tempo_aleatorio)
 
 func _on_sair_do_jogo_pressed():

@@ -25,6 +25,7 @@ Global="*res://scripts/global.gd"
 Transition="*res://Interface/transition.tscn"
 MusicManager="*res://scripts/MusicManager.gd"
 Intro="*res://scripts/intro.gd"
+SaveManager="*res://scripts/SaveManager.gd"
 
 [display]
 

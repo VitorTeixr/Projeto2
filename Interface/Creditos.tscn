@@ -21,14 +21,6 @@ shader_parameter/white_noise_rate = 0.149
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1527r")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -59.0
-offset_top = -23.0
-offset_right = 1197.0
-offset_bottom = 675.0
-texture = ExtResource("2_pq05o")
-expand_mode = 1
-
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
@@ -70,6 +62,14 @@ offset_right = 15.0
 offset_bottom = 23.0
 mouse_filter = 2
 texture = ExtResource("5_m2u8j")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -59.0
+offset_top = -23.0
+offset_right = 1197.0
+offset_bottom = 675.0
+texture = ExtResource("2_pq05o")
 expand_mode = 1
 
 [node name="ColorRect2" type="ColorRect" parent="."]

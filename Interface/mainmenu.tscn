@@ -189,6 +189,7 @@ text = "Demo"
 label_settings = SubResource("LabelSettings_obyyy")
 
 [node name="Cursor" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 15.0
 offset_bottom = 23.0
 mouse_filter = 2
