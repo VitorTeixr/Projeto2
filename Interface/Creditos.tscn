@@ -44,7 +44,10 @@ Júlia
 Vitor
 
 Narrativa:
-Júlia"
+Júlia
+
+Agradecimentos:
+Pedro, Derick e Gabriel Pinheiro"
 label_settings = SubResource("LabelSettings_lrj12")
 horizontal_alignment = 1
 
@@ -69,6 +72,7 @@ offset_left = -59.0
 offset_top = -23.0
 offset_right = 1197.0
 offset_bottom = 675.0
+mouse_filter = 2
 texture = ExtResource("2_pq05o")
 expand_mode = 1
 
