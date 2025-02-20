@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdwfba3u7376h"]
+[gd_scene load_steps=5 format=3 uid="uid://cdwfba3u7376h"]
 
 [ext_resource type="Texture2D" uid="uid://c8taf62cx575x" path="res://sprites/icon.png" id="1_28lxm"]
 [ext_resource type="Script" path="res://scripts/loading_scene.gd" id="1_fa505"]
-[ext_resource type="Script" path="res://scripts/ProgressBar.gd" id="3_ssscg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhuoq"]
 bg_color = Color(0.668257, 0.647478, 0.617296, 1)
@@ -27,7 +26,6 @@ offset_right = 841.0
 offset_bottom = 615.0
 theme_override_styles/background = SubResource("StyleBoxFlat_bhuoq")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mfix8")
-script = ExtResource("3_ssscg")
 
 [node name="TextureRect" type="TextureRect" parent="ProgressBar"]
 layout_mode = 0

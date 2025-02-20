@@ -146,7 +146,7 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		# Verifica se a imagem está visível
 		if imagem10.visible:
-			get_tree().quit()  # Fecha o jogo
+			get_tree().change_scene_to_file("res://Interface/boot_pc.tscn")
 
 # Métodos para inicialização
 func setup_linha_roxa():
@@ -213,7 +213,7 @@ func piscar_imagem():
 	blink_timer.start()
 
 func aleatorizar_aparicao():
-	var tempo_aleatorio = randf_range(5, 2000)
+	var tempo_aleatorio = randf_range(5, 1000)
 	var timer = get_tree().create_timer(tempo_aleatorio)
 	await timer.timeout
 	imagem10.visible = true

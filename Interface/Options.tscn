@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck6mwpvcnjgx6"]
+[gd_scene load_steps=9 format=3 uid="uid://ck6mwpvcnjgx6"]
 
 [ext_resource type="Script" path="res://scripts/Options.gd" id="1_dodn2"]
 [ext_resource type="PackedScene" uid="uid://dhmfce4wycv1j" path="res://Interface/volume_slider.tscn" id="2_8cjxq"]
@@ -6,6 +6,10 @@
 [ext_resource type="FontFile" uid="uid://vneqrsab2dtf" path="res://sprites/Fonts/Battlenet.ttf" id="3_4ed68"]
 [ext_resource type="Shader" path="res://sprites/crt.gdshader" id="3_4pym6"]
 [ext_resource type="Texture2D" uid="uid://cq5u72oie000y" path="res://sprites/Icons/Cursor.png" id="5_cnion"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_df8qd"]
+font = ExtResource("3_4ed68")
+font_size = 28
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4mnus"]
 shader = ExtResource("3_4pym6")
@@ -51,6 +55,7 @@ offset_right = 358.0
 offset_bottom = 523.0
 
 [node name="CheckButton" type="CheckButton" parent="."]
+visible = false
 offset_left = 412.0
 offset_top = 414.0
 offset_right = 758.0
@@ -58,6 +63,25 @@ offset_bottom = 467.0
 theme_override_fonts/font = ExtResource("3_4ed68")
 theme_override_font_sizes/font_size = 50
 text = "Tela cheia"
+flat = true
+
+[node name="Label" type="Label" parent="CheckButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -181.5
+offset_top = 19.0
+offset_right = 181.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Para uma melhor experiência, recomenda-se
+manter a opção de tela cheia ativada"
+label_settings = SubResource("LabelSettings_df8qd")
+horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 412.0
